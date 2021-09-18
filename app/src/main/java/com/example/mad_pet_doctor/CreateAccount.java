@@ -34,19 +34,20 @@ public class CreateAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-       //
-
         txtName = findViewById(R.id.createAcc_nameEditText);
         txtEmail = findViewById(R.id.createAcc_emailEditText);
-        txtMobileNumber = findViewById(R.id.createAcc_passwordEditTest);
+        txtMobileNumber = findViewById(R.id.createAcc_mobileNoEditText);
         txtPassword = findViewById(R.id.createAcc_passwordEditTest);
 
         saveBtn = findViewById(R.id.createAccbtn);
+
+        user = new User();
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                saveUser(v);
             }
         });
 
@@ -69,14 +70,14 @@ public class CreateAccount extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Please enter a Mobile Number",Toast.LENGTH_SHORT).show();
             }
             else if(TextUtils.isEmpty(txtPassword.getText().toString())){
-                Toast.makeText(getApplicationContext(),"Please enter a Name",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Please enter a Password",Toast.LENGTH_SHORT).show();
             }
             else{
 
                 user.setName(txtName.getText().toString().trim());
-                user.setName(txtEmail.getText().toString().trim());
-                user.setName(txtMobileNumber.getText().toString().trim());
-                user.setName(txtPassword.getText().toString().trim());
+                user.setEmail(txtEmail.getText().toString().trim());
+                user.setPhoneNumber(txtMobileNumber.getText().toString().trim());
+                user.setPassword(txtPassword.getText().toString().trim());
 
                 db.push().setValue(user);
 

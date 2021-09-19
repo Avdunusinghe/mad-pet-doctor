@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -17,6 +18,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.regex.Pattern;
 
 public class MedicalCenterRegistration extends AppCompatActivity {
 
@@ -44,27 +47,66 @@ public class MedicalCenterRegistration extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String medicalCenterNo = medicalCenterNoEdt.getText().toString();
-                String name = nameEdt.getText().toString();
-                String address = addressEdt.getText().toString();
-                String telNo = telNoEdt.getText().toString();
+                if (TextUtils.isEmpty((medicalCenterNoEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter medical center no", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((nameEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter name", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((addressEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter address", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((telNoEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter tel no", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((emailEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter email", Toast.LENGTH_SHORT).show();
+                } else {
+                    boolean validateEmail = validateEmail();
+                    boolean validateMobileNo = validateTelNo();
+                    String medicalCenterNo = medicalCenterNoEdt.getText().toString();
+                    String name = nameEdt.getText().toString();
+                    String address = addressEdt.getText().toString();
+                    String telNo = telNoEdt.getText().toString();
+                    String email = emailEdt.getText().toString();
+                    medicalCenterId = name;
+
+                    MedicalCenterReg MedicalCenterReg = new MedicalCenterReg(medicalCenterId, medicalCenterNo, name, address, telNo, email);
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            databaseReference.child(medicalCenterId).setValue(MedicalCenterReg);
+                            Toast.makeText(MedicalCenterRegistration.this, "Medical Center Registered Successfully.", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(MedicalCenterRegistration.this,MainActivity.class));
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            Toast.makeText(MedicalCenterRegistration.this, "Error occurred. Please Try again."+error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+
+            private boolean validateEmail() {
                 String email = emailEdt.getText().toString();
-                medicalCenterId = name;
+                String EmalFormat = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
-                MedicalCenterReg MedicalCenterReg = new MedicalCenterReg(medicalCenterId, medicalCenterNo, name, address, telNo, email);
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        databaseReference.child(medicalCenterId).setValue(MedicalCenterReg);
-                        Toast.makeText(MedicalCenterRegistration.this, "Medical Center Registered Successfully.", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(MedicalCenterRegistration.this,MainActivity.class));
-                    }
+                if(Pattern.compile(EmalFormat).matcher(email).matches())
+                {
+                    return true;
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Please enter valid email", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+            }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(MedicalCenterRegistration.this, "Error occurred. Please Try again."+error.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+            private boolean validateTelNo() {
+                String phone = telNoEdt.getText().toString();
+
+                if (phone.length() == 10) {
+                    return true;
+                } else {
+                    Toast.makeText(getApplicationContext(), "Please enter valid phone number", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
             }
         });
     }

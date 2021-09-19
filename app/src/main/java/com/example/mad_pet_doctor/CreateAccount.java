@@ -161,7 +161,7 @@ public class CreateAccount extends AppCompatActivity {
 
                                         user.setEmail(email);
 
-                                        user.setPassword(phoneNumber);
+                                        user.setPhoneNumber(phoneNumber);
 
                                         FirebaseDatabase.getInstance().getReference("User")
                                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -179,6 +179,8 @@ public class CreateAccount extends AppCompatActivity {
                                                             .show();
 
                                                     routeAuthActivity();
+
+
 
                                                 }
                                                 else{
@@ -200,6 +202,7 @@ public class CreateAccount extends AppCompatActivity {
                                                 task.getException().getMessage(),
                                                 Toast.LENGTH_SHORT)
                                                 .show();
+
                                         spinner.dismiss();
                                     }
 
@@ -225,7 +228,10 @@ public class CreateAccount extends AppCompatActivity {
             return true;
         }
         else {
-            Toast.makeText(getApplicationContext(), "Please enter valid phone number", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),
+                    "Please enter valid phone number",
+                    Toast.LENGTH_SHORT)
+                    .show();
             return false;
         }
 
@@ -236,10 +242,15 @@ public class CreateAccount extends AppCompatActivity {
         String emailPattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
         if(Pattern.compile(emailPattern).matcher(email).matches()) {
+
             return true;
         }
         else {
-            Toast.makeText(getApplicationContext(), "Please enter valid email", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),
+                    "Please enter valid email",
+                    Toast.LENGTH_SHORT)
+                    .show();
+
             return false;
         }
 
@@ -251,16 +262,27 @@ public class CreateAccount extends AppCompatActivity {
         String confirmPassword = inputConfirmPassword.getText().toString();
 
         if(password.equals(confirmPassword)) {
+
             return true;
         }
 
         else if(password.length() < 6){
-            Toast.makeText(getApplicationContext(), "Passwords length must grater than or equal to 6", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(getApplicationContext(),
+                    "Passwords length must grater than or equal to 6",
+                    Toast.LENGTH_SHORT)
+                    .show();
+
             return false;
         }
 
         else {
-            Toast.makeText(getApplicationContext(), "Passwords are Not matching", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(getApplicationContext(),
+                    "Passwords are Not matching",
+                    Toast.LENGTH_SHORT)
+                    .show();
+
             return false;
         }
 
@@ -268,11 +290,12 @@ public class CreateAccount extends AppCompatActivity {
 
     public void routeAuthActivity(){
 
-        Intent intent = new Intent(CreateAccount.this, AuthActivity.class);
 
+        Intent intent = new Intent(CreateAccount.this,AuthActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-
         startActivity(intent);
+
+
     }
 
 }

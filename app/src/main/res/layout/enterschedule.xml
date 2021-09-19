@@ -34,30 +34,17 @@
         app:layout_constraintTop_toBottomOf="@+id/sched_pic" />
 
     <TextView
-        android:id="@+id/sched_label1"
-        android:layout_width="112dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="28dp"
-        android:contentDescription="@string/sched_label1"
-        android:fontFamily="sans-serif-black"
-        android:text="Doctor ID"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sched_name" />
-
-    <TextView
         android:id="@+id/sched_label2"
         android:layout_width="116dp"
         android:layout_height="34dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="36dp"
         android:contentDescription="@string/sched_label2"
         android:fontFamily="sans-serif-black"
         android:text="Doctor Name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sched_label1" />
+        app:layout_constraintTop_toBottomOf="@+id/sched_name" />
 
     <TextView
         android:id="@+id/sched_label3"
@@ -96,7 +83,7 @@
         app:backgroundTint="@android:color/holo_red_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTime" />
+        app:layout_constraintTop_toBottomOf="@+id/Time" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
@@ -202,24 +189,10 @@
         app:srcCompat="@drawable/pet_doc_2" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="193dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toEndOf="@+id/sched_label1"
-        app:layout_constraintTop_toBottomOf="@+id/sched_name" />
-
-    <EditText
         android:id="@+id/editTextTextPersonName6"
         android:layout_width="193dp"
         android:layout_height="44dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
@@ -227,10 +200,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/sched_label2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        app:layout_constraintTop_toBottomOf="@+id/sched_name" />
 
     <EditText
-        android:id="@+id/editTextDate"
+        android:id="@+id/Date"
         android:layout_width="192dp"
         android:layout_height="37dp"
         android:layout_marginTop="16dp"
@@ -244,7 +217,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
 
     <EditText
-        android:id="@+id/editTextTime"
+        android:id="@+id/Time"
         android:layout_width="196dp"
         android:layout_height="44dp"
         android:layout_marginTop="12dp"
@@ -253,7 +226,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toEndOf="@+id/sched_label4"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+        app:layout_constraintTop_toBottomOf="@+id/Date" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

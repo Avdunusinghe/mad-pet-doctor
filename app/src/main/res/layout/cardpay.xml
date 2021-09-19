@@ -255,19 +255,6 @@
         app:layout_constraintTop_toBottomOf="@+id/input_1" />
 
     <EditText
-        android:id="@+id/input_3"
-        android:layout_width="154dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="12dp"
-        android:contentDescription="@string/input_3"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
-        app:layout_constraintStart_toEndOf="@+id/cardlabel11"
-        app:layout_constraintTop_toBottomOf="@+id/input_2" />
-
-    <EditText
         android:id="@+id/input_4"
         android:layout_width="157dp"
         android:layout_height="47dp"
@@ -278,7 +265,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.693"
         app:layout_constraintStart_toEndOf="@+id/cardlabel4"
-        app:layout_constraintTop_toBottomOf="@+id/input_3" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate2" />
+
+    <EditText
+        android:id="@+id/editTextDate2"
+        android:layout_width="165dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.755"
+        app:layout_constraintStart_toEndOf="@+id/cardlabel11"
+        app:layout_constraintTop_toBottomOf="@+id/input_2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

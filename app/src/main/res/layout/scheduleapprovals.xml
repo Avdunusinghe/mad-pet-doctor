@@ -24,7 +24,7 @@
     <TableLayout
         android:id="@+id/scheduleapprovaltable"
         android:layout_width="347dp"
-        android:layout_height="389dp"
+        android:layout_height="384dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/scheduleapprovalstable"
         android:paddingLeft="5dp"
@@ -81,10 +81,17 @@
                 android:fontFamily="sans-serif-black"
                 android:text="Status" />
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
         </TableRow>
 
         <TableRow
 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="#ffffff"
             android:padding="10dp">
 
@@ -119,18 +126,10 @@
 
             <TextView
                 android:id="@+id/apptable34"
-                android:layout_width="wrap_content"
+                android:layout_width="82dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="4-5PM" />
-
-            <Button
-                android:id="@+id/button18"
-                android:layout_width="71dp"
-                android:layout_height="38dp"
-                android:text="Accept"
-                android:textSize="8sp"
-                app:backgroundTint="@android:color/holo_green_light" />
 
         </TableRow>
 
@@ -178,6 +177,8 @@
 
         <TableRow
 
+            android:layout_width="365dp"
+            android:layout_height="wrap_content"
             android:background="#ffffff"
             android:padding="10dp">
 
@@ -210,9 +211,17 @@
                 android:text="6-7PM" />
 
             <Button
-                android:id="@+id/button14"
-                android:layout_width="71dp"
-                android:layout_height="38dp"
+                android:id="@+id/button29"
+                android:layout_width="38dp"
+                android:layout_height="26dp"
+                android:text="Accept"
+                android:textSize="8sp"
+                app:backgroundTint="@android:color/holo_green_light" />
+
+            <Button
+                android:id="@+id/button18"
+                android:layout_width="38dp"
+                android:layout_height="26dp"
                 android:text="Accept"
                 android:textSize="8sp"
                 app:backgroundTint="@android:color/holo_green_light" />
@@ -304,7 +313,8 @@
         </TableRow>
 
         <TableRow
-            android:layout_height="60dp"
+            android:layout_width="300dp"
+            android:layout_height="57dp"
             android:background="#C6D5DB"
             android:padding="10dp">
 

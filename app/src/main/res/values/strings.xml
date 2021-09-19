@@ -506,7 +506,8 @@
     <string name="cont_label2">Email</string>
     <string name="cont_label3">message</string>
     <string name="sched_pic">Schedule Pic</string>
-
+    <string name="createAcc_confirmPasswordText">Confirm Password</string>
+    <string name="createAcc_ConfirmPasswordEditText" />
 
 
 </resources>

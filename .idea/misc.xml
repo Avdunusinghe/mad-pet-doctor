@@ -3,7 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/doctors.xml" value="0.190625" />
+        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/activity_admin_home.xml" value="0.10371376811594203" />
+        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/doctore_registration.xml" value="0.25" />
       </map>
     </option>
   </component>

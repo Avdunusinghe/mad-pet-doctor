@@ -23,8 +23,8 @@
 
     <TableLayout
         android:id="@+id/scheduleapprovaltable"
-        android:layout_width="347dp"
-        android:layout_height="384dp"
+        android:layout_width="385dp"
+        android:layout_height="557dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/scheduleapprovalstable"
         android:paddingLeft="5dp"
@@ -43,7 +43,7 @@
             <TextView
                 android:id="@+id/apptable1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="34dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-black"
                 android:text="DocID" />
@@ -52,39 +52,39 @@
             <TextView
                 android:id="@+id/apptable2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="34dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-black"
                 android:text="Doc Name" />
 
             <TextView
                 android:id="@+id/apptable3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="47dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-black"
                 android:text="Date" />
 
             <TextView
                 android:id="@+id/apptable4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="46dp"
+                android:layout_height="33dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-black"
                 android:text="Time" />
 
             <TextView
                 android:id="@+id/apptable33"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="59dp"
+                android:layout_height="34dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-black"
                 android:text="Status" />
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="60dp"
+                android:layout_height="34dp" />
 
         </TableRow>
 
@@ -95,18 +95,18 @@
             android:background="#ffffff"
             android:padding="10dp">
 
+
             <TextView
                 android:id="@+id/apptable5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="31dp"
                 android:layout_weight="1"
                 android:text="123" />
 
-
             <TextView
                 android:id="@+id/apptable6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="33dp"
                 android:layout_weight="1"
                 android:text="Dr Charitha" />
             <!--android:layout_width="wrap_content"
@@ -120,20 +120,35 @@
             <TextView
                 android:id="@+id/apptable7"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="33dp"
                 android:layout_weight="1"
                 android:text="06.Dec" />
 
             <TextView
                 android:id="@+id/apptable34"
-                android:layout_width="82dp"
-                android:layout_height="wrap_content"
+                android:layout_width="57dp"
+                android:layout_height="31dp"
                 android:layout_weight="1"
                 android:text="4-5PM" />
+
+            <ImageView
+                android:id="@+id/icon1"
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:contentDescription="@string/icon1"
+                app:srcCompat="@drawable/editicon" />
+
+            <ImageView
+                android:id="@+id/icondel1"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                app:srcCompat="@drawable/deleteicon" />
 
         </TableRow>
 
         <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="#C6D5DB"
             android:padding="10dp">
 
@@ -165,108 +180,17 @@
                 android:layout_weight="1"
                 android:text="5-6PM" />
 
-            <Button
-                android:id="@+id/button13"
-                android:layout_width="71dp"
-                android:layout_height="38dp"
-                android:text="Accept"
-                android:textSize="8sp"
-                app:backgroundTint="@android:color/holo_green_light" />
-
-        </TableRow>
-
-        <TableRow
-
-            android:layout_width="365dp"
-            android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/apptable13"
+            <ImageView
+                android:id="@+id/icon2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="235" />
+                android:layout_height="27dp"
+                app:srcCompat="@drawable/editicon" />
 
-            <TextView
-                android:id="@+id/apptable14"
+            <ImageView
+                android:id="@+id/icondel2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Dr.Vimanga" />
-
-            <TextView
-                android:id="@+id/apptable15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="06.Dec" />
-
-            <TextView
-                android:id="@+id/appptable16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="6-7PM" />
-
-            <Button
-                android:id="@+id/button29"
-                android:layout_width="38dp"
                 android:layout_height="26dp"
-                android:text="Accept"
-                android:textSize="8sp"
-                app:backgroundTint="@android:color/holo_green_light" />
-
-            <Button
-                android:id="@+id/button18"
-                android:layout_width="38dp"
-                android:layout_height="26dp"
-                android:text="Accept"
-                android:textSize="8sp"
-                app:backgroundTint="@android:color/holo_green_light" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="#C6D5DB"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/apptable17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="456" />
-
-            <TextView
-                android:id="@+id/apptable18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Dr.Hiruni" />
-
-            <TextView
-                android:id="@+id/apptable19"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="07.Dec" />
-
-            <TextView
-                android:id="@+id/apptable20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="7-8PM" />
-
-            <Button
-                android:id="@+id/button15"
-                android:layout_width="71dp"
-                android:layout_height="38dp"
-                android:text="Accept"
-                android:textSize="8sp"
-                app:backgroundTint="@android:color/holo_green_light" />
+                app:srcCompat="@drawable/deleteicon" />
 
         </TableRow>
 
@@ -302,19 +226,23 @@
                 android:layout_weight="1"
                 android:text="8-9PM" />
 
-            <Button
-                android:id="@+id/button16"
-                android:layout_width="71dp"
-                android:layout_height="38dp"
-                android:text="Accept"
-                android:textSize="8sp"
-                app:backgroundTint="@android:color/holo_green_light" />
+            <ImageView
+                android:id="@+id/icon3"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                app:srcCompat="@drawable/editicon" />
+
+            <ImageView
+                android:id="@+id/icondel3"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                app:srcCompat="@drawable/deleteicon" />
 
         </TableRow>
 
         <TableRow
-            android:layout_width="300dp"
-            android:layout_height="57dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="#C6D5DB"
             android:padding="10dp">
 
@@ -346,13 +274,17 @@
                 android:layout_weight="1"
                 android:text="4-6PM" />
 
-            <Button
-                android:id="@+id/button17"
-                android:layout_width="71dp"
-                android:layout_height="38dp"
-                android:text="Accept"
-                android:textSize="8sp"
-                app:backgroundTint="@android:color/holo_green_light" />
+            <ImageView
+                android:id="@+id/icon4"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                app:srcCompat="@drawable/editicon" />
+
+            <ImageView
+                android:id="@+id/icondel4"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                app:srcCompat="@drawable/deleteicon" />
 
         </TableRow>
 

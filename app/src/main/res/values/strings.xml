@@ -506,7 +506,7 @@
     <string name="cont_label2">Email</string>
     <string name="cont_label3">message</string>
     <string name="sched_pic">Schedule Pic</string>
-
+    <string name="icon1" />
 
 
 </resources>

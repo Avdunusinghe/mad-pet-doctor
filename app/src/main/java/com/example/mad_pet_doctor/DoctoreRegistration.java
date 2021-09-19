@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -20,7 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class DoctoreRegistration extends AppCompatActivity {
 
-    private TextInputEditText docPicEdt, fullNameEdt, docLicenseNoEdt, qualificationEdt, medicalCenterEdt, addressEdt, telNoEdt, emailEdt;
+    private TextInputEditText fullNameEdt, docLicenseNoEdt, qualificationEdt, medicalCenterEdt, addressEdt, telNoEdt, emailEdt;
+    private ImageButton docPicBtn;
     private RadioButton yesBtn;
     private RadioButton noBtn;
     private Button submitBtn;
@@ -32,6 +34,7 @@ public class DoctoreRegistration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.doctore_registration);
+        docPicBtn = findViewById(R.id.imageButton8);
         fullNameEdt = findViewById(R.id.textInputEditText2);
         docLicenseNoEdt = findViewById(R.id.editText5);
         qualificationEdt = findViewById(R.id.editText6);
@@ -43,12 +46,11 @@ public class DoctoreRegistration extends AppCompatActivity {
         noBtn = findViewById(R.id.radioButton2);
         submitBtn = findViewById(R.id.button4);
         fireBaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = fireBaseDatabase.getReference("Doctors");
+        databaseReference = fireBaseDatabase.getReference("DoctorReg");
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String docPic = docPicEdt.getText().toString();
                 String fullName = fullNameEdt.getText().toString();
                 String docLicenseNo = docLicenseNoEdt.getText().toString();
                 String qualification = qualificationEdt.getText().toString();
@@ -58,7 +60,7 @@ public class DoctoreRegistration extends AppCompatActivity {
                 String email = emailEdt.getText().toString();
                 doctorId = fullName;
 
-                DoctorReg DoctorReg = new DoctorReg(doctorId,docPic,fullName,docLicenseNo,qualification,medicalCenter,address,telNo,email);
+                DoctorReg DoctorReg = new DoctorReg(doctorId,fullName,docLicenseNo,qualification,medicalCenter,address,telNo,email);
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {

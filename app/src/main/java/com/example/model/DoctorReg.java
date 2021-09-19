@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class DoctorReg implements Parcelable {
-    private String docPic;
     private String fullName;
     private String docLicenseNo;
     private String qualification;
@@ -18,8 +17,7 @@ public class DoctorReg implements Parcelable {
 
     }
 
-    public DoctorReg(String docPic, String fullName, String docLicenseNo, String qualification, String medicalCenter, String address, String telNo, String email, String doctorId) {
-        this.docPic = docPic;
+    public DoctorReg(String fullName, String docLicenseNo, String qualification, String medicalCenter, String address, String telNo, String email, String doctorId) {
         this.fullName = fullName;
         this.docLicenseNo = docLicenseNo;
         this.qualification = qualification;
@@ -31,7 +29,6 @@ public class DoctorReg implements Parcelable {
     }
 
     protected DoctorReg(Parcel in) {
-        docPic = in.readString();
         fullName = in.readString();
         docLicenseNo = in.readString();
         qualification = in.readString();
@@ -53,14 +50,6 @@ public class DoctorReg implements Parcelable {
             return new DoctorReg[size];
         }
     };
-
-    public String getDocPic() {
-        return docPic;
-    }
-
-    public void setDocPic(String docPic) {
-        this.docPic = docPic;
-    }
 
     public String getFullName() {
         return fullName;
@@ -133,7 +122,6 @@ public class DoctorReg implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(docPic);
         dest.writeString(fullName);
         dest.writeString(docLicenseNo);
         dest.writeString(qualification);

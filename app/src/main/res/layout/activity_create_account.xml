@@ -145,11 +145,12 @@
         android:id="@+id/createAccbtn"
         android:layout_width="147dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="44dp"
         android:text="@string/createAccbtn"
         app:backgroundTint="#DD4646"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

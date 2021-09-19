@@ -1,7 +1,8 @@
-package com.example.model;
+package com.example.common;
 
 import android.content.SharedPreferences;
 import android.content.Context;
+
 public class AuthorizationManagement {
 
     SharedPreferences sharedPreferences;

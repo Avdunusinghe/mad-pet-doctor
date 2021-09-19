@@ -95,19 +95,31 @@ public class CreateAccount extends AppCompatActivity {
                 //check fields are empty
                 if(TextUtils.isEmpty((inputName.getText().toString()))){
 
-                    Toast.makeText(getApplicationContext(),"Please enter Name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),
+                            "Please enter Name",
+                            Toast.LENGTH_SHORT)
+                            .show();
                 }
                 else if(TextUtils.isEmpty(inputEmail.getText().toString())){
 
-                    Toast.makeText(getApplicationContext(),"Please enter a Your Email",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),
+                            "Please enter a Your Email",
+                            Toast.LENGTH_SHORT)
+                            .show();
                 }
                 else if(TextUtils.isEmpty(inputMobileNumber.getText().toString())){
 
-                    Toast.makeText(getApplicationContext(),"Please enter a Mobile Number",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),
+                            "Please enter a Mobile Number",
+                            Toast.LENGTH_SHORT)
+                            .show();
                 }
                 else if(TextUtils.isEmpty(inputPassword.getText().toString())) {
 
-                    Toast.makeText(getApplicationContext(), "Please enter a Password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),
+                            "Please enter a Password",
+                            Toast.LENGTH_SHORT)
+                            .show();
                 }
                 else{
 
@@ -221,10 +233,9 @@ public class CreateAccount extends AppCompatActivity {
     public boolean validateEmail()
     {
         String email = inputEmail.getText().toString();
-        String EmalFormat = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        String emailPattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
-        if(Pattern.compile(EmalFormat).matcher(email).matches())
-        {
+        if(Pattern.compile(emailPattern).matcher(email).matches()) {
             return true;
         }
         else {
@@ -239,8 +250,7 @@ public class CreateAccount extends AppCompatActivity {
         String password = inputPassword.getText().toString();
         String confirmPassword = inputConfirmPassword.getText().toString();
 
-        if(password.equals(confirmPassword))
-        {
+        if(password.equals(confirmPassword)) {
             return true;
         }
 

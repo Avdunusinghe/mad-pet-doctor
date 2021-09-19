@@ -29,7 +29,8 @@ public class DoctorProfile extends AppCompatActivity {
 
     private TextInputEditText fullNameEdt, docLicenseNoEdt, qualificationEdt, medicalCenterEdt, addressEdt, telNoEdt, emailEdt;
     private ImageButton docPicBtn;
-    private RadioButton yesBtn, noBtn;
+    private RadioGroup houseCallYesOrNoGroup;
+    private RadioButton houseCallYesOrNoBtn;
     private Button updateBtn,deleteBtn;
     private FirebaseDatabase fireBaseDatabase;
     private DatabaseReference databaseReference;
@@ -48,8 +49,7 @@ public class DoctorProfile extends AppCompatActivity {
         addressEdt = findViewById(R.id.editText8);
         telNoEdt = findViewById(R.id.editText9);
         emailEdt = findViewById(R.id.editText10);
-        yesBtn = findViewById(R.id.radioButton);
-        noBtn = findViewById(R.id.radioButton2);
+        houseCallYesOrNoGroup = (RadioGroup)findViewById(R.id.radioGroup2);
         updateBtn = findViewById(R.id.auth_loginbtn);
         deleteBtn = findViewById(R.id.buton2);
         fireBaseDatabase = FirebaseDatabase.getInstance();
@@ -65,6 +65,14 @@ public class DoctorProfile extends AppCompatActivity {
             emailEdt.setText(doctorReg.getEmail());
             doctorId = doctorReg.getDoctorId();
         }
+
+        ImageButton docPicBtn = (ImageButton)findViewById(R.id.imageButton8);
+        docPicBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Upload a picture.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         databaseReference = fireBaseDatabase.getReference("DoctorReg").child(doctorId);
 
@@ -96,6 +104,10 @@ public class DoctorProfile extends AppCompatActivity {
                     String telNo = telNoEdt.getText().toString();
                     String email = emailEdt.getText().toString();
 
+                    int selectedValue=houseCallYesOrNoGroup.getCheckedRadioButtonId();
+                    houseCallYesOrNoBtn=(RadioButton)findViewById(selectedValue);
+                    Toast.makeText(DoctorProfile.this,houseCallYesOrNoBtn.getText(),Toast.LENGTH_SHORT).show();
+
                     Map<String, Object> map = new HashMap<>();
                     map.put("fullName", fullName);
                     map.put("docLicenseNo", docLicenseNo);
@@ -111,7 +123,7 @@ public class DoctorProfile extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             databaseReference.updateChildren(map);
                             Toast.makeText(DoctorProfile.this, "Doctor Profile Updated.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(DoctorProfile.this, MainActivity.class));
+                            startActivity(new Intent(DoctorProfile.this, Doctors.class));
                         }
 
                         @Override

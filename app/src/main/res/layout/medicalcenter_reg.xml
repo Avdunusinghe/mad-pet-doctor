@@ -98,7 +98,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="364dp"
+        android:layout_marginTop="372dp"
         android:text="@string/medical_center_no"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -111,7 +111,7 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="28dp"
         android:text="@string/Name"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -124,7 +124,7 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="36dp"
         android:text="@string/address1"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -137,7 +137,7 @@
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:text="@string/tel_no1"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -159,7 +159,7 @@
         app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.012" />
 
     <Button
         android:id="@+id/button3"
@@ -176,9 +176,9 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputEditText3"
-        android:layout_width="196dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="356dp"
+        android:layout_width="214dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="364dp"
         android:hint="@string/medicalCenter_no"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"

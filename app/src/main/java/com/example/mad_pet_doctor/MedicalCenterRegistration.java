@@ -44,6 +44,14 @@ public class MedicalCenterRegistration extends AppCompatActivity {
         fireBaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = fireBaseDatabase.getReference("MedicalCenterReg");
 
+        ImageButton medicalPicBtn = (ImageButton)findViewById(R.id.imageButton);
+        medicalPicBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Upload a picture.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

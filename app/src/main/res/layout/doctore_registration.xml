@@ -89,6 +89,7 @@
         android:id="@+id/textView3"
         android:layout_width="313dp"
         android:layout_height="48dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center_horizontal"
         android:text="@string/doctor_registration"
@@ -100,7 +101,7 @@
         android:textStyle="bold|italic"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView55" />
 
@@ -108,7 +109,7 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="192dp"
+        android:layout_marginTop="252dp"
         android:text="@string/full_name1"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -134,25 +135,25 @@
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="@string/qualification_specialization1"
         android:textColor="#000000"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/editText7"
         app:layout_constraintEnd_toStartOf="@+id/editText6"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+        app:layout_constraintTop_toBottomOf="@+id/editText5" />
 
     <TextView
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="@string/medicalCenter1"
         android:textColor="#000000"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/editText8"
         app:layout_constraintEnd_toStartOf="@+id/editText7"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
@@ -160,7 +161,7 @@
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
         android:text="@string/address1"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -186,7 +187,7 @@
         android:id="@+id/textView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:text="@string/email1"
         android:textColor="#000000"
         android:textSize="16sp"
@@ -199,39 +200,49 @@
         android:id="@+id/textView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:text="@string/can_you_make_house_calls1"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
-    <RadioButton
-        android:id="@+id/radioButton"
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checked="true"
-        android:text="@string/yes"
-        app:buttonTint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.176"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+        app:layout_constraintTop_toBottomOf="@+id/textView30">
 
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/no"
-        app:buttonTint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.174"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButton"
-        app:layout_constraintVertical_bias="0.0" />
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/yes"
+            app:buttonTint="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.176"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no"
+            app:buttonTint="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.174"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton"
+            app:layout_constraintVertical_bias="0.0" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/button4"
@@ -242,7 +253,6 @@
         app:backgroundTint="#1E21CA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.959" />
@@ -261,8 +271,8 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editText5"
-        android:layout_width="225dp"
-        android:layout_height="35dp"
+        android:layout_width="236dp"
+        android:layout_height="36dp"
         android:hint="@string/doctor_licenseNo"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/editText6"
@@ -274,8 +284,8 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editText6"
-        android:layout_width="155dp"
-        android:layout_height="38dp"
+        android:layout_width="177dp"
+        android:layout_height="40dp"
         android:hint="@string/specialization"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/editText7"
@@ -298,8 +308,8 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editText8"
-        android:layout_width="292dp"
-        android:layout_height="37dp"
+        android:layout_width="288dp"
+        android:layout_height="38dp"
         android:layout_marginTop="8dp"
         android:hint="@string/Address"
         android:textSize="14sp"
@@ -310,7 +320,7 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editText9"
-        android:layout_width="306dp"
+        android:layout_width="301dp"
         android:layout_height="35dp"
         android:layout_marginTop="12dp"
         android:hint="@string/telNo"
@@ -322,8 +332,8 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/editText10"
-        android:layout_width="312dp"
-        android:layout_height="36dp"
+        android:layout_width="299dp"
+        android:layout_height="39dp"
         android:layout_marginTop="5dp"
         android:hint="@string/Email"
         android:textSize="14sp"
@@ -332,16 +342,15 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView29"
         app:layout_constraintTop_toBottomOf="@+id/editText9"
-        app:layout_constraintVertical_bias="0.011" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/imageButton8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="85dp"
+        android:layout_height="74dp"
         android:layout_marginTop="10dp"
         app:layout_constraintBottom_toTopOf="@+id/textInputEditText2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/add_user" />

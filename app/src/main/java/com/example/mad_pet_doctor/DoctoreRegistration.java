@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.model.DoctorReg;
@@ -26,7 +28,8 @@ public class DoctoreRegistration extends AppCompatActivity {
 
     private TextInputEditText fullNameEdt, docLicenseNoEdt, qualificationEdt, medicalCenterEdt, addressEdt, telNoEdt, emailEdt;
     private ImageButton docPicBtn;
-    private RadioButton yesBtn, noBtn;
+    private RadioGroup houseCallYesOrNoGroup;
+    private RadioButton houseCallYesOrNoBtn;
     private Button submitBtn;
     private FirebaseDatabase fireBaseDatabase;
     private DatabaseReference databaseReference;
@@ -44,11 +47,18 @@ public class DoctoreRegistration extends AppCompatActivity {
         addressEdt = findViewById(R.id.editText8);
         telNoEdt = findViewById(R.id.editText9);
         emailEdt = findViewById(R.id.editText10);
-        yesBtn = findViewById(R.id.radioButton);
-        noBtn = findViewById(R.id.radioButton2);
+        houseCallYesOrNoGroup = (RadioGroup)findViewById(R.id.radioGroup);
         submitBtn = findViewById(R.id.button4);
         fireBaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = fireBaseDatabase.getReference("DoctorReg");
+
+        ImageButton docPicBtn = (ImageButton)findViewById(R.id.imageButton8);
+        docPicBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Upload a picture.", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +95,10 @@ public class DoctoreRegistration extends AppCompatActivity {
                     String telNo = telNoEdt.getText().toString();
                     String email = emailEdt.getText().toString();
                     doctorId = fullName;
+
+                    int selectedValue=houseCallYesOrNoGroup.getCheckedRadioButtonId();
+                    houseCallYesOrNoBtn=(RadioButton)findViewById(selectedValue);
+                    Toast.makeText(DoctoreRegistration.this,houseCallYesOrNoBtn.getText(),Toast.LENGTH_SHORT).show();
                 
 
                     DoctorReg DoctorReg = new DoctorReg(doctorId,fullName,docLicenseNo,qualification,medicalCenter,address,telNo,email);
@@ -93,7 +107,7 @@ public class DoctoreRegistration extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             databaseReference.child(doctorId).setValue(DoctorReg);
                             Toast.makeText(DoctoreRegistration.this, "Doctor Registered Successfully.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(DoctoreRegistration.this,MainActivity.class));
+                            startActivity(new Intent(DoctoreRegistration.this,Doctors.class));
                         }
 
                         @Override

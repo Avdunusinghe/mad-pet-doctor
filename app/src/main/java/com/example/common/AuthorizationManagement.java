@@ -3,11 +3,13 @@ package com.example.common;
 import android.content.SharedPreferences;
 import android.content.Context;
 
+import com.example.model.Admin;
+
 public class AuthorizationManagement {
 
     SharedPreferences sharedPreferences;
 
-    SharedPreferences.Editor editor;
+    SharedPreferences.Editor editor ;
 
     String SHARED_PREF_NAME = "session";
 
@@ -17,15 +19,15 @@ public class AuthorizationManagement {
 
         sharedPreferences = context.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
 
-        editor = sharedPreferences.edit();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
     }
 
-    /*public void saveSession(Admin user){
+    public void saveSession(Admin user){
         //save session of user
         String username = user.getUsername();
         editor.putString(SESSION_KEY, username).commit();
 
-    }*/
+    }
 
     public String getSession() {
         //return user who's session is saved

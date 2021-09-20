@@ -1,20 +1,32 @@
 package com.example.mad_pet_doctor;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.model.BookingModal;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class AppointmentDetailsActivity extends AppCompatActivity {
 
-    private TextView Hoslogo , AnimalId, OwnerName , AppDate , AppTime , PayDetails , AppFee , ServiceCharge , TotalFee;
+    private TextView Hoslogo , AnimalName, OwnerName , AppDate , AppTime , PayDetails , AppFee , ServiceCharge , TotalFee;
     private TextView input1 , input2,  input3, input4 , input5, input6 , input7  ;
     private Button confirmBtn;
-    private FirebaseAuth mAuth;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private String BookingId;
+    private BookingModal bookingModal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -22,7 +34,7 @@ public class AppointmentDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.appointmentdetails);
         Hoslogo = findViewById(R.id.app_head);
-        AnimalId = findViewById(R.id.app_label1);
+        AnimalName = findViewById(R.id.app_label1);
         OwnerName = findViewById(R.id.app_label2);
         AppDate = findViewById(R.id.app_label3);
         AppTime = findViewById(R.id.app_label4);
@@ -38,14 +50,27 @@ public class AppointmentDetailsActivity extends AppCompatActivity {
         input6 = findViewById(R.id.input_label7);
         input7 = findViewById(R.id.input_label);
         confirmBtn = findViewById(R.id.bton17);
-        mAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+
+
+        //retrieve
+
+        bookingModal = getIntent().getParcelableExtra("Bookings");
+        if(bookingModal != null){
+            input1.setText(bookingModal.getAnimalName());
+            input2.setText(bookingModal.getOwnerName());
+            input3.setText(bookingModal.getAppointmentDate());
+            input4.setText(bookingModal.getAppointmentTime());
+            BookingId = bookingModal.getBookingId();
+        }
+
+        databaseReference = firebaseDatabase.getReference("Boookings").child(BookingId);
 
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // Intend i;
-               // i = new Intend ( AppointmentDetailsActivity.this, CardPayActivity.class );
-               // startActivity(i);
+                Intent i = new Intent(AppointmentDetailsActivity.this, CardPayActivity.class);
+                startActivity(i);
             }
         });
 

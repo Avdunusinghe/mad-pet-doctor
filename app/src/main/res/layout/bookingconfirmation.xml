@@ -76,30 +76,6 @@
         </TableRow>
 
         <TableRow
-            android:background="@color/white"
-            android:padding="5dp">
-
-            <TextView
-                android:id="@+id/tab3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="Animal ID"
-                app:autoSizeTextType="uniform" />
-
-            <TextView
-                android:id="@+id/tab4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="1232343"
-                app:autoSizeTextType="uniform" />
-
-        </TableRow>
-
-        <TableRow
             android:background="#ffffff"
             android:padding="5dp">
 
@@ -124,7 +100,7 @@
         </TableRow>
 
         <TableRow
-            android:id="@+id/tab8"
+
             android:background="#ffffff"
             android:padding="5dp">
 
@@ -138,6 +114,7 @@
                 app:autoSizeTextType="uniform" />
 
             <TextView
+                android:id="@+id/tab8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

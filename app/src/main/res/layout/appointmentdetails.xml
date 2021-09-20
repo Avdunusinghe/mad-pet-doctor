@@ -55,7 +55,7 @@
         android:layout_marginTop="20dp"
         android:contentDescription="@string/app_label1"
         android:fontFamily="sans-serif-black"
-        android:text="Animal Id"
+        android:text="Animal "
         app:layout_constraintEnd_toStartOf="@+id/input_label1"
         app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="parent"
@@ -156,7 +156,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="68dp"
         android:layout_marginRight="68dp"
-        android:text="23451"
+        android:text="Toby"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appo_head" />
 
@@ -200,6 +200,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="8dp"
+        android:autofillHints="1200.00"
         android:text="1200.00"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.377"
@@ -213,6 +214,7 @@
         android:layout_marginStart="84dp"
         android:layout_marginLeft="84dp"
         android:layout_marginTop="8dp"
+        android:autofillHints="800.00"
         android:text="800.00"
         app:layout_constraintStart_toEndOf="@+id/app_label7"
         app:layout_constraintTop_toBottomOf="@+id/input_label6" />
@@ -224,6 +226,7 @@
         android:layout_marginStart="104dp"
         android:layout_marginLeft="104dp"
         android:layout_marginTop="12dp"
+        android:autofillHints="2000.00"
         android:text="2000.00"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.052"

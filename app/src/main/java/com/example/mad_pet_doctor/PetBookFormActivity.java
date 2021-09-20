@@ -18,13 +18,17 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.type.Date;
+import com.google.type.DateTime;
+
+import java.sql.Time;
 
 public class PetBookFormActivity extends AppCompatActivity {
 
-    private ImageView hosLogo , petpic1, petpic2;
-    private TextView petHeading , AnimalId, AnimalName, Ownername, OwnerPhoneNo, Address;
-    private EditText AnimalIdEdt, AnimalNameEdt, OwnerNameEdt, OwnerPhoneEdt, AddressEdt;
-    private Button NextBtn;
+    private ImageView hosLogo , petpic1;
+    private TextView petHeading , AnimalName, Ownername, OwnerPhoneNo, Address, AppDate , AppTime;
+    private EditText  AnimalNameEdt, OwnerNameEdt, OwnerPhoneEdt, AddressEdt , AppDateEdt  , AppTimeEdt ;
+    private Button NextBtn ;
     private String BookingId;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -37,18 +41,19 @@ public class PetBookFormActivity extends AppCompatActivity {
         setContentView(R.layout.petbookform);
         hosLogo = findViewById(R.id.hos_logo1);
         petpic1 = findViewById(R.id.pet_pic1);
-        petpic2 = findViewById(R.id.pet_pic2);
         petHeading = findViewById(R.id.appo_head);
-        AnimalId = findViewById(R.id.pet_label1);
         AnimalName = findViewById(R.id.pet_label2);
         Ownername = findViewById(R.id.pet_label3);
         OwnerPhoneNo = findViewById(R.id.pet_label4);
         Address = findViewById(R.id.pet_label5);
-        AnimalIdEdt = findViewById(R.id.pet_input1);
-        AnimalNameEdt = findViewById(R.id.pet_input2);
-        OwnerNameEdt = findViewById(R.id.pet_input3);
-        OwnerPhoneEdt = findViewById(R.id.pet_input4);
-        AddressEdt = findViewById(R.id.pet_input5);
+        AppDate = findViewById(R.id.pet_label6);
+        AppTime = findViewById(R.id.pet_label7);
+        AnimalNameEdt = findViewById(R.id.pet_input1);
+        OwnerNameEdt = findViewById(R.id.pet_input2);
+        OwnerPhoneEdt = findViewById(R.id.pet_input3);
+        AddressEdt = findViewById(R.id.pet_input4);
+        AppDateEdt = findViewById(R.id.pet_input5);
+        AppTimeEdt = findViewById(R.id.pet_input6);
         NextBtn = findViewById(R.id.bton17);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Boookings");
@@ -56,13 +61,15 @@ public class PetBookFormActivity extends AppCompatActivity {
         NextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String AnimalId = AnimalIdEdt.getText().toString();
+
                 String AnimalName = AnimalNameEdt.getText().toString();
                 String OwnerName = OwnerNameEdt.getText().toString();
                 String OwnerPhone = OwnerPhoneEdt.getText().toString();
                 String Address = AddressEdt.getText().toString();
+                String  AppointmentDate = AppDateEdt.getText().toString();
+                String  AppointmentTime = AppTimeEdt.getText().toString();
                 BookingId = AnimalName;
-                BookingModal bookingModal = new BookingModal(AnimalId, AnimalName,OwnerName, OwnerPhone, Address, BookingId);
+                BookingModal bookingModal = new BookingModal( AnimalName,OwnerName, OwnerPhone, Address,AppointmentDate,AppointmentTime, BookingId);
 
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override

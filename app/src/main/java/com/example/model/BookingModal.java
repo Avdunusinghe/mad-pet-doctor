@@ -3,34 +3,42 @@ package com.example.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.type.Date;
+import com.google.type.DateTime;
+
+import java.sql.Time;
+
 public class BookingModal implements Parcelable {
 
-    private String AnimalId;
     private String AnimalName;
     private String OwnerName;
     private String OwnerPhone;
     private String Address;
+    private String AppointmentDate;
+    private String AppointmentTime;
     private String BookingId;
 
     public BookingModal(){
 
     }
 
-    public BookingModal(String animalId, String animalName, String ownerName, String ownerPhone, String address, String bookingId) {
-        AnimalId = animalId;
+    public BookingModal(String animalName, String ownerName, String ownerPhone, String address, String appointmentDate, String appointmentTime, String bookingId) {
         AnimalName = animalName;
         OwnerName = ownerName;
         OwnerPhone = ownerPhone;
         Address = address;
+        AppointmentDate = appointmentDate;
+        AppointmentTime = appointmentTime;
         BookingId = bookingId;
     }
 
     protected BookingModal(Parcel in) {
-        AnimalId = in.readString();
         AnimalName = in.readString();
         OwnerName = in.readString();
         OwnerPhone = in.readString();
         Address = in.readString();
+        AppointmentDate = in.readString();
+        AppointmentTime = in.readString();
         BookingId = in.readString();
     }
 
@@ -45,14 +53,6 @@ public class BookingModal implements Parcelable {
             return new BookingModal[size];
         }
     };
-
-    public String getAnimalId() {
-        return AnimalId;
-    }
-
-    public void setAnimalId(String animalId) {
-        AnimalId = animalId;
-    }
 
     public String getAnimalName() {
         return AnimalName;
@@ -86,6 +86,22 @@ public class BookingModal implements Parcelable {
         Address = address;
     }
 
+    public String getAppointmentDate() {
+        return AppointmentDate;
+    }
+
+    public void setAppointmentDate(String appointmentDate) {
+        AppointmentDate = appointmentDate;
+    }
+
+    public String getAppointmentTime() {
+        return AppointmentTime;
+    }
+
+    public void setAppointmentTime(String appointmentTime) {
+        AppointmentTime = appointmentTime;
+    }
+
     public String getBookingId() {
         return BookingId;
     }
@@ -101,11 +117,12 @@ public class BookingModal implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(AnimalId);
         parcel.writeString(AnimalName);
         parcel.writeString(OwnerName);
         parcel.writeString(OwnerPhone);
         parcel.writeString(Address);
+        parcel.writeString(AppointmentDate);
+        parcel.writeString(AppointmentTime);
         parcel.writeString(BookingId);
     }
 }

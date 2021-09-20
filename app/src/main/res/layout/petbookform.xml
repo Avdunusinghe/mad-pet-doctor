@@ -4,132 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:contentDescription="@string/bton9"
     tools:context=".MainActivity">
 
-
-    <TextView
-        android:id="@+id/appo_head"
-        android:layout_width="141dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
-        android:contentDescription="@string/pet_head"
-        android:fontFamily="sans-serif-black"
-        android:text="PET 01"
-        app:autoSizeTextType="uniform"
-        app:layout_constraintEnd_toStartOf="@+id/pet_pic1"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/hos_logo1"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
-
-    <ImageView
-        android:id="@+id/pet_pic1"
-        android:layout_width="81dp"
-        android:layout_height="86dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/hos_logo1"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
-        app:srcCompat="@drawable/dog_dressed_doctor_vet" />
-
-    <TextView
-        android:id="@+id/pet_label1"
-        android:layout_width="113dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginTop="36dp"
-        android:contentDescription="@string/pet_label1"
-        android:fontFamily="sans-serif-black"
-        android:text="Animal ID"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appo_head" />
-
-    <TextView
-        android:id="@+id/pet_label2"
-        android:layout_width="111dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginTop="12dp"
-        android:contentDescription="@string/pet_label2"
-        android:fontFamily="sans-serif-black"
-        android:text="Animal Name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pet_label1" />
-
-    <TextView
-        android:id="@+id/pet_label3"
-        android:layout_width="113dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
+    <EditText
+        android:id="@+id/pet_input3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:contentDescription="@string/pet_label3"
-        android:fontFamily="sans-serif-black"
-        android:text="Owner Name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pet_label2" />
-
-    <TextView
-        android:id="@+id/pet_label4"
-        android:layout_width="115dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/pet_label4"
-        android:fontFamily="sans-serif-black"
-        android:text="Owner Phone No"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pet_label3" />
-
-    <TextView
-        android:id="@+id/pet_label5"
-        android:layout_width="117dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/pet_label5"
-        android:fontFamily="sans-serif-black"
-        android:text="Address"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pet_label4" />
-
-    <Button
-        android:id="@+id/bton17"
-        android:layout_width="91dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:background="#A11F1F"
-        android:contentDescription="@string/bton7"
-        android:text="NEXT"
-        app:backgroundTint="#BF2B2B"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintTop_toBottomOf="@+id/pet_input5" />
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toEndOf="@+id/pet_label4"
+        app:layout_constraintTop_toBottomOf="@+id/pet_input2" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar3"
-        android:layout_width="411dp"
-        android:layout_height="70dp"
+        android:id="@+id/toolbar4"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <View
         android:id="@+id/view"
@@ -138,160 +39,253 @@
         android:background="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar4" />
 
     <com.google.android.material.chip.Chip
-        android:id="@+id/chip5"
-        android:layout_width="44dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
+        android:id="@+id/chip16"
+        android:layout_width="49dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
         app:chipBackgroundColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/imageView56"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/toolbar3"
-        app:layout_constraintTop_toTopOf="@+id/chip9" />
-
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chip9"
-        android:layout_width="45dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        app:chipBackgroundColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/imageView56"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <ImageView
-        android:id="@+id/hos_logo1"
-        android:layout_width="75dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="32dp"
-        android:contentDescription="@string/hos_logo"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chip5"
-        app:srcCompat="@drawable/hospital" />
-
-    <ImageView
-        android:id="@+id/imageView52"
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip17"
         android:layout_width="49dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="35dp"
+        app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.002"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView56"
+        android:layout_width="71dp"
+        android:layout_height="54dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toEndOf="@+id/chip16"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pet_doc_2" />
+
+    <ImageView
+        android:id="@+id/usericon3"
+        android:layout_width="30dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar4"
+        app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toEndOf="@+id/imageView56"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user_icon" />
 
     <TextView
-        android:id="@+id/usernameId"
+        android:id="@+id/textView57"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:contentDescription="@string/usernameId"
-        android:text="J.G.A.C.H"
-        android:textColor="@color/black"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView52" />
-
+        android:text="TKSAR"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar4"
+        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintStart_toEndOf="@+id/imageView56"
+        app:layout_constraintTop_toBottomOf="@+id/usericon3" />
 
     <ImageView
-        android:id="@+id/imageView56"
-        android:layout_width="64dp"
+        android:id="@+id/hos_logo1"
+        android:layout_width="63dp"
         android:layout_height="58dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar3"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/hos_logo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pet_doc_2" />
+        app:layout_constraintTop_toBottomOf="@+id/chip17"
+        app:srcCompat="@drawable/hospital" />
+
+    <TextView
+        android:id="@+id/appo_head"
+        android:layout_width="126dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="92dp"
+        android:contentDescription="@string/confirm_1"
+        android:fontFamily="sans-serif-black"
+        android:text="PET 01"
+        android:textColor="@color/black"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toStartOf="@+id/pet_pic1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/hos_logo1"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <ImageView
+        android:id="@+id/pet_pic1"
+        android:layout_width="64dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginRight="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar4"
+        app:srcCompat="@drawable/dog_dressed_doctor_vet" />
+
+    <TextView
+        android:id="@+id/pet_label2"
+        android:layout_width="131dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Animal Name"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appo_head" />
+
+    <TextView
+        android:id="@+id/pet_label3"
+        android:layout_width="131dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Owner Name"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pet_label2" />
+
+    <TextView
+        android:id="@+id/pet_label4"
+        android:layout_width="131dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Owner Phone No"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pet_label3" />
+
+    <TextView
+        android:id="@+id/pet_label5"
+        android:layout_width="131dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Address"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pet_label4" />
+
+    <TextView
+        android:id="@+id/pet_label6"
+        android:layout_width="131dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Appointment Date"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pet_label5" />
+
+    <TextView
+        android:id="@+id/pet_label7"
+        android:layout_width="131dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Appointment Time"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pet_label6" />
 
     <EditText
         android:id="@+id/pet_input1"
-        android:layout_width="185dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
-        app:layout_constraintStart_toEndOf="@+id/pet_label1"
+        app:layout_constraintStart_toEndOf="@+id/pet_label2"
         app:layout_constraintTop_toBottomOf="@+id/appo_head" />
 
     <EditText
-        android:id="@+id/pet_input2"
-        android:layout_width="185dp"
-        android:layout_height="39dp"
+        android:id="@+id/pet_input4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        app:layout_constraintStart_toEndOf="@+id/pet_label5"
+        app:layout_constraintTop_toBottomOf="@+id/pet_input3" />
+
+    <EditText
+        android:id="@+id/pet_input2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.659"
-        app:layout_constraintStart_toEndOf="@+id/pet_label2"
+        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintStart_toEndOf="@+id/pet_label3"
         app:layout_constraintTop_toBottomOf="@+id/pet_input1" />
 
     <EditText
-        android:id="@+id/pet_input3"
-        android:layout_width="184dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="4dp"
+        android:id="@+id/pet_input5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
-        app:layout_constraintStart_toEndOf="@+id/pet_label3"
-        app:layout_constraintTop_toBottomOf="@+id/pet_input2" />
+        android:inputType="date"
+        app:layout_constraintStart_toEndOf="@+id/pet_label6"
+        app:layout_constraintTop_toBottomOf="@+id/pet_input4" />
 
     <EditText
-        android:id="@+id/pet_input4"
-        android:layout_width="181dp"
-        android:layout_height="40dp"
+        android:id="@+id/pet_input6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:inputType="phone"
+        android:inputType="time"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.87"
-        app:layout_constraintStart_toEndOf="@+id/pet_label4"
-        app:layout_constraintTop_toBottomOf="@+id/pet_input3" />
+        app:layout_constraintTop_toBottomOf="@+id/pet_input5" />
 
-    <EditText
-        android:id="@+id/pet_input5"
-        android:layout_width="182dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:inputType="textPostalAddress"
+    <Button
+        android:id="@+id/bton17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="#C83737"
+        android:text="NEXT"
+        app:backgroundTint="@color/DarkRed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.604"
-        app:layout_constraintStart_toEndOf="@+id/pet_label5"
-        app:layout_constraintTop_toBottomOf="@+id/pet_input4" />
-
-    <ImageView
-        android:id="@+id/pet_pic2"
-        android:layout_width="128dp"
-        android:layout_height="74dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
-        android:layout_marginTop="32dp"
+        app:layout_constraintHorizontal_bias="0.804"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pet_label5"
-        app:srcCompat="@drawable/dog" />
+        app:layout_constraintTop_toBottomOf="@+id/pet_input6" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

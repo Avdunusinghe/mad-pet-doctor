@@ -86,11 +86,15 @@ public class AuthActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 spinner.setTitle("Login User");
+
                 spinner.setMessage("Please Wait..");
+
                 spinner.setCanceledOnTouchOutside(false);
+
                 spinner.show();
 
                 String inputEmail = email.getText().toString();
+
                 String inputPassword = password.getText().toString();
 
                 if(validateMail()){
@@ -101,14 +105,31 @@ public class AuthActivity extends AppCompatActivity {
 
                             if(task.isSuccessful()){
 
-                                Toast.makeText(getApplicationContext(),
-                                        "Login Success",
-                                        Toast.LENGTH_SHORT)
-                                        .show();
+                                if(inputEmail.equals("admin@gmail.com")){
 
-                                routeMainActivity();
+                                    spinner.dismiss();
 
-                                spinner.dismiss();
+                                    Toast.makeText(getApplicationContext(),
+                                            "Admin Login Success",
+                                            Toast.LENGTH_SHORT)
+                                            .show();
+
+                                    routeAdminActivity();
+
+                                }
+                                else{
+
+                                    Toast.makeText(getApplicationContext(),
+                                            "Login Success",
+                                            Toast.LENGTH_SHORT)
+                                            .show();
+
+                                    routeMainActivity();
+
+                                    spinner.dismiss();
+
+                                }
+
 
                             }
                             else{
@@ -124,7 +145,7 @@ public class AuthActivity extends AppCompatActivity {
                         }
                     });
                 }
-                else{
+               /* else{
 
                     if(inputEmail.equals("admin") && inputPassword.equals("admin")){
 
@@ -152,7 +173,7 @@ public class AuthActivity extends AppCompatActivity {
 
                         spinner.dismiss();
                     }
-                }
+                }*/
             }
         });
 
@@ -215,7 +236,7 @@ public class AuthActivity extends AppCompatActivity {
 
     public void routeForgetPasswordActivity()
     {
-        Intent intent = new Intent(AuthActivity.this, ChangePasswordActivity.class);
+        Intent intent = new Intent(AuthActivity.this, ResetPasswordEmailActivity.class);
         startActivity(intent);
     }
 

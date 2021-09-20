@@ -275,8 +275,7 @@
     <string name="medicalcenterColEmail">Email</string>
 
 
-
- <!--Chanukshi-->
+    <!--Chanukshi-->
     <!--Chanukshi-->
     <string name="hos_logo">Hospital_Logo</string>
     <string name="hos_heading">Hospital_heading</string>
@@ -374,10 +373,6 @@
     <string name="prof_btn5">APPOINTMENTS</string>
     <string name="addbtn">Add Button</string>
     <string name="usernameId">usernameId</string>
-
-
-
-
 
 
     <!-- Nawanjana MH -->
@@ -508,6 +503,10 @@
     <string name="sched_pic">Schedule Pic</string>
     <string name="createAcc_confirmPasswordText">Confirm Password</string>
     <string name="createAcc_ConfirmPasswordEditText" />
+    <string name="resetPasswordEmail_text">Email</string>
+    <string name="resetPassword_emailEditText" />
+    <string name="send_emailBtn">Send Email</string>
+    <string name="resetPassword_authTextView">Sign in</string>
 
 
 </resources>

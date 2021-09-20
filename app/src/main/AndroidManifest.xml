@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Madpetdoctor">
-        <activity android:name=".MainActivity">
-
+        <activity
+            android:name=".ResetPasswordEmailActivity"
+            android:exported="true" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".AdminHome" />
+        <activity android:name=".ChangePasswordActivity" />
+        <activity android:name=".CreateAccount" />
+        <activity android:name=".AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

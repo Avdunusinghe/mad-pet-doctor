@@ -3,10 +3,15 @@ package com.example.mad_pet_doctor;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,7 +29,11 @@ public class ClientProfile extends AppCompatActivity {
 
     TextView email;
 
+    Button updateUserBtn;
+
     DatabaseReference dbRef;
+
+    ProgressDialog spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +47,30 @@ public class ClientProfile extends AppCompatActivity {
 
         phoneNumber = findViewById(R.id.editProfile_movileNumberEditText);
 
+        updateUserBtn = findViewById(R.id.clientProfileSavebtn);
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         userId = user.getUid();
 
         getUserDetails();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        updateUserBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //update userdetails
+                updateUserProfile();
+            }
+        });
+
+
+
+
 
     }
 
@@ -83,6 +112,21 @@ public class ClientProfile extends AppCompatActivity {
                     dbRef.child("name").setValue(name.getText().toString().trim());
 
                     dbRef.child("phoneNumber").setValue(name.getText().toString().trim());
+
+                    spinner.setTitle("Update Profile");
+
+                    spinner.setMessage("Please Wait");
+
+                    spinner.setCanceledOnTouchOutside(false);
+
+                    spinner.show();
+
+                    Toast.makeText(getApplicationContext(),
+                            "Succefully updated detils",
+                            Toast.LENGTH_SHORT)
+                            .show();
+                    Intent intent = new Intent(ClientProfile.this, ClientProfile.class);
+                    startActivity(intent);
                 }
 
                 @Override

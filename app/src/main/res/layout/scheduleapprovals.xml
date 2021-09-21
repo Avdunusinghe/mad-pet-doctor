@@ -40,13 +40,6 @@
             android:background="#84ACBD"
             android:padding="10dp">
 
-            <TextView
-                android:id="@+id/apptable1"
-                android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="DocID" />
 
 
             <TextView
@@ -74,17 +67,19 @@
                 android:text="Time" />
 
             <TextView
-                android:id="@+id/apptable33"
+                android:id="@+id/apptable5"
                 android:layout_width="59dp"
                 android:layout_height="34dp"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-black"
-                android:text="Status" />
+                android:text="Update" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/apptable6"
                 android:layout_width="60dp"
-                android:layout_height="34dp" />
+                android:layout_height="34dp"
+                android:fontFamily="sans-serif-black"
+                android:text="Delete"/>
 
         </TableRow>
 
@@ -96,15 +91,9 @@
             android:padding="10dp">
 
 
-            <TextView
-                android:id="@+id/apptable5"
-                android:layout_width="wrap_content"
-                android:layout_height="31dp"
-                android:layout_weight="1"
-                android:text="123" />
 
             <TextView
-                android:id="@+id/apptable6"
+                android:id="@+id/apptable7"
                 android:layout_width="80dp"
                 android:layout_height="33dp"
                 android:layout_weight="1"
@@ -118,7 +107,7 @@
                 app:autoSizeTextType="uniform" -->
 
             <TextView
-                android:id="@+id/apptable7"
+                android:id="@+id/apptable79"
                 android:layout_width="wrap_content"
                 android:layout_height="33dp"
                 android:layout_weight="1"
@@ -127,22 +116,32 @@
             <TextView
                 android:id="@+id/apptable34"
                 android:layout_width="57dp"
-                android:layout_height="31dp"
+                android:layout_height="35dp"
                 android:layout_weight="1"
                 android:text="4-5PM" />
 
-            <ImageView
-                android:id="@+id/icon1"
-                android:layout_width="wrap_content"
-                android:layout_height="27dp"
-                android:contentDescription="@string/icon1"
-                app:srcCompat="@drawable/editicon" />
+            <ImageButton
+                android:id="@+id/icondell"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                app:layout_constraintStart_toEndOf="@+id/DocID01"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:srcCompat="@drawable/edit_button" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/icondel1"
-                android:layout_width="wrap_content"
-                android:layout_height="26dp"
-                app:srcCompat="@drawable/deleteicon" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                app:layout_constraintStart_toEndOf="@+id/DocID01"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:srcCompat="@drawable/delete_button" />
+
 
         </TableRow>
 
@@ -152,12 +151,7 @@
             android:background="#C6D5DB"
             android:padding="10dp">
 
-            <TextView
-                android:id="@+id/apptable9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="124" />
+
 
             <TextView
                 android:id="@+id/apptable10"
@@ -180,17 +174,27 @@
                 android:layout_weight="1"
                 android:text="5-6PM" />
 
-            <ImageView
-                android:id="@+id/icon2"
-                android:layout_width="wrap_content"
-                android:layout_height="27dp"
-                app:srcCompat="@drawable/editicon" />
+            <ImageButton
+                android:id="@+id/icondell1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                app:layout_constraintStart_toEndOf="@+id/DocID01"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:srcCompat="@drawable/edit_button" />
 
-            <ImageView
-                android:id="@+id/icondel2"
-                android:layout_width="wrap_content"
-                android:layout_height="26dp"
-                app:srcCompat="@drawable/deleteicon" />
+            <ImageButton
+                android:id="@+id/icondel12"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                app:layout_constraintStart_toEndOf="@+id/DocID01"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:srcCompat="@drawable/delete_button" />
 
         </TableRow>
 
@@ -198,12 +202,7 @@
             android:background="#ffffff"
             android:padding="10dp">
 
-            <TextView
-                android:id="@+id/apptable21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="678" />
+
 
             <TextView
                 android:id="@+id/apptable22"
@@ -226,17 +225,27 @@
                 android:layout_weight="1"
                 android:text="8-9PM" />
 
-            <ImageView
-                android:id="@+id/icon3"
-                android:layout_width="wrap_content"
-                android:layout_height="26dp"
-                app:srcCompat="@drawable/editicon" />
+            <ImageButton
+                android:id="@+id/icondell3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                app:layout_constraintStart_toEndOf="@+id/DocID01"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:srcCompat="@drawable/edit_button" />
 
-            <ImageView
-                android:id="@+id/icondel3"
-                android:layout_width="wrap_content"
-                android:layout_height="25dp"
-                app:srcCompat="@drawable/deleteicon" />
+            <ImageButton
+                android:id="@+id/icondel13"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                app:layout_constraintStart_toEndOf="@+id/DocID01"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:srcCompat="@drawable/delete_button" />
 
         </TableRow>
 
@@ -246,12 +255,6 @@
             android:background="#C6D5DB"
             android:padding="10dp">
 
-            <TextView
-                android:id="@+id/apptable25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="987" />
 
             <TextView
                 android:id="@+id/apptable26"
@@ -274,17 +277,27 @@
                 android:layout_weight="1"
                 android:text="4-6PM" />
 
-            <ImageView
-                android:id="@+id/icon4"
-                android:layout_width="wrap_content"
-                android:layout_height="23dp"
-                app:srcCompat="@drawable/editicon" />
+            <ImageButton
+                android:id="@+id/icondell4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                app:layout_constraintStart_toEndOf="@+id/DocID01"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:srcCompat="@drawable/edit_button" />
 
-            <ImageView
-                android:id="@+id/icondel4"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                app:srcCompat="@drawable/deleteicon" />
+            <ImageButton
+                android:id="@+id/icondel14"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                app:layout_constraintStart_toEndOf="@+id/DocID01"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:srcCompat="@drawable/delete_button" />
 
         </TableRow>
 
@@ -349,7 +362,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/hos_logo"
-        app:layout_constraintEnd_toStartOf="@+id/sched_pic"
+
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chip5"

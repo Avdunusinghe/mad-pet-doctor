@@ -50,28 +50,30 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView55"
         android:layout_width="70dp"
         android:layout_height="58dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/pet_doc_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pet_doc_2"
-        android:contentDescription="@string/pet_doc_2" />
+        app:srcCompat="@drawable/pet_doc_2" />
+
     <ImageView
         android:id="@+id/usericon"
         android:layout_width="31dp"
         android:layout_height="25dp"
         android:layout_marginTop="20dp"
+        android:contentDescription="@string/user_icon"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toEndOf="@+id/imageView55"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user_icon"
-        android:contentDescription="@string/user_icon" />
+        app:srcCompat="@drawable/user_icon" />
 
     <TextView
         android:id="@+id/usernameid"
@@ -87,6 +89,7 @@
         android:id="@+id/textView3"
         android:layout_width="370dp"
         android:layout_height="130dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center_horizontal"
         android:text="@string/my_appointments_and_report"
@@ -97,80 +100,62 @@
         android:textSize="45sp"
         android:textStyle="bold|italic"
         android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView55" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout8"
-        android:layout_width="355dp"
-        android:layout_height="207dp"
-        android:background="#FFE3AE"
-        android:bottom="3dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout9"
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="145dp"
+        android:layout_height="84dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/my_appointments"
+        app:layout_constraintBottom_toTopOf="@+id/button10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:srcCompat="@drawable/appointment" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="112dp"
+        android:layout_height="85dp"
+        android:layout_gravity="center"
+        android:contentDescription="@drawable/report"
+        app:layout_constraintBottom_toTopOf="@+id/button31"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
+        app:layout_constraintTop_toBottomOf="@+id/button10"
+        app:srcCompat="@drawable/report" />
 
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:contentDescription="@string/my_appointments"
-            app:srcCompat="@drawable/appointment" />
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="339dp"
+        android:layout_height="88dp"
+        android:text="@string/my_appointments"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:backgroundTint="#DFBA4040"
+        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView10" />
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-black"
-            android:text="@string/my_appointments"
-            android:textColor="#000000"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout9"
-        android:layout_width="358dp"
-        android:layout_height="215dp"
-        android:background="#FEF67F"
-        android:orientation="vertical"
+    <Button
+        android:id="@+id/button31"
+        android:layout_width="339dp"
+        android:layout_height="88dp"
+        android:text="@string/report"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:backgroundTint="#DFBA4040"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
-
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:contentDescription="@drawable/report"
-            app:srcCompat="@drawable/report" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:fontFamily="sans-serif-black"
-            android:text="@string/report"
-            android:textColor="#000000"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

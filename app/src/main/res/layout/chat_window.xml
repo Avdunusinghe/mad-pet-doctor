@@ -10,7 +10,7 @@
         android:id="@+id/toolbar2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -50,28 +50,30 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView55"
-        android:layout_width="70dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="69dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/pet_doc_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pet_doc_2"
-        android:contentDescription="@string/pet_doc_2" />
+        app:srcCompat="@drawable/pet_doc_2" />
+
     <ImageView
         android:id="@+id/usericon"
         android:layout_width="31dp"
         android:layout_height="25dp"
         android:layout_marginTop="20dp"
+        android:contentDescription="@string/user_icon"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toEndOf="@+id/imageView55"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user_icon"
-        android:contentDescription="@string/user_icon" />
+        app:srcCompat="@drawable/user_icon" />
 
     <TextView
         android:id="@+id/usernameid"
@@ -79,91 +81,47 @@
         android:layout_height="wrap_content"
         android:text="@string/mhn"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toEndOf="@+id/imageView55"
         app:layout_constraintTop_toBottomOf="@+id/usericon" />
 
-    <TextView
-        android:id="@+id/textView52"
-        android:layout_width="457dp"
-        android:layout_height="76dp"
-        android:background="#D8F1B0"
-        android:text="@string/extview"
-        android:textColor="#D8F1B0"
-        app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView55"
-        app:layout_constraintVertical_bias="0.067" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/button32"
+        android:dividerHeight="16dp"
+        android:divider="@android:color/transparent"
+        android:id="@+id/list_of_messages"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentLeft="true" />
 
-    <ImageView
-        android:id="@+id/imageView56"
-        android:layout_width="71dp"
-        android:layout_height="54dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:contentDescription="@string/plus"
+    <EditText
+        android:id="@+id/editTextTextPersonName7"
+        android:layout_width="318dp"
+        android:layout_height="44dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Type a message"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textInputEditText"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@+id/button32"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView52"
-        app:layout_constraintVertical_bias="0.471"
-        app:srcCompat="@drawable/plus" />
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.991" />
 
-    <ImageView
-        android:id="@+id/imageView58"
-        android:layout_width="48dp"
-        android:layout_height="40dp"
-        android:contentDescription="@string/send"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputEditText"
-        app:layout_constraintEnd_toEndOf="@+id/textInputEditText"
-        app:layout_constraintHorizontal_bias="0.975"
-        app:layout_constraintStart_toStartOf="@+id/textInputEditText"
-        app:layout_constraintTop_toTopOf="@+id/textInputEditText"
-        app:layout_constraintVertical_bias="0.411"
-        app:srcCompat="@drawable/send" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
-        android:layout_width="338dp"
-        android:layout_height="59dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:hint="@string/keyboard"
+    <Button
+        android:id="@+id/button32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        app:backgroundTint="#982A2A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView56"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.621" />
-
-    <ImageView
-        android:id="@+id/imageView59"
-        android:layout_width="71dp"
-        android:layout_height="60dp"
-        android:contentDescription="@string/girl"
-        app:layout_constraintBottom_toBottomOf="@+id/textView52"
-        app:layout_constraintEnd_toEndOf="@+id/textView52"
-        app:layout_constraintHorizontal_bias="0.041"
-        app:layout_constraintStart_toStartOf="@+id/textView52"
-        app:layout_constraintTop_toTopOf="@+id/textView52"
-        app:srcCompat="@drawable/girl" />
-
-    <TextView
-        android:id="@+id/textView59"
-        android:layout_width="244dp"
-        android:layout_height="51dp"
-        android:text="@string/rihana"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView52"
-        app:layout_constraintEnd_toEndOf="@+id/textView52"
-        app:layout_constraintHorizontal_bias="0.063"
-        app:layout_constraintStart_toEndOf="@+id/imageView59"
-        app:layout_constraintTop_toTopOf="@+id/textView52"
-        app:layout_constraintVertical_bias="0.68" />
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName7"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.991" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

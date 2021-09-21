@@ -42,7 +42,7 @@ public class MedicalCenterRegistration extends AppCompatActivity {
         emailEdt = findViewById(R.id.editText4);
         submitBtn = findViewById(R.id.button3);
         fireBaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = fireBaseDatabase.getReference("MedicalCenterReg");
+        databaseReference = fireBaseDatabase.getReference("MedicalCenter");
 
         ImageButton medicalPicBtn = (ImageButton)findViewById(R.id.imageButton);
         medicalPicBtn.setOnClickListener(new View.OnClickListener() {

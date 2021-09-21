@@ -4,39 +4,39 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class DoctorReg implements Parcelable {
-    private String fullName;
-    private String docLicenseNo;
-    private String qualification;
-    private String medicalCenter;
-    private String address;
-    private String telNo;
-    private String email;
-    private String doctorId;
+    private String DoctorId;
+    private String FullName;
+    private String DocLicenseNo;
+    private String Qualification;
+    private String MedicalCenter;
+    private String Address;
+    private String TelNo;
+    private String Email;
 
     public DoctorReg(){
 
     }
 
-    public DoctorReg(String fullName, String docLicenseNo, String qualification, String medicalCenter, String address, String telNo, String email, String doctorId) {
-        this.fullName = fullName;
-        this.docLicenseNo = docLicenseNo;
-        this.qualification = qualification;
-        this.medicalCenter = medicalCenter;
-        this.address = address;
-        this.telNo = telNo;
-        this.email = email;
-        this.doctorId = doctorId;
+    public DoctorReg(String doctorId, String fullName, String docLicenseNo, String qualification, String medicalCenter, String address, String telNo, String email) {
+        DoctorId = doctorId;
+        FullName = fullName;
+        DocLicenseNo = docLicenseNo;
+        Qualification = qualification;
+        MedicalCenter = medicalCenter;
+        Address = address;
+        TelNo = telNo;
+        Email = email;
     }
 
     protected DoctorReg(Parcel in) {
-        fullName = in.readString();
-        docLicenseNo = in.readString();
-        qualification = in.readString();
-        medicalCenter = in.readString();
-        address = in.readString();
-        telNo = in.readString();
-        email = in.readString();
-        doctorId = in.readString();
+        DoctorId = in.readString();
+        FullName = in.readString();
+        DocLicenseNo = in.readString();
+        Qualification = in.readString();
+        MedicalCenter = in.readString();
+        Address = in.readString();
+        TelNo = in.readString();
+        Email = in.readString();
     }
 
     public static final Creator<DoctorReg> CREATOR = new Creator<DoctorReg>() {
@@ -51,68 +51,68 @@ public class DoctorReg implements Parcelable {
         }
     };
 
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getDocLicenseNo() {
-        return docLicenseNo;
-    }
-
-    public void setDocLicenseNo(String docLicenseNo) {
-        this.docLicenseNo = docLicenseNo;
-    }
-
-    public String getQualification() {
-        return qualification;
-    }
-
-    public void setQualification(String qualification) {
-        this.qualification = qualification;
-    }
-
-    public String getMedicalCenter() {
-        return medicalCenter;
-    }
-
-    public void setMedicalCenter(String medicalCenter) {
-        this.medicalCenter = medicalCenter;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getTelNo() {
-        return telNo;
-    }
-
-    public void setTelNo(String telNo) {
-        this.telNo = telNo;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getDoctorId() {
-        return doctorId;
+        return DoctorId;
     }
 
     public void setDoctorId(String doctorId) {
-        this.doctorId = doctorId;
+        DoctorId = doctorId;
+    }
+
+    public String getFullName() {
+        return FullName;
+    }
+
+    public void setFullName(String fullName) {
+        FullName = fullName;
+    }
+
+    public String getDocLicenseNo() {
+        return DocLicenseNo;
+    }
+
+    public void setDocLicenseNo(String docLicenseNo) {
+        DocLicenseNo = docLicenseNo;
+    }
+
+    public String getQualification() {
+        return Qualification;
+    }
+
+    public void setQualification(String qualification) {
+        Qualification = qualification;
+    }
+
+    public String getMedicalCenter() {
+        return MedicalCenter;
+    }
+
+    public void setMedicalCenter(String medicalCenter) {
+        MedicalCenter = medicalCenter;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    public String getTelNo() {
+        return TelNo;
+    }
+
+    public void setTelNo(String telNo) {
+        TelNo = telNo;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
     }
 
     @Override
@@ -122,13 +122,13 @@ public class DoctorReg implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(fullName);
-        dest.writeString(docLicenseNo);
-        dest.writeString(qualification);
-        dest.writeString(medicalCenter);
-        dest.writeString(address);
-        dest.writeString(telNo);
-        dest.writeString(email);
-        dest.writeString(doctorId);
+        dest.writeString(DoctorId);
+        dest.writeString(FullName);
+        dest.writeString(DocLicenseNo);
+        dest.writeString(Qualification);
+        dest.writeString(MedicalCenter);
+        dest.writeString(Address);
+        dest.writeString(TelNo);
+        dest.writeString(Email);
     }
 }

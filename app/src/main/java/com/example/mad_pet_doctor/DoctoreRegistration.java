@@ -3,6 +3,7 @@ package com.example.mad_pet_doctor;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -30,10 +31,12 @@ public class DoctoreRegistration extends AppCompatActivity {
     private ImageButton docPicBtn;
     private RadioGroup houseCallYesOrNoGroup;
     private RadioButton houseCallYesOrNoBtn;
-    private Button submitBtn;
+    Button submitBtn;
+    ProgressDialog spinner;
     private FirebaseDatabase fireBaseDatabase;
     private DatabaseReference databaseReference;
     private String doctorId;
+    private DoctorReg DoctorReg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,44 +50,43 @@ public class DoctoreRegistration extends AppCompatActivity {
         addressEdt = findViewById(R.id.editText8);
         telNoEdt = findViewById(R.id.editText9);
         emailEdt = findViewById(R.id.editText10);
-        houseCallYesOrNoGroup = (RadioGroup)findViewById(R.id.radioGroup);
+        houseCallYesOrNoGroup = (RadioGroup) findViewById(R.id.radioGroup);
         submitBtn = findViewById(R.id.button4);
+        spinner = new ProgressDialog(DoctoreRegistration.this);
         fireBaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = fireBaseDatabase.getReference("DoctorReg");
+        databaseReference = fireBaseDatabase.getReference("Doctor");
 
-        ImageButton docPicBtn = (ImageButton)findViewById(R.id.imageButton8);
+        ImageButton docPicBtn = (ImageButton) findViewById(R.id.imageButton8);
         docPicBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Upload a picture.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty((fullNameEdt.getText().toString()))){
+                if (TextUtils.isEmpty((fullNameEdt.getText().toString()))) {
                     Toast.makeText(getApplicationContext(), "Please enter name", Toast.LENGTH_SHORT).show();
-                }
-                else if (TextUtils.isEmpty((docLicenseNoEdt.getText().toString()))){
+                } else if (TextUtils.isEmpty((docLicenseNoEdt.getText().toString()))) {
                     Toast.makeText(getApplicationContext(), "Please enter license no", Toast.LENGTH_SHORT).show();
-                }
-                else if (TextUtils.isEmpty((qualificationEdt.getText().toString()))){
+                } else if (TextUtils.isEmpty((qualificationEdt.getText().toString()))) {
                     Toast.makeText(getApplicationContext(), "Please enter qualifications", Toast.LENGTH_SHORT).show();
-                }
-                else if (TextUtils.isEmpty((medicalCenterEdt.getText().toString()))){
+                } else if (TextUtils.isEmpty((medicalCenterEdt.getText().toString()))) {
                     Toast.makeText(getApplicationContext(), "Please enter medical center", Toast.LENGTH_SHORT).show();
-                }
-                else if (TextUtils.isEmpty((addressEdt.getText().toString()))){
+                } else if (TextUtils.isEmpty((addressEdt.getText().toString()))) {
                     Toast.makeText(getApplicationContext(), "Please enter address", Toast.LENGTH_SHORT).show();
-                }
-                else if (TextUtils.isEmpty((telNoEdt.getText().toString()))){
+                } else if (TextUtils.isEmpty((telNoEdt.getText().toString()))) {
                     Toast.makeText(getApplicationContext(), "Please enter tel no", Toast.LENGTH_SHORT).show();
-                }
-                else if (TextUtils.isEmpty((emailEdt.getText().toString()))){
+                } else if (TextUtils.isEmpty((emailEdt.getText().toString()))) {
                     Toast.makeText(getApplicationContext(), "Please enter email", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
                     boolean validateEmail = validateEmail();
                     boolean validateMobileNo = validateTelNo();
                     String fullName = fullNameEdt.getText().toString();
@@ -94,56 +96,59 @@ public class DoctoreRegistration extends AppCompatActivity {
                     String address = addressEdt.getText().toString();
                     String telNo = telNoEdt.getText().toString();
                     String email = emailEdt.getText().toString();
+                    spinner.setTitle("Register New Doctor");
+                    spinner.setMessage("Please Wait while Validate the Details");
+                    spinner.setCanceledOnTouchOutside(false);
+                    spinner.show();
                     doctorId = fullName;
 
-                    int selectedValue=houseCallYesOrNoGroup.getCheckedRadioButtonId();
-                    houseCallYesOrNoBtn=(RadioButton)findViewById(selectedValue);
-                    Toast.makeText(DoctoreRegistration.this,houseCallYesOrNoBtn.getText(),Toast.LENGTH_SHORT).show();
-                
+                    int selectedValue = houseCallYesOrNoGroup.getCheckedRadioButtonId();
+                    houseCallYesOrNoBtn = (RadioButton) findViewById(selectedValue);
+                    Toast.makeText(DoctoreRegistration.this, houseCallYesOrNoBtn.getText(), Toast.LENGTH_SHORT).show();
 
-                    DoctorReg DoctorReg = new DoctorReg(doctorId,fullName,docLicenseNo,qualification,medicalCenter,address,telNo,email);
+                    DoctorReg DoctorReg = new DoctorReg(doctorId, fullName, docLicenseNo, qualification, medicalCenter, address, telNo, email);
                     databaseReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             databaseReference.child(doctorId).setValue(DoctorReg);
                             Toast.makeText(DoctoreRegistration.this, "Doctor Registered Successfully.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(DoctoreRegistration.this,Doctors.class));
+                            startActivity(new Intent(DoctoreRegistration.this, Doctors.class));
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-                            Toast.makeText(DoctoreRegistration.this, "Error occurred. Please Try again."+error.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DoctoreRegistration.this, "Error occurred. Please Try again." + error.toString(), Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
             }
-
-            private boolean validateEmail() {
-                String email = emailEdt.getText().toString();
-                String EmalFormat = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-
-                if(Pattern.compile(EmalFormat).matcher(email).matches())
-                {
-                    return true;
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Please enter valid email", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-            }
-
-            private boolean validateTelNo() {
-                String phone = telNoEdt.getText().toString();
-
-                if(phone.length() == 10)
-                {
-                    return true;
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Please enter valid phone number", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-            }
         });
+    }
+
+    private boolean validateEmail() {
+        String email = emailEdt.getText().toString();
+        String EmalFormat = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+        if(Pattern.compile(EmalFormat).matcher(email).matches())
+        {
+            return true;
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Please enter valid email", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+    private boolean validateTelNo() {
+        String phone = telNoEdt.getText().toString();
+
+        if(phone.length() == 10)
+        {
+            return true;
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Please enter valid phone number", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 }

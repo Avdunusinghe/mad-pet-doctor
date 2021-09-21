@@ -4,33 +4,48 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class MedicalCenterReg implements Parcelable {
-    private String medicalCenterNo;
-    private String name;
-    private String address;
-    private String telNo;
-    private String email;;
-    private String medicalCenterId;
+    private String MedicalCenterId;
+    private String MedicalCenterNo;
+    private String Name;
+    private String Address;
+    private String TelNo;
+    private String Email;;
 
     public MedicalCenterReg() {
 
     }
 
-    public MedicalCenterReg(String medicalCenterNo, String name, String address, String telNo, String email, String medicalCenterId) {
-        this.medicalCenterNo = medicalCenterNo;
-        this.name = name;
-        this.address = address;
-        this.telNo = telNo;
-        this.email = email;
-        this.medicalCenterId = medicalCenterId;
+    public MedicalCenterReg(String medicalCenterId, String medicalCenterNo, String name, String address, String telNo, String email) {
+        MedicalCenterId = medicalCenterId;
+        MedicalCenterNo = medicalCenterNo;
+        Name = name;
+        Address = address;
+        TelNo = telNo;
+        Email = email;
     }
 
     protected MedicalCenterReg(Parcel in) {
-        medicalCenterNo = in.readString();
-        name = in.readString();
-        address = in.readString();
-        telNo = in.readString();
-        email = in.readString();
-        medicalCenterId = in.readString();
+        MedicalCenterId = in.readString();
+        MedicalCenterNo = in.readString();
+        Name = in.readString();
+        Address = in.readString();
+        TelNo = in.readString();
+        Email = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(MedicalCenterId);
+        dest.writeString(MedicalCenterNo);
+        dest.writeString(Name);
+        dest.writeString(Address);
+        dest.writeString(TelNo);
+        dest.writeString(Email);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<MedicalCenterReg> CREATOR = new Creator<MedicalCenterReg>() {
@@ -45,66 +60,51 @@ public class MedicalCenterReg implements Parcelable {
         }
     };
 
-    public String getMedicalCenterNo() {
-        return medicalCenterNo;
-    }
-
-    public void setMedicalCenterNo(String medicalCenterNo) {
-        this.medicalCenterNo = medicalCenterNo;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getTelNo() {
-        return telNo;
-    }
-
-    public void setTelNo(String telNo) {
-        this.telNo = telNo;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getMedicalCenterId() {
-        return medicalCenterId;
+        return MedicalCenterId;
     }
 
     public void setMedicalCenterId(String medicalCenterId) {
-        this.medicalCenterId = medicalCenterId;
+        MedicalCenterId = medicalCenterId;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
+    public String getMedicalCenterNo() {
+        return MedicalCenterNo;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(medicalCenterNo);
-        dest.writeString(name);
-        dest.writeString(address);
-        dest.writeString(telNo);
-        dest.writeString(email);
-        dest.writeString(medicalCenterId);
+    public void setMedicalCenterNo(String medicalCenterNo) {
+        MedicalCenterNo = medicalCenterNo;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {
+        Address = address;
+    }
+
+    public String getTelNo() {
+        return TelNo;
+    }
+
+    public void setTelNo(String telNo) {
+        TelNo = telNo;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
     }
 }

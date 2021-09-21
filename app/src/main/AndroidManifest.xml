@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mad_pet_doctor">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,13 +13,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Madpetdoctor">
         <activity android:name=".UpdateScheduleActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MedicalProfActivity">
+
+        </activity>
+        <activity android:name=".EnterScheduleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PetBookFormActivity"></activity>
+        <activity android:name=".DoctoreRegistration"></activity>
+        <activity android:name="DailyReportsActivity"></activity>
+        <activity android:name=".AppointmentDetailsActivity"></activity>
+        <activity android:name=".CardPayActivity"></activity>
+        <activity android:name=".ScheduleApprovalsActivity"></activity>
+        <activity android:name=".ContactUsActivity"></activity>
+        <activity android:name=".BookingConfirmationActivity"></activity>
+        <activity android:name=".MedicalProfileUserActivity"></activity>
+        <activity android:name=".AppointmentsActivity"></activity>
+
     </application>
 
 </manifest>

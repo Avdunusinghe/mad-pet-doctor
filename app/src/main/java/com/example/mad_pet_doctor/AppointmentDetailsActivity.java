@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,8 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AppointmentDetailsActivity extends AppCompatActivity {
 
-    private TextView Hoslogo , AnimalName, OwnerName , AppDate , AppTime , PayDetails , AppFee , ServiceCharge , TotalFee;
-    private TextView input1 , input2,  input3, input4 , input5, input6 , input7  ;
+    private ImageView Hoslogo ;
+    private TextView input1 , input2,  input3, input4 , input5, input6 , input7 , AnimalName, OwnerName , AppDate , AppTime , PayDetails , AppFee , ServiceCharge , TotalFee ;
     private Button confirmBtn;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -33,7 +34,7 @@ public class AppointmentDetailsActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.appointmentdetails);
-        Hoslogo = findViewById(R.id.app_head);
+        Hoslogo = findViewById(R.id.hos_logo1);
         AnimalName = findViewById(R.id.app_label1);
         OwnerName = findViewById(R.id.app_label2);
         AppDate = findViewById(R.id.app_label3);

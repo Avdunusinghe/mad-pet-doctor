@@ -418,8 +418,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toEndOf="@+id/dailyrep_1"
-        app:layout_constraintTop_toBottomOf="@+id/usernameId"
-        app:srcCompat="@drawable/icons8_hospital_30" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameId"/>
+        //app:srcCompat="@drawable/icons8_hospital_30" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

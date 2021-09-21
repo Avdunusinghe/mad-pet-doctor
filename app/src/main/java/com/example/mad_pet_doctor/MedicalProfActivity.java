@@ -36,8 +36,8 @@ public class MedicalProfActivity extends AppCompatActivity {
         ScheduleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intend1 = new Intent(MedicalProfActivity.this, EnterScheduleActivity.class);
-                startActivity(intend1);
+                Intent i = new Intent(MedicalProfActivity.this, EnterScheduleActivity.class);
+                startActivity(i);
             }
         });
 
@@ -45,8 +45,8 @@ public class MedicalProfActivity extends AppCompatActivity {
         DocRegistrationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intend2 = new Intent(MedicalProfActivity.this, DoctoreRegistration.class);
-                startActivity(intend2);
+                Intent i = new Intent(MedicalProfActivity.this, DoctoreRegistration.class);
+                startActivity(i);
             }
         });
 
@@ -54,8 +54,8 @@ public class MedicalProfActivity extends AppCompatActivity {
         ReportBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intend3 = new Intent(MedicalProfActivity.this,  DailyReportsActivity.class);
-                startActivity(intend3);
+                Intent i = new Intent(MedicalProfActivity.this,  DailyReportsActivity.class);
+                startActivity(i);
             }
         });
 

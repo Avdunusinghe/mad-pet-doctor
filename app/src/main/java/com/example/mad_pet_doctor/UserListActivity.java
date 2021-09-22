@@ -6,9 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.list_view.UserList;
 import com.example.model.User;
@@ -17,7 +15,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.protobuf.Internal;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +26,7 @@ public class UserListActivity extends AppCompatActivity {
 
     List<User> userList;
 
-    DatabaseReference dbRef;
+    DatabaseReference db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,13 +36,9 @@ public class UserListActivity extends AppCompatActivity {
 
         userList = new ArrayList<>();
 
-        dbRef = FirebaseDatabase.getInstance().getReference("User");
+        db = FirebaseDatabase.getInstance().getReference("User");
 
         userListView = (ListView)findViewById(R.id.user_listview);
-
-
-
-
 
     }
 
@@ -53,7 +46,7 @@ public class UserListActivity extends AppCompatActivity {
     public void onStart(){
         super.onStart();
 
-        dbRef.addValueEventListener(new ValueEventListener() {
+        db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -62,13 +55,12 @@ public class UserListActivity extends AppCompatActivity {
                 for(DataSnapshot userDataSnapshot:snapshot.getChildren()){
 
                     User users = userDataSnapshot.getValue(User.class);
+
                     userList.add(users);
                 }
 
                 UserList userListAdapter = new UserList(UserListActivity.this,userList);
                 userListView.setAdapter(userListAdapter);
-
-
 
             }
 
@@ -78,6 +70,20 @@ public class UserListActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private boolean deleteUser(String id){
+
+        db = FirebaseDatabase.getInstance().getReference("User").child(id);
+
+        db.removeValue();
+
+        Toast.makeText(getApplicationContext(),
+                "Artist Deleted",
+                Toast.LENGTH_LONG)
+                .show();
+
+        return true;
     }
 
 

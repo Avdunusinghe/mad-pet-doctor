@@ -51,6 +51,7 @@ public class UserList extends ArrayAdapter<User> {
 
         textViewMobileNumber.setText(user.getPhoneNumber());
 
+
         return listViewItem;
     }
 

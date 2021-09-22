@@ -129,6 +129,8 @@ public class CreateAccount extends AppCompatActivity {
 
                     boolean validatePassword = validatePassword();
 
+                    String id;
+
                     String name = inputName.getText().toString().trim();
 
                     String email = inputEmail.getText().toString().trim();
@@ -136,6 +138,8 @@ public class CreateAccount extends AppCompatActivity {
                     String phoneNumber = inputMobileNumber.getText().toString().trim();
 
                     String password = inputPassword.getText().toString().trim();
+
+
 
 
                     spinner.setTitle("Register New User");

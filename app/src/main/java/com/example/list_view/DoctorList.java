@@ -33,21 +33,25 @@ public class DoctorList extends ArrayAdapter<DoctorReg> {
 
         LayoutInflater inflater = context.getLayoutInflater();
 
-        View listViewItem = inflater.inflate(R.layout.activity_user_list_details, null, true);
+        View listViewItem = inflater.inflate(R.layout.activity_doctor_list, null, true);
 
-        TextView textViewName = (TextView) listViewItem.findViewById(R.id.user_name_list_textview);
+        TextView textViewDoctorName = (TextView) listViewItem.findViewById(R.id.doctor_list_name_textview);
 
-        TextView textViewEmail = (TextView) listViewItem.findViewById(R.id.user_email_list_textview);
+        TextView textViewMedicalCenter = (TextView) listViewItem.findViewById(R.id.doctor_list_medicalcenter_textview);
 
-        TextView textViewMobileNumber = (TextView) listViewItem.findViewById(R.id.user_phone_list_textview);
+        TextView textViewDoctorEmail = (TextView) listViewItem.findViewById(R.id.doctor_list_email_textview);
+
+        TextView textViewDoctorMobileNumber = (TextView) listViewItem.findViewById(R.id.doctor_list_mobilenumber_textview);
 
         DoctorReg doctor = doctors.get(position);
 
-        textViewName.setText(doctor.getDoctorId());
+        textViewDoctorName.setText(doctor.getFullName());
 
-        textViewEmail.setText(doctor.getEmail());
+        textViewMedicalCenter.setText(doctor.getMedicalCenter());
 
-       // textViewMobileNumber.setText(doctor.getPhoneNumber());
+        textViewDoctorEmail.setText(doctor.getEmail());
+
+        textViewDoctorMobileNumber.setText(doctor.getTelNo());
 
 
         return listViewItem;

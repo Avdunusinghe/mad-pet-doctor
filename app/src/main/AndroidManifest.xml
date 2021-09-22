@@ -22,7 +22,7 @@
         <activity android:name=".AdminHome" />
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".CreateAccount" />
-        <activity android:name=".UserListActivity">
+        <activity android:name=".DoctorListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

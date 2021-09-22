@@ -85,13 +85,13 @@ public class MedicalCenterRegistration extends AppCompatActivity {
                     spinner.setMessage("Please Wait while Validate the Details");
                     spinner.setCanceledOnTouchOutside(false);
                     spinner.show();
-                    medicalCenterId = name;
+                    String id = databaseReference.push().getKey();
 
-                    MedicalCenterReg MedicalCenterReg = new MedicalCenterReg(medicalCenterId, medicalCenterNo, name, address, telNo, email);
+                    MedicalCenterReg MedicalCenterReg = new MedicalCenterReg(id, medicalCenterNo, name, address, telNo, email);
                     databaseReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            databaseReference.child(medicalCenterId).setValue(MedicalCenterReg);
+                            databaseReference.child(id).setValue(MedicalCenterReg);
                             Toast.makeText(MedicalCenterRegistration.this, "Medical Center Registered Successfully.", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(MedicalCenterRegistration.this, MainActivity.class));
                         }

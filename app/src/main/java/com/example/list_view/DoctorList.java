@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.mad_pet_doctor.Doctors;
 import com.example.mad_pet_doctor.R;
 import com.example.model.DoctorReg;
 
@@ -33,7 +32,7 @@ public class DoctorList extends ArrayAdapter<DoctorReg> {
 
         LayoutInflater inflater = context.getLayoutInflater();
 
-        View listViewItem = inflater.inflate(R.layout.activity_doctor_list, null, true);
+        View listViewItem = inflater.inflate(R.layout.activity_doctor_list_detail, null, true);
 
         TextView textViewDoctorName = (TextView) listViewItem.findViewById(R.id.doctor_list_name_textview);
 

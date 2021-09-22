@@ -85,7 +85,7 @@
 
     <SearchView
         android:id="@+id/searchView"
-        android:layout_width="402dp"
+        android:layout_width="388dp"
         android:layout_height="37dp"
         android:layout_marginTop="20dp"
         android:background="@color/WhiteSmoke"
@@ -130,13 +130,16 @@
         app:srcCompat="@drawable/plus" />
 
     <ListView
-        android:layout_width="378dp"
-        android:layout_height="463dp"
-        android:layout_marginTop="28dp"
+        android:id="@+id/medical_centers-listview"
+        android:layout_width="382dp"
+        android:layout_height="486dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView51" />
+        app:layout_constraintTop_toBottomOf="@+id/medicalcenteListText"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

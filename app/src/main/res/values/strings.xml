@@ -284,6 +284,14 @@
     <string name="user_email_list_textview" />
     <string name="user_phone_list_textview" />
 
+    <string name="doctor_list_name_textview" />
+    <string name="doctor_list_medicalcenter_textview" />
+    <string name="doctor_list_mobilenumber_textview" />
+    <string name="medicalcenter_list_name_textview" />
+    <string name="medicalcenter_list_address_textview" />
+    <string name="medicalcenter_list_mobilenumber_textview" />
+    <string name="medicalcenter_list_email_textview" />
+
 
     <!--Chanukshi-->
     <!--Chanukshi-->
@@ -511,9 +519,7 @@
     <string name="cont_label2">Email</string>
     <string name="cont_label3">message</string>
     <string name="sched_pic">Schedule Pic</string>
-    <string name="doctor_list_name_textview" />
-    <string name="doctor_list_medicalcenter_textview" />
-    <string name="doctor_list_mobilenumber_textview" />
+
 
 
 </resources>

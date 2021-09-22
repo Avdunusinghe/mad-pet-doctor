@@ -507,6 +507,9 @@
     <string name="resetPassword_emailEditText" />
     <string name="send_emailBtn">Send Email</string>
     <string name="resetPassword_authTextView">Sign in</string>
+    <string name="user_name_list_textview" />
+    <string name="user_email_list_textview" />
+    <string name="user_phone_list_textview" />
 
 
 </resources>

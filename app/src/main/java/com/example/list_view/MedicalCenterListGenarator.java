@@ -8,18 +8,17 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.mad_pet_doctor.R;
-import com.example.model.DoctorReg;
 import com.example.model.MedicalCenterReg;
 
 import java.util.List;
 
-public class MedicalCenterList extends ArrayAdapter<MedicalCenterReg> {
+public class MedicalCenterListGenarator extends ArrayAdapter<MedicalCenterReg> {
 
     private Activity context;
 
     List<MedicalCenterReg> medicalCenters;
 
-    public MedicalCenterList(Activity context, List<MedicalCenterReg>medicalCenters){
+    public MedicalCenterListGenarator(Activity context, List<MedicalCenterReg>medicalCenters){
 
         super(context, R.layout.activity_medical_center_list,medicalCenters);
 

@@ -111,6 +111,22 @@ public class MedicalCenterList extends AppCompatActivity {
         return true;
     }
 
+    private boolean deleteMedicalCenter(String id){
+
+        db = FirebaseDatabase.getInstance().getReference("MedicalCenter").child(id);
+
+        db.removeValue();
+
+        Toast.makeText(getApplicationContext(),
+                "MedicalCenter has Been Deleted",
+                Toast.LENGTH_LONG)
+                .show();
+
+        return true;
+
+
+    }
+
     private void showUpdateDeleteMedicalCenterDialog(final String id,String medicalCenterNumber, String name, String address, String mobileNumber, String email){
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -151,6 +167,17 @@ public class MedicalCenterList extends AppCompatActivity {
                 }
             }
         });
+
+        buttonDeleteMedicalCenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                deleteMedicalCenter(id);
+                alertDialog.dismiss();
+            }
+        });
+
+
 
 
     }

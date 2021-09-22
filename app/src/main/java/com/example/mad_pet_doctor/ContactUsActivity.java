@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.regex.Pattern;
 
 public class ContactUsActivity extends AppCompatActivity {
 
@@ -52,27 +55,48 @@ public class ContactUsActivity extends AppCompatActivity {
 
         ContSubmitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                String Name = NameEdt.getText().toString();
-                String Email = EmaiEdt.getText().toString();
-                String Message = MessageEdt.getText().toString();
-                ContactId = Name;
-                ContactModal contactModal = new ContactModal(Name, Email,Message, ContactId);
+            public void onClick(View v) {
 
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull  DataSnapshot snapshot) {
-                        databaseReference.child(ContactId).setValue(contactModal);
-                        Toast.makeText(ContactUsActivity.this, "Message is  Added..", Toast.LENGTH_SHORT ).show();
-                        startActivity(new Intent(ContactUsActivity.this, MainActivity.class));
-                    }
+                if (TextUtils.isEmpty((NameEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter  name", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((EmaiEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter email", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((MessageEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter message", Toast.LENGTH_SHORT).show();
+                } else {
+                    String Name = NameEdt.getText().toString();
+                    String Email = EmaiEdt.getText().toString();
+                    String Message = MessageEdt.getText().toString();
+                    ContactId = Name;
+                    ContactModal contactModal = new ContactModal(Name, Email, Message, ContactId);
 
-                    @Override
-                    public void onCancelled(@NonNull  DatabaseError error) {
-                        Toast.makeText(ContactUsActivity.this, "Error occurs to add message" + error.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            databaseReference.child(ContactId).setValue(contactModal);
+                            Toast.makeText(ContactUsActivity.this, "Message is  Added..", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(ContactUsActivity.this, MainActivity.class));
+                        }
 
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            Toast.makeText(ContactUsActivity.this, "Error occurs to add message" + error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                }
+            }
+
+            private boolean validateEmail() {
+                String email = EmaiEdt.getText().toString();
+                String EmalFormat = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+                if (Pattern.compile(EmalFormat).matcher(email).matches()) {
+                    return true;
+                } else {
+                    Toast.makeText(getApplicationContext(), "Please enter valid email", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
             }
         });
     }

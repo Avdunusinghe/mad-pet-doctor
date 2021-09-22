@@ -14,20 +14,19 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/LightSkyBlue"
+    android:background="@color/BurlyWood"
     >
 
     <ImageView
+        android:id="@+id/idAppSchedule"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:id="@+id/idAppSchedule"
-        android:scaleType="centerCrop"
-       ></ImageView>
+        android:scaleType="centerCrop"></ImageView>
 
     <ImageView
         android:id="@+id/imageView52"
-        android:layout_width="93dp"
-        android:layout_height="99dp"
+        android:layout_width="94dp"
+        android:layout_height="105dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -60,8 +59,8 @@
 
     <TextView
         android:id="@+id/book_doc2"
-        android:layout_width="138dp"
-        android:layout_height="wrap_content"
+        android:layout_width="134dp"
+        android:layout_height="32dp"
         android:layout_alignParentTop="true"
         android:layout_marginStart="-15dp"
         android:layout_marginLeft="-15dp"
@@ -75,36 +74,20 @@
 
     <Button
         android:id="@+id/buton"
-        android:layout_width="113dp"
+        android:layout_width="164dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="-47dp"
+        android:layout_marginLeft="-47dp"
+        android:layout_marginTop="146dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginRight="13dp"
         android:layout_toEndOf="@+id/book_doc"
         android:layout_toRightOf="@+id/book_doc"
         android:contentDescription="@string/buton"
         android:text="BOOK"
         app:backgroundTint="@android:color/holo_red_dark"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/call_btn2"
-        android:layout_width="98dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buton"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:contentDescription="@string/call_btn2"
-        android:text="CALL"
-        app:backgroundTint="@android:color/holo_red_dark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buton" />
 
     <TextView
         android:id="@+id/book_doc3"
@@ -113,9 +96,9 @@
         android:layout_below="@+id/imageView52"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="33dp"
-        android:layout_marginLeft="33dp"
-        android:layout_marginTop="26dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="14dp"
         android:contentDescription="@string/book_doc3"
         android:fontFamily="sans-serif-black"
         android:text="Date"
@@ -127,9 +110,9 @@
         android:layout_width="65dp"
         android:layout_height="29dp"
         android:layout_below="@+id/book_doc2"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="51dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="68dp"
         android:layout_marginRight="68dp"
         android:layout_toEndOf="@+id/book_doc3"
@@ -138,6 +121,19 @@
         android:fontFamily="sans-serif-black"
         android:text="Time"
         app:layout_constraintTop_toBottomOf="@+id/book_doc2" />
+
+    <ImageButton
+        android:id="@+id/call_btn"
+        android:layout_width="62dp"
+        android:layout_height="61dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        app:backgroundTint="@android:color/holo_red_dark"
+        app:srcCompat="@drawable/call_btn" />
 
 </RelativeLayout>
 

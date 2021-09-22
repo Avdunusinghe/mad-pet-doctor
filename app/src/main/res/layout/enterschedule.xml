@@ -11,9 +11,9 @@
         android:id="@+id/sched_pic"
         android:layout_width="79dp"
         android:layout_height="69dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="164dp"
-        android:layout_marginRight="164dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginRight="172dp"
         android:contentDescription="@string/sched_pic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar3"
@@ -36,21 +36,22 @@
 
     <TextView
         android:id="@+id/sched_label2"
-        android:layout_width="116dp"
-        android:layout_height="34dp"
+        android:layout_width="123dp"
+        android:layout_height="40dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="20dp"
         android:contentDescription="@string/sched_label2"
         android:fontFamily="sans-serif-black"
         android:text="Doctor Name"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sched_label111" />
 
     <TextView
         android:id="@+id/sched_label111"
-        android:layout_width="116dp"
-        android:layout_height="34dp"
+        android:layout_width="123dp"
+        android:layout_height="40dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="8dp"
@@ -62,27 +63,29 @@
 
     <TextView
         android:id="@+id/sched_label3"
-        android:layout_width="125dp"
-        android:layout_height="33dp"
+        android:layout_width="123dp"
+        android:layout_height="40dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="68dp"
         android:contentDescription="@string/sched_label3"
         android:fontFamily="sans-serif-black"
         android:text="Date"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sched_label111" />
 
     <TextView
         android:id="@+id/sched_label4"
-        android:layout_width="134dp"
-        android:layout_height="33dp"
+        android:layout_width="123dp"
+        android:layout_height="40dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="12dp"
         android:contentDescription="@string/sched_label4"
         android:fontFamily="sans-serif-black"
         android:text="Time"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sched_label3" />
 
@@ -205,50 +208,52 @@
     <EditText
         android:id="@+id/editTextTextPersonName6"
         android:layout_width="190dp"
-        android:layout_height="32dp"
+        android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
 
     <EditText
         android:id="@+id/Date"
-        android:layout_width="192dp"
-        android:layout_height="37dp"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/sched_label3"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
 
     <EditText
         android:id="@+id/Time"
-        android:layout_width="196dp"
-        android:layout_height="44dp"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="time"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/sched_label4"
         app:layout_constraintTop_toBottomOf="@+id/Date" />
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
-        android:layout_width="208dp"
-        android:layout_height="32dp"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sched_name" />
 

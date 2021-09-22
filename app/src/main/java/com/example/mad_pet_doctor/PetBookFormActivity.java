@@ -7,6 +7,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -116,31 +117,45 @@ public class  PetBookFormActivity extends AppCompatActivity {
 
         NextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
 
-                String AnimalName = AnimalNameEdt.getText().toString();
-                String OwnerName = OwnerNameEdt.getText().toString();
-                String OwnerPhone = OwnerPhoneEdt.getText().toString();
-                String Address = AddressEdt.getText().toString();
-                String  AppointmentDate = AppDateEdt.getText().toString();
-                String  AppointmentTime = AppTimeEdt.getText().toString();
-                BookingId = AnimalName;
-                BookingModal bookingModal = new BookingModal( AnimalName,OwnerName, OwnerPhone, Address,AppointmentDate,AppointmentTime, BookingId);
+                if (TextUtils.isEmpty((AnimalNameEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter Animal name", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((OwnerNameEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter Owner name", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((OwnerPhoneEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter Phone number", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((AddressEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter address", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((AppDateEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please select date", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((AppTimeEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please select Time", Toast.LENGTH_SHORT).show();
+                } else {
+                    String AnimalName = AnimalNameEdt.getText().toString();
+                    String OwnerName = OwnerNameEdt.getText().toString();
+                    String OwnerPhone = OwnerPhoneEdt.getText().toString();
+                    String Address = AddressEdt.getText().toString();
+                    String AppointmentDate = AppDateEdt.getText().toString();
+                    String AppointmentTime = AppTimeEdt.getText().toString();
+                    BookingId = AnimalName;
+                    BookingModal bookingModal = new BookingModal(AnimalName, OwnerName, OwnerPhone, Address, AppointmentDate, AppointmentTime, BookingId);
 
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull  DataSnapshot snapshot) {
-                        databaseReference.child(BookingId).setValue(bookingModal);
-                        Toast.makeText(PetBookFormActivity.this, "Booking information is  Added..", Toast.LENGTH_SHORT ).show();
-                        startActivity(new Intent(PetBookFormActivity.this, AppointmentDetailsActivity.class));
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            databaseReference.child(BookingId).setValue(bookingModal);
+                            Toast.makeText(PetBookFormActivity.this, "Booking information is  Added..", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(PetBookFormActivity.this, AppointmentDetailsActivity.class));
 
-                    }
+                        }
 
-                    @Override
-                    public void onCancelled(@NonNull  DatabaseError error) {
-                        Toast.makeText(PetBookFormActivity.this, "Error occurs to booking" + error.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            Toast.makeText(PetBookFormActivity.this, "Error occurs to booking" + error.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
         });
 

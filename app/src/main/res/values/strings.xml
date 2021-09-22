@@ -508,6 +508,7 @@
     <string name="resetPassword_authTextView">resetPassword_authTextView</string>
     <string name="resetPassword_emailEditText">resetPassword_emailEditText</string>
     <string name="createAcc_confirmPasswordText">createAcc_confirmPasswordText</string>
+    <string name="btondelete">DELETE</string>
 
 
 </resources>

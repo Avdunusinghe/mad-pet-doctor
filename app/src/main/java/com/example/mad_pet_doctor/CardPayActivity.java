@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -58,31 +59,40 @@ public class CardPayActivity extends AppCompatActivity {
 
          PayBtn.setOnClickListener(new View.OnClickListener() {
              @Override
-             public void onClick(View view) {
-                 String CardHoldername = CardHolderEdt.getText().toString();
-                 String CardNumber = CardNoEdt.getText().toString();
-                 String ExpiredDate = ExpDateEdt.getText().toString();
-                 String CVCNumber = CVcEdt.getText().toString();
-                 PaymentId = CardHoldername;
-                 CardPaymentsModal coursepaymentsmodal = new CardPaymentsModal(CardHoldername, CardNumber, ExpiredDate, CVCNumber, PaymentId);
+             public void onClick(View v) {
+                 if (TextUtils.isEmpty((CardHolderEdt.getText().toString()))) {
+                     Toast.makeText(getApplicationContext(), "Please enter CardHolder name", Toast.LENGTH_SHORT).show();
+                 } else if (TextUtils.isEmpty((CardNoEdt.getText().toString()))) {
+                     Toast.makeText(getApplicationContext(), "Please enter CardNumber", Toast.LENGTH_SHORT).show();
+                 } else if (TextUtils.isEmpty((ExpDateEdt.getText().toString()))) {
+                     Toast.makeText(getApplicationContext(), "Please enter expiration  date", Toast.LENGTH_SHORT).show();
+                 } else if (TextUtils.isEmpty((CVcEdt.getText().toString()))) {
+                     Toast.makeText(getApplicationContext(), "Please enter CVC no", Toast.LENGTH_SHORT).show();
+                 }else {
+                     String CardHoldername = CardHolderEdt.getText().toString();
+                     String CardNumber = CardNoEdt.getText().toString();
+                     String ExpiredDate = ExpDateEdt.getText().toString();
+                     String CVCNumber = CVcEdt.getText().toString();
+                     PaymentId = CardHoldername;
+                     CardPaymentsModal coursepaymentsmodal = new CardPaymentsModal(CardHoldername, CardNumber, ExpiredDate, CVCNumber, PaymentId);
 
-                 databaseReference.addValueEventListener(new ValueEventListener() {
-                     @Override
-                     public void onDataChange(@NonNull  DataSnapshot snapshot) {
-                        databaseReference.child(PaymentId).setValue(coursepaymentsmodal);
-                         Toast.makeText(CardPayActivity.this, "Payment Details Added..", Toast.LENGTH_SHORT ).show();
-                         startActivity(new Intent(CardPayActivity.this, MedicalProfileUserActivity.class));
+                     databaseReference.addValueEventListener(new ValueEventListener() {
+                         @Override
+                         public void onDataChange(@NonNull DataSnapshot snapshot) {
+                             databaseReference.child(PaymentId).setValue(coursepaymentsmodal);
+                             Toast.makeText(CardPayActivity.this, "Payment Details Added..", Toast.LENGTH_SHORT).show();
+                             startActivity(new Intent(CardPayActivity.this, MedicalProfileUserActivity.class));
 
-                     }
+                         }
 
-                     @Override
-                     public void onCancelled(@NonNull  DatabaseError error) {
-                        Toast.makeText(CardPayActivity.this, "error occurs" + error.toString(), Toast.LENGTH_SHORT).show();
+                         @Override
+                         public void onCancelled(@NonNull DatabaseError error) {
+                             Toast.makeText(CardPayActivity.this, "error occurs" + error.toString(), Toast.LENGTH_SHORT).show();
 
-                     }
-                 });
+                         }
+                     });
 
-
+                 }
              }
          });
 

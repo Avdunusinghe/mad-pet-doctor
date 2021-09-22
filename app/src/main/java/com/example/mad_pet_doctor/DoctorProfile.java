@@ -51,7 +51,7 @@ public class DoctorProfile extends AppCompatActivity {
         emailEdt = findViewById(R.id.editText10);
         houseCallYesOrNoGroup = (RadioGroup)findViewById(R.id.radioGroup2);
         updateBtn = findViewById(R.id.auth_loginbtn);
-        deleteBtn = findViewById(R.id.buton2);
+        deleteBtn = findViewById(R.id.button2);
         fireBaseDatabase = FirebaseDatabase.getInstance();
         doctorReg = getIntent().getParcelableExtra("DoctorRegs");
 

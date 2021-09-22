@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.RelativeLayout;
 
 import com.example.model.ScheduleModal;
 import com.google.firebase.database.ChildEventListener;
@@ -25,6 +26,7 @@ public class AppointmentsActivity extends AppCompatActivity {
     private SearchView SearchBar;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
+    private RelativeLayout cardApp;
     private ArrayList<ScheduleModal> scheduleModalArrayList;
     private ScheduleAdapter scheduleAdapter;
 
@@ -35,14 +37,14 @@ public class AppointmentsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.appointments);
         scheduleApp = findViewById(R.id.idAppSchedule);
-        SearchBar = findViewById(R.id.searchView2);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference= firebaseDatabase.getReference("Schedules");
         scheduleModalArrayList = new ArrayList<>();
-        scheduleAdapter = new ScheduleAdapter(scheduleModalArrayList,this, (ScheduleAdapter.CourseClickInterface) this);
+        scheduleAdapter = new ScheduleAdapter(scheduleModalArrayList,this,  this::onCourseClick);
         scheduleApp.setLayoutManager(new LinearLayoutManager(this));
         scheduleApp.setAdapter(scheduleAdapter);
-
+        cardApp = findViewById(R.id.homeCard);
+        getAllschedules();
 
     }
 
@@ -79,8 +81,8 @@ public class AppointmentsActivity extends AppCompatActivity {
     }
 
     public void onCourseClick(int position){
-        Intent i = new Intent(AppointmentsActivity.this , PetBookFormActivity.class);
-        startActivity(i);
+        startActivity(new Intent(AppointmentsActivity.this , PetBookFormActivity.class));
+
 
     }
 }

@@ -7,6 +7,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -47,10 +48,11 @@ public class EnterScheduleActivity extends AppCompatActivity {
         hoslogo = findViewById(R.id.hos_logo1);
         schedulepic = findViewById(R.id.sched_pic);
         schedHeading = findViewById(R.id.sched_name);
-        Id.findViewById(R.id.sched_label111);
+        Id = findViewById(R.id.sched_label111);
         Docname = findViewById(R.id.sched_label2);
         Date = findViewById(R.id.sched_label3);
         Time = findViewById(R.id.sched_label4);
+        IDEdt=findViewById(R.id.editTextTextPersonName4);
         DocNameEdt = findViewById(R.id.editTextTextPersonName6);
         DateEdt = findViewById(R.id.Date);
         TimeEdt = findViewById(R.id.Time);
@@ -108,11 +110,20 @@ public class EnterScheduleActivity extends AppCompatActivity {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Id = IDEdt.getText().toString();
-                String DoctorName = DocNameEdt.getText().toString();
-                String Date = DateEdt.getText().toString();
-                String Time = TimeEdt.getText().toString();
-                ScheduleId = Id;
+                if (TextUtils.isEmpty((IDEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter Id", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((DocNameEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please enter doctor name", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((DateEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please select date", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty((TimeEdt.getText().toString()))) {
+                    Toast.makeText(getApplicationContext(), "Please select time", Toast.LENGTH_SHORT).show();
+                }else {
+                    String Id = IDEdt.getText().toString();
+                    String DoctorName = DocNameEdt.getText().toString();
+                    String Date = DateEdt.getText().toString();
+                    String Time = TimeEdt.getText().toString();
+                    ScheduleId = Id;
 
                 ScheduleModal scheduleModal = new ScheduleModal(Id , DoctorName,Date,Time,ScheduleId);
 
@@ -121,7 +132,7 @@ public class EnterScheduleActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull  DataSnapshot snapshot) {
                         databaseReference.child(ScheduleId).setValue(scheduleModal);
                         Toast.makeText(EnterScheduleActivity.this, "Schedule is  Added..", Toast.LENGTH_SHORT ).show();
-                        startActivity( new Intent(EnterScheduleActivity.this, ScheduleApprovalsActivity.class));
+                        startActivity( new Intent(EnterScheduleActivity.this, MedicalProfileUserActivity.class));
 
 
                     }
@@ -135,11 +146,9 @@ public class EnterScheduleActivity extends AppCompatActivity {
 
 
             }
+        }
         });
-
-
     }
-
     private void updateLabel() {
         String myFormat = "MM/dd/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);

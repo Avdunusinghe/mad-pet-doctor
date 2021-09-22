@@ -25,63 +25,67 @@ import java.util.Map;
 public class UpdateScheduleActivity extends AppCompatActivity {
 
     private ImageView hoslogo , schedulepic;
-    private TextView schedHeading, Docname, Date, Time;
-    private EditText DocNameEdt, DateEdt, TimeEdt;
+    private TextView schedHeading, Docname, Date, Time,Id;
+    private EditText DocNameEdt, DateEdt, TimeEdt,IDEdt;
     private Button UpdateBtn, DeleteBtn;
     private FirebaseDatabase firebaseDatabase ;
     private DatabaseReference databaseReference;
-    private String ScheduleId;
+    private String scheduleId;
     private ScheduleModal scheduleModal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.updateschedule);
+        setContentView(R.layout.enterschedule);
         hoslogo = findViewById(R.id.hos_logo1);
         schedulepic = findViewById(R.id.sched_pic);
         schedHeading = findViewById(R.id.sched_name);
+        Id = findViewById(R.id.sched_label111);
         Docname = findViewById(R.id.sched_label2);
         Date = findViewById(R.id.sched_label3);
         Time = findViewById(R.id.sched_label4);
+        IDEdt=findViewById(R.id.editTextTextPersonName4);
         DocNameEdt = findViewById(R.id.editTextTextPersonName6);
         DateEdt = findViewById(R.id.Date);
         TimeEdt = findViewById(R.id.Time);
         UpdateBtn = findViewById(R.id.bton7);
-        DeleteBtn = findViewById(R.id.bton);
+        DeleteBtn = findViewById(R.id.btondelete);
         firebaseDatabase = FirebaseDatabase.getInstance();
+        scheduleModal = getIntent().getParcelableExtra("Schedule");
 
-
-        scheduleModal = getIntent().getParcelableExtra("Schedules");
         if (scheduleModal != null){
+            IDEdt.setText(scheduleModal.getId());
             DocNameEdt.setText(scheduleModal.getDoctorName());
             DateEdt.setText(scheduleModal.getDate());
             TimeEdt.setText(scheduleModal.getTime());
-            ScheduleId = scheduleModal.getScheduleId();
+            scheduleId = scheduleModal.getScheduleId();
         }
 
         databaseReference = firebaseDatabase.getReference("Schedules");
 
         UpdateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+                String id = IDEdt.getText().toString();
+                String doctorName = DocNameEdt.getText().toString();
+                String date = DateEdt.getText().toString();
+                String time = TimeEdt.getText().toString();
 
-                String DoctorName = DocNameEdt.getText().toString();
-                String Date = DateEdt.getText().toString();
-                String Time = TimeEdt.getText().toString();
-                ScheduleId = DoctorName;
 
                 Map<String, Object> map = new HashMap<>();
-                map.put("DoctorName" , DoctorName );
-                map.put("Date", Date);
-                map.put("Time", Time);
+                map.put("Id", id);
+                map.put("DoctorName" , doctorName );
+                map.put("Date", date);
+                map.put("Time", time);
+                map.put("ScheduleId", scheduleId);
 
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         databaseReference.updateChildren(map);
                         Toast.makeText(UpdateScheduleActivity.this,"Schedules Updated..", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(UpdateScheduleActivity.this, ScheduleApprovalsActivity.class));
+                        startActivity(new Intent(UpdateScheduleActivity.this, MedicalProfileUserActivity.class));
 
                     }
 
@@ -93,18 +97,19 @@ public class UpdateScheduleActivity extends AppCompatActivity {
             }
         });
 
-        DeleteBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DeleteSchedule();
-            }
-        });
+        //DeleteBtn.setOnClickListener(new View.OnClickListener() {
+            //@Override
+            //public void onClick(View v) {
+
+                //DeleteSchedule();
+            //}
+        //});
     }
 
     private void DeleteSchedule(){
         databaseReference.removeValue();
         Toast.makeText(this, "Schedule Deleted..", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(UpdateScheduleActivity.this, ScheduleApprovalsActivity.class));
+        startActivity(new Intent(UpdateScheduleActivity.this, MedicalProfActivity.class));
     }
 }
 

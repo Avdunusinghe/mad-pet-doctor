@@ -106,7 +106,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/calculate"
         android:layout_width="111dp"
         android:layout_height="37dp"
         android:layout_marginBottom="4dp"
@@ -152,7 +152,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button7"
+        app:layout_constraintStart_toEndOf="@+id/calculate"
         app:layout_constraintTop_toBottomOf="@+id/tableRow28"
         app:layout_constraintVertical_bias="0.666" />
 
@@ -453,7 +453,7 @@
         android:layout_width="358dp"
         android:layout_height="24dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintBottom_toTopOf="@+id/calculate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent">

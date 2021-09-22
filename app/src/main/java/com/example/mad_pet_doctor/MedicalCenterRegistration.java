@@ -3,6 +3,7 @@ package com.example.mad_pet_doctor;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -26,6 +27,7 @@ public class MedicalCenterRegistration extends AppCompatActivity {
     private TextInputEditText medicalCenterNoEdt, nameEdt, addressEdt, telNoEdt, emailEdt;
     private ImageButton medicalPicBtn;
     private Button submitBtn;
+    ProgressDialog spinner;
     private FirebaseDatabase fireBaseDatabase;
     private DatabaseReference databaseReference;
     private String medicalCenterId;
@@ -41,16 +43,22 @@ public class MedicalCenterRegistration extends AppCompatActivity {
         telNoEdt = findViewById(R.id.editText3);
         emailEdt = findViewById(R.id.editText4);
         submitBtn = findViewById(R.id.button3);
+        spinner = new ProgressDialog(MedicalCenterRegistration.this);
         fireBaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = fireBaseDatabase.getReference("MedicalCenter");
 
-        ImageButton medicalPicBtn = (ImageButton)findViewById(R.id.imageButton);
+        ImageButton medicalPicBtn = (ImageButton) findViewById(R.id.imageButton);
         medicalPicBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Upload a picture.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +81,10 @@ public class MedicalCenterRegistration extends AppCompatActivity {
                     String address = addressEdt.getText().toString();
                     String telNo = telNoEdt.getText().toString();
                     String email = emailEdt.getText().toString();
+                    spinner.setTitle("Register New Medical Center");
+                    spinner.setMessage("Please Wait while Validate the Details");
+                    spinner.setCanceledOnTouchOutside(false);
+                    spinner.show();
                     medicalCenterId = name;
 
                     MedicalCenterReg MedicalCenterReg = new MedicalCenterReg(medicalCenterId, medicalCenterNo, name, address, telNo, email);
@@ -81,41 +93,41 @@ public class MedicalCenterRegistration extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             databaseReference.child(medicalCenterId).setValue(MedicalCenterReg);
                             Toast.makeText(MedicalCenterRegistration.this, "Medical Center Registered Successfully.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(MedicalCenterRegistration.this,MainActivity.class));
+                            startActivity(new Intent(MedicalCenterRegistration.this, MainActivity.class));
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
-                            Toast.makeText(MedicalCenterRegistration.this, "Error occurred. Please Try again."+error.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MedicalCenterRegistration.this, "Error occurred. Please Try again." + error.toString(), Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
             }
-
-            private boolean validateEmail() {
-                String email = emailEdt.getText().toString();
-                String EmalFormat = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-
-                if(Pattern.compile(EmalFormat).matcher(email).matches())
-                {
-                    return true;
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Please enter valid email", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-            }
-
-            private boolean validateTelNo() {
-                String phone = telNoEdt.getText().toString();
-
-                if (phone.length() == 10) {
-                    return true;
-                } else {
-                    Toast.makeText(getApplicationContext(), "Please enter valid phone number", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-            }
         });
+    }
+
+    private boolean validateEmail() {
+        String email = emailEdt.getText().toString();
+        String EmalFormat = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+        if(Pattern.compile(EmalFormat).matcher(email).matches())
+        {
+            return true;
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Please enter valid email", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+    private boolean validateTelNo() {
+        String phone = telNoEdt.getText().toString();
+
+        if (phone.length() == 10) {
+            return true;
+        } else {
+            Toast.makeText(getApplicationContext(), "Please enter valid phone number", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 }

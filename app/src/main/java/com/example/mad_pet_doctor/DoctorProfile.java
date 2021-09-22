@@ -3,6 +3,7 @@ package com.example.mad_pet_doctor;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -31,7 +32,8 @@ public class DoctorProfile extends AppCompatActivity {
     private ImageButton docPicBtn;
     private RadioGroup houseCallYesOrNoGroup;
     private RadioButton houseCallYesOrNoBtn;
-    private Button updateBtn,deleteBtn;
+    Button updateBtn,deleteBtn;
+    ProgressDialog spinner;
     private FirebaseDatabase fireBaseDatabase;
     private DatabaseReference databaseReference;
     private String doctorId;
@@ -49,11 +51,12 @@ public class DoctorProfile extends AppCompatActivity {
         addressEdt = findViewById(R.id.editText8);
         telNoEdt = findViewById(R.id.editText9);
         emailEdt = findViewById(R.id.editText10);
-        houseCallYesOrNoGroup = (RadioGroup)findViewById(R.id.radioGroup2);
+        houseCallYesOrNoGroup = (RadioGroup) findViewById(R.id.radioGroup2);
         updateBtn = findViewById(R.id.auth_loginbtn);
         deleteBtn = findViewById(R.id.buton2);
+        spinner = new ProgressDialog(DoctorProfile.this);
         fireBaseDatabase = FirebaseDatabase.getInstance();
-        doctorReg = getIntent().getParcelableExtra("DoctorRegs");
+        doctorReg = getIntent().getParcelableExtra("Doctor");
 
         if (doctorReg != null) {
             fullNameEdt.setText(doctorReg.getFullName());
@@ -66,15 +69,18 @@ public class DoctorProfile extends AppCompatActivity {
             doctorId = doctorReg.getDoctorId();
         }
 
-        ImageButton docPicBtn = (ImageButton)findViewById(R.id.imageButton8);
+        ImageButton docPicBtn = (ImageButton) findViewById(R.id.imageButton8);
         docPicBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "Upload a picture.", Toast.LENGTH_SHORT).show();
             }
         });
-
-        databaseReference = fireBaseDatabase.getReference("DoctorReg").child(doctorId);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        databaseReference = fireBaseDatabase.getReference("Doctor").child(doctorId);
 
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,10 +109,14 @@ public class DoctorProfile extends AppCompatActivity {
                     String address = addressEdt.getText().toString();
                     String telNo = telNoEdt.getText().toString();
                     String email = emailEdt.getText().toString();
+                    spinner.setTitle("Update Doctor");
+                    spinner.setMessage("Please Wait while Validate the Details");
+                    spinner.setCanceledOnTouchOutside(false);
+                    spinner.show();
 
-                    int selectedValue=houseCallYesOrNoGroup.getCheckedRadioButtonId();
-                    houseCallYesOrNoBtn=(RadioButton)findViewById(selectedValue);
-                    Toast.makeText(DoctorProfile.this,houseCallYesOrNoBtn.getText(),Toast.LENGTH_SHORT).show();
+                    int selectedValue = houseCallYesOrNoGroup.getCheckedRadioButtonId();
+                    houseCallYesOrNoBtn = (RadioButton) findViewById(selectedValue);
+                    Toast.makeText(DoctorProfile.this, houseCallYesOrNoBtn.getText(), Toast.LENGTH_SHORT).show();
 
                     Map<String, Object> map = new HashMap<>();
                     map.put("fullName", fullName);
@@ -157,7 +167,6 @@ public class DoctorProfile extends AppCompatActivity {
                 }
             }
         });
-
 
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override

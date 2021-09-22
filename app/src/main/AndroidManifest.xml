@@ -14,9 +14,22 @@
             android:exported="true" />
         <activity android:name=".MainActivity" />
         <activity android:name=".AdminHome" />
+        <activity android:name=".BlogMenu"/>
+        <activity android:name=".BlogContent"/>
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".CreateAccount" />
-        <activity android:name=".AuthActivity">
+        <activity android:name=".AuthActivity"/>
+        <activity android:name=".DoctoreRegistration"/>
+        <activity android:name=".MedicalCenterRegistration"/>
+        <activity android:name=".MyAppointmentReport"/>
+        <activity android:name=".MyAppointmnt"/>
+        <activity android:name=".ChatWithDoc"/>
+        <activity android:name=".ChatWindow"/>
+        <activity android:name=".HealthTips"/>
+        <activity android:name=".Doctors"/>
+        <activity android:name=".DoctorProfile"/>
+        <activity android:name=".Dog"/>
+        <activity android:name=".DailyReport">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

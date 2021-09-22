@@ -19,6 +19,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.net.HttpCookie;
+import java.security.cert.PolicyNode;
+
 public class AppointmentDetailsActivity extends AppCompatActivity {
 
     private ImageView Hoslogo ;
@@ -28,10 +31,12 @@ public class AppointmentDetailsActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private String BookingId;
     private BookingModal bookingModal;
+    private ValueEventListener valueEventListener;
+
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.appointmentdetails);
         Hoslogo = findViewById(R.id.hos_logo1);
@@ -42,8 +47,8 @@ public class AppointmentDetailsActivity extends AppCompatActivity {
         PayDetails = findViewById(R.id.app_label5);
         AppFee = findViewById(R.id.app_label6);
         ServiceCharge = findViewById(R.id.app_label7);
-        TotalFee  = findViewById(R.id.app_label8);
-        input1 =findViewById(R.id.input_label1);
+        TotalFee = findViewById(R.id.app_label8);
+        input1 = findViewById(R.id.input_label1);
         input2 = findViewById(R.id.input_label2);
         input3 = findViewById(R.id.input_label3);
         input4 = findViewById(R.id.input_label5);
@@ -53,28 +58,47 @@ public class AppointmentDetailsActivity extends AppCompatActivity {
         confirmBtn = findViewById(R.id.bton17);
         firebaseDatabase = FirebaseDatabase.getInstance();
 
-
         //retrieve
-
         bookingModal = getIntent().getParcelableExtra("Bookings");
-        if(bookingModal != null){
-            input1.setText(bookingModal.getAnimalName());
-            input2.setText(bookingModal.getOwnerName());
-            input3.setText(bookingModal.getAppointmentDate());
-            input4.setText(bookingModal.getAppointmentTime());
-            BookingId = bookingModal.getBookingId();
-        }
 
-        databaseReference = firebaseDatabase.getReference("Boookings").child(BookingId);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+
+                DataSnapshot dataSnapshot = null;
+                if (dataSnapshot != null) {
+                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+
+                        BookingModal bookingModal;
+                        bookingModal = dataSnapshot.getValue(BookingModal.class);
+
+                        String petname = bookingModal.getAnimalName();
+                        String ownername = bookingModal.getOwnerName();
+                        String appdate = bookingModal.getAppointmentDate();
+                        String apptime = bookingModal.getAppointmentTime();
+
+                        input1.setText(petname);
+                        input2.setText(ownername);
+                        input3.setText(appdate);
+                        input4.setText(apptime);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(AppointmentDetailsActivity.this, "Error occurs to booking" + error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(AppointmentDetailsActivity.this, CardPayActivity.class);
-                startActivity(i);
+                startActivity(new Intent(AppointmentDetailsActivity.this, CardPayActivity.class));
+
             }
         });
 
+    }}
 
-    }
-}

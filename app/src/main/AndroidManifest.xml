@@ -22,16 +22,18 @@
 
         </activity>
         <activity android:name=".AppointmentsActivity">
-          <intent-filter>
-              <action android:name="android.intent.action.MAIN"/>
-              <category android:name="android.intent.category.LAUNCHER"/>
-          </intent-filter>
+
         </activity>
         <activity android:name=".BookingConfirmationActivity">
 
         </activity>
         <activity android:name=".ContactUsActivity"></activity>
-        <activity android:name=".AppointmentDetailsActivity"></activity>
+        <activity android:name=".AppointmentDetailsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".MedicalProfileUserActivity"></activity>
         <activity android:name=".CardPayActivity"></activity>
         <activity android:name=".DailyReportsActivity"></activity>

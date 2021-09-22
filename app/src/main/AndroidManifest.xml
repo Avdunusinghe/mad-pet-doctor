@@ -27,7 +27,6 @@
         <activity android:name=".BlogContent"/>
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".CreateAccount" />
-<<<<<<< HEAD
         <activity android:name=".AuthActivity"/>
         <activity android:name=".MyAppointmentReport"/>
         <activity android:name=".ChatWithDoc"/>
@@ -39,10 +38,8 @@
         <activity android:name=".MyAppointmnt"/>
         <activity android:name=".DoctorProfile"/>
         <activity android:name=".MedicalCenterRegistration"/>
-        <activity android:name=".DoctoreRegistration">
-=======
+        <activity android:name=".DoctoreRegistration"/>
         <activity android:name=".DoctorListActivity">
->>>>>>> 62a83ad4c2a1a39dee00efdb7cb5a3e63c486533
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

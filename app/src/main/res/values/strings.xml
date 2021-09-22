@@ -519,6 +519,12 @@
     <string name="cont_label2">Email</string>
     <string name="cont_label3">message</string>
     <string name="sched_pic">Schedule Pic</string>
+    <string name="medicalcenter_update_name_editText" />
+    <string name="medicalcenter_update_number_editText" />
+    <string name="medicalcenter_update_address_editText" />
+    <string name="mc_update_mobile_et" />
+    <string name="mc_update_email_et" />
+    <string name="mc_up_number_et" />
 
 
 </resources>

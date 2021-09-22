@@ -8,7 +8,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.list_view.MedicalCenterListGenarator;
@@ -94,6 +97,34 @@ public class MedicalCenterList extends AppCompatActivity {
         LayoutInflater inflater = getLayoutInflater();
         final View dialogView = inflater.inflate(R.layout.activity_medical_center_dialog, null);
 
+        //final Spinner spinnerGenre = (Spinner) dialogView.findViewById(R.id.spinner_medical_center);
+
+        final EditText editTextMedicalCenterName = (EditText) dialogView.findViewById(R.id.mc_up_name_et);
+        final EditText editTextMedicalCenterNumber = (EditText) dialogView.findViewById(R.id.mc_up_number_et);
+        final EditText editTextMedicalCenterAddress = (EditText) dialogView.findViewById(R.id.mc_up_address_et);
+        final EditText editTextMedicalCenterMobileNumber = (EditText) dialogView.findViewById(R.id.mc_up_mobile_et);
+        final EditText editTextMedicalCenterEmail = (EditText) dialogView.findViewById(R.id.mc_up_email_et);
+
+        final Button buttonUpdateMedicalCenter = (Button) dialogView.findViewById(R.id.buttonUpdateMc);
+        final Button buttonDeleteMedicalCenter = (Button) dialogView.findViewById(R.id.buttonDeleteMc);
+
+        dialogBuilder.setTitle(name);
+
+        final AlertDialog alertDialog = dialogBuilder.create();
+        alertDialog.show();
+
+
+        buttonUpdateMedicalCenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String medicalCenterName = editTextMedicalCenterName.toString().toString().trim();
+                String medicalCenterNumber = editTextMedicalCenterNumber.toString().toString().trim();
+                String medicalCenterAddress = editTextMedicalCenterAddress.toString().toString().trim();
+                String medicalCenterMobileNumber = editTextMedicalCenterMobileNumber.toString().toString().trim();
+                String medicalCenterEmail = editTextMedicalCenterEmail.toString().toString().trim();
+            }
+        });
 
 
     }

@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -46,6 +48,24 @@ public class MedicalCenterList extends AppCompatActivity {
         db = FirebaseDatabase.getInstance().getReference("MedicalCenter");
 
         medicalCenterView = (ListView)findViewById(R.id.medical_centers_listview);
+
+        medicalCenterView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int id, long l) {
+                MedicalCenterReg medicalCenterReg = medicalCenterList.get(id);
+
+                showUpdateDeleteMedicalCenterDialog(medicalCenterReg.getMedicalCenterId(),
+                        medicalCenterReg.getMedicalCenterNo(),
+                        medicalCenterReg.getName(),
+                        medicalCenterReg.getAddress(),
+                        medicalCenterReg.getTelNo(),
+                        medicalCenterReg.getEmail());
+
+                return true;
+
+
+            }
+        });
     }
 
     @Override
@@ -123,6 +143,12 @@ public class MedicalCenterList extends AppCompatActivity {
                 String medicalCenterAddress = editTextMedicalCenterAddress.toString().toString().trim();
                 String medicalCenterMobileNumber = editTextMedicalCenterMobileNumber.toString().toString().trim();
                 String medicalCenterEmail = editTextMedicalCenterEmail.toString().toString().trim();
+
+                if(!TextUtils.isEmpty(medicalCenterName)){
+
+                    updateMedicalCenter(id,medicalCenterName, medicalCenterNumber, medicalCenterAddress, medicalCenterMobileNumber, medicalCenterEmail);
+                    alertDialog.dismiss();
+                }
             }
         });
 

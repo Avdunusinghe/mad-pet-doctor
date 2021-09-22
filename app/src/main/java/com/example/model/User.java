@@ -2,7 +2,7 @@ package com.example.model;
 
 public class User {
 
-    private int id;
+    private String id;
     private String name;
     private String email;
     private String phoneNumber;
@@ -11,7 +11,7 @@ public class User {
     public User() {
     }
 
-    public User(int id, String name, String email, String phoneNumber, String password) {
+    public User(String id, String name, String email, String phoneNumber, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -19,7 +19,7 @@ public class User {
         this.password = password;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -39,7 +39,7 @@ public class User {
         return password;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

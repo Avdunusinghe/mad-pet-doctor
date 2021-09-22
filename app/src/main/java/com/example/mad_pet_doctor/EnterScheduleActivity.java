@@ -30,8 +30,8 @@ import java.util.Locale;
 public class EnterScheduleActivity extends AppCompatActivity {
 
     private ImageView hoslogo , schedulepic;
-    private TextView schedHeading, Docname, Date, Time;
-    private EditText DocNameEdt, DateEdt, TimeEdt;
+    private TextView schedHeading, Docname, Date, Time,Id;
+    private EditText IDEdt, DocNameEdt, DateEdt, TimeEdt;
     private Button submitBtn;
     private FirebaseDatabase firebaseDatabase ;
     private DatabaseReference databaseReference;
@@ -47,6 +47,7 @@ public class EnterScheduleActivity extends AppCompatActivity {
         hoslogo = findViewById(R.id.hos_logo1);
         schedulepic = findViewById(R.id.sched_pic);
         schedHeading = findViewById(R.id.sched_name);
+        Id.findViewById(R.id.sched_label111);
         Docname = findViewById(R.id.sched_label2);
         Date = findViewById(R.id.sched_label3);
         Time = findViewById(R.id.sched_label4);
@@ -106,13 +107,14 @@ public class EnterScheduleActivity extends AppCompatActivity {
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+                String Id = IDEdt.getText().toString();
                 String DoctorName = DocNameEdt.getText().toString();
                 String Date = DateEdt.getText().toString();
                 String Time = TimeEdt.getText().toString();
-                ScheduleId = DoctorName;
+                ScheduleId = Id;
 
-                ScheduleModal scheduleModal = new ScheduleModal(DoctorName,Date,Time,ScheduleId);
+                ScheduleModal scheduleModal = new ScheduleModal(Id , DoctorName,Date,Time,ScheduleId);
 
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override

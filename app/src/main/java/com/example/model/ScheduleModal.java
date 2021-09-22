@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ScheduleModal implements Parcelable {
+    private String Id;
     private String DoctorName;
     private String Date;
     private String Time;
@@ -13,7 +14,8 @@ public class ScheduleModal implements Parcelable {
 
     }
 
-    public ScheduleModal(String doctorName, String date, String time, String scheduleId) {
+    public ScheduleModal(String id, String doctorName, String date, String time, String scheduleId) {
+        Id = id;
         DoctorName = doctorName;
         Date = date;
         Time = time;
@@ -21,6 +23,7 @@ public class ScheduleModal implements Parcelable {
     }
 
     protected ScheduleModal(Parcel in) {
+        Id = in.readString();
         DoctorName = in.readString();
         Date = in.readString();
         Time = in.readString();
@@ -38,6 +41,14 @@ public class ScheduleModal implements Parcelable {
             return new ScheduleModal[size];
         }
     };
+
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
+    }
 
     public String getDoctorName() {
         return DoctorName;
@@ -78,6 +89,7 @@ public class ScheduleModal implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(Id);
         parcel.writeString(DoctorName);
         parcel.writeString(Date);
         parcel.writeString(Time);

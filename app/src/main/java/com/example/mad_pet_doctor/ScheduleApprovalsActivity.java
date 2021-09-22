@@ -27,7 +27,7 @@ public class ScheduleApprovalsActivity extends AppCompatActivity {
 
     private ImageView HosLogo;
     private TextView Heading, DocNameEdt, DateEdt, TimeEdt, Column4, Column5;
-    private FloatingActionButton AddBtn;
+    //private FloatingActionButton AddBtn;
     private TableLayout Table;
     private ImageButton UpdateBtn, DeleteBtn;
     private FirebaseDatabase firebaseDatabase;
@@ -50,7 +50,7 @@ public class ScheduleApprovalsActivity extends AppCompatActivity {
         TimeEdt.findViewById(R.id.apptable4);
         Column4.findViewById(R.id.apptable5);
         Column5.findViewById(R.id.apptable6);
-        AddBtn.findViewById(R.id.addbton);
+        //AddBtn.findViewById(R.id.addbton);
         UpdateBtn.findViewById(R.id.icondell);
         DeleteBtn.findViewById(R.id.icondel1);
         firebaseDatabase = FirebaseDatabase.getInstance();

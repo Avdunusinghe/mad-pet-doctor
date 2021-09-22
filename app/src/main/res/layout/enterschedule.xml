@@ -33,16 +33,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sched_pic" />
 
+
     <TextView
         android:id="@+id/sched_label2"
         android:layout_width="116dp"
         android:layout_height="34dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/sched_label2"
         android:fontFamily="sans-serif-black"
         android:text="Doctor Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sched_label111" />
+
+    <TextView
+        android:id="@+id/sched_label111"
+        android:layout_width="116dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/sched_label2"
+        android:fontFamily="sans-serif-black"
+        android:text="Schedule Id"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sched_name" />
 
@@ -50,14 +64,14 @@
         android:id="@+id/sched_label3"
         android:layout_width="125dp"
         android:layout_height="33dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="68dp"
         android:contentDescription="@string/sched_label3"
         android:fontFamily="sans-serif-black"
         android:text="Date"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sched_label2" />
+        app:layout_constraintTop_toBottomOf="@+id/sched_label111" />
 
     <TextView
         android:id="@+id/sched_label4"
@@ -121,19 +135,19 @@
         app:layout_constraintStart_toStartOf="@+id/toolbar3"
         app:layout_constraintTop_toTopOf="@+id/chip9" />
 
+
     <com.google.android.material.chip.Chip
         android:id="@+id/chip9"
         android:layout_width="45dp"
         android:layout_height="25dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/imageView56"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <ImageView
         android:id="@+id/hos_logo1"
@@ -190,17 +204,15 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName6"
-        android:layout_width="193dp"
-        android:layout_height="44dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_width="190dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/sched_label2"
-        app:layout_constraintTop_toBottomOf="@+id/sched_name" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
 
     <EditText
         android:id="@+id/Date"
@@ -212,7 +224,7 @@
         android:ems="10"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.833"
         app:layout_constraintStart_toEndOf="@+id/sched_label3"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6" />
 
@@ -224,9 +236,21 @@
         android:ems="10"
         android:inputType="time"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toEndOf="@+id/sched_label4"
         app:layout_constraintTop_toBottomOf="@+id/Date" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="208dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sched_name" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

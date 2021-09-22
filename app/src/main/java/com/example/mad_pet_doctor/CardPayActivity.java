@@ -71,7 +71,7 @@ public class CardPayActivity extends AppCompatActivity {
                      public void onDataChange(@NonNull  DataSnapshot snapshot) {
                         databaseReference.child(PaymentId).setValue(coursepaymentsmodal);
                          Toast.makeText(CardPayActivity.this, "Payment Details Added..", Toast.LENGTH_SHORT ).show();
-                         startActivity(new Intent(CardPayActivity.this, ActivityMainSideBar.class));
+                         startActivity(new Intent(CardPayActivity.this, MedicalProfileUserActivity.class));
 
                      }
 

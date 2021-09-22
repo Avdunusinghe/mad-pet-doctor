@@ -375,6 +375,10 @@
     <string name="usernameId">usernameId</string>
 
 
+
+
+
+
     <!-- Nawanjana MH -->
     <string name="mhn">MHN</string>
     <string name="pet_doc_2">pet_doc_2</string>
@@ -501,8 +505,9 @@
     <string name="cont_label2">Email</string>
     <string name="cont_label3">message</string>
     <string name="sched_pic">Schedule Pic</string>
-    <string name="icon1" />
-    <string name="bton">bton</string>
+    <string name="resetPassword_authTextView">resetPassword_authTextView</string>
+    <string name="resetPassword_emailEditText">resetPassword_emailEditText</string>
+    <string name="createAcc_confirmPasswordText">createAcc_confirmPasswordText</string>
 
 
 </resources>

@@ -1,11 +1,15 @@
 package com.example.mad_pet_doctor;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.list_view.MedicalCenterListGenarator;
 import com.example.model.DoctorReg;
@@ -67,5 +71,30 @@ public class MedicalCenterList extends AppCompatActivity {
 
             }
         });
+    }
+
+    public boolean updateMedicalCenter(String id,String medicalCenterNumber, String name, String address, String mobileNumber, String email){
+
+        db = FirebaseDatabase.getInstance().getReference("MedicalCenter").child(id);
+
+        MedicalCenterReg medicalCenterReg = new MedicalCenterReg(id,name,medicalCenterNumber,address,mobileNumber,email);
+        db.setValue(medicalCenterReg);
+
+        Toast.makeText(getApplicationContext(),
+                "MedicalCenter Updated",
+                Toast.LENGTH_LONG)
+                .show();
+
+        return true;
+    }
+
+    private void showUpdateDeleteMedicalCenterDialog(final String id,String medicalCenterNumber, String name, String address, String mobileNumber, String email){
+
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        final View dialogView = inflater.inflate(R.layout.activity_medical_center_dialog, null);
+
+
+
     }
 }

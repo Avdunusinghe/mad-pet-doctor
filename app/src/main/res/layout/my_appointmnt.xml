@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MyAppointmnt">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -82,77 +82,83 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView55" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/confirm1"
         android:layout_width="111dp"
         android:layout_height="37dp"
         android:layout_marginBottom="3dp"
         android:text="@string/confirm"
+        android:onClick="confirm1"
         app:backgroundTint="#1B35C5"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
+        app:layout_constraintEnd_toStartOf="@+id/cancel1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/confirm2"
         android:layout_width="111dp"
         android:layout_height="37dp"
         android:layout_marginBottom="4dp"
         android:text="@string/confirm"
+        android:onClick="confirm2"
         app:backgroundTint="#1B35C5"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
-        app:layout_constraintEnd_toStartOf="@+id/button8"
+        app:layout_constraintEnd_toStartOf="@+id/cancel2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/calculate"
+        android:id="@+id/confirm3"
         android:layout_width="111dp"
         android:layout_height="37dp"
         android:layout_marginBottom="4dp"
         android:text="@string/confirm"
+        android:onClick="confirm3"
         app:backgroundTint="#1B35C5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button9"
+        app:layout_constraintEnd_toStartOf="@+id/cancel3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/cancel1"
         android:layout_width="111dp"
         android:layout_height="37dp"
         android:text="@string/cancel"
+        android:onClick="cancel1"
         app:backgroundTint="#F40B0B"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button5"
+        app:layout_constraintStart_toEndOf="@+id/confirm1"
         app:layout_constraintTop_toBottomOf="@+id/tableRow19"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/cancel2"
         android:layout_width="111dp"
         android:layout_height="37dp"
         android:text="@string/cancel"
+        android:onClick="cancel2"
         app:backgroundTint="#F40B0B"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/confirm2"
         app:layout_constraintTop_toBottomOf="@+id/tableRow24"
         app:layout_constraintVertical_bias="0.75" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/cancel3"
         android:layout_width="111dp"
         android:layout_height="37dp"
         android:text="@string/cancel"
+        android:onClick="cancel3"
         app:backgroundTint="#F40B0B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/calculate"
+        app:layout_constraintStart_toEndOf="@+id/confirm3"
         app:layout_constraintTop_toBottomOf="@+id/tableRow28"
         app:layout_constraintVertical_bias="0.666" />
 
@@ -172,6 +178,11 @@
             android:text="@string/patient_name"
             android:textColor="#000000"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="227dp"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/textView36"
@@ -201,6 +212,11 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textView15"
+            android:layout_width="203dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:id="@+id/textView38"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -228,6 +244,11 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textView11"
+            android:layout_width="227dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:id="@+id/textView31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -252,6 +273,11 @@
             android:text="@string/medicalCenter1"
             android:textColor="#000000"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="197dp"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/textView39"
@@ -281,6 +307,11 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textView12"
+            android:layout_width="194dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:id="@+id/textView42"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -308,6 +339,11 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textView16"
+            android:layout_width="191dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:id="@+id/textView81"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -332,6 +368,11 @@
             android:text="@string/date"
             android:textColor="#000000"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="259dp"
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/textView40"
@@ -361,6 +402,11 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textView13"
+            android:layout_width="258dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:id="@+id/textView79"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -388,6 +434,11 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textView17"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:id="@+id/textView83"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -400,7 +451,7 @@
         android:id="@+id/tableRow19"
         android:layout_width="361dp"
         android:layout_height="27dp"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/confirm1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableRow18"
@@ -415,11 +466,17 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textView10"
+            android:layout_width="271dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:id="@+id/textView41"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_8_00_p_m"
             android:textColor="#000000" />
+
     </TableRow>
 
     <TableRow
@@ -427,7 +484,7 @@
         android:layout_width="361dp"
         android:layout_height="31dp"
         android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/confirm2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent">
@@ -441,11 +498,17 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textView14"
+            android:layout_width="268dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:id="@+id/textView80"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_8_10_p_m"
             android:textColor="#000000" />
+
     </TableRow>
 
     <TableRow
@@ -453,7 +516,7 @@
         android:layout_width="358dp"
         android:layout_height="24dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/calculate"
+        app:layout_constraintBottom_toTopOf="@+id/confirm3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent">
@@ -467,11 +530,17 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textView18"
+            android:layout_width="266dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:id="@+id/textView84"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/_8_20_p_m"
             android:textColor="#000000" />
+
     </TableRow>
 
     <EditText

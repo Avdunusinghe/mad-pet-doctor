@@ -37,11 +37,14 @@ public class UserList extends ArrayAdapter<User> {
 
         View listViewItem = inflater.inflate(R.layout.activity_user_list_details, null, true);
 
-        TextView textViewName = (TextView) listViewItem.findViewById(R.id.user_name_list_textview);
+        TextView textViewName = (TextView)
+                listViewItem.findViewById(R.id.user_name_list_textview);
 
-        TextView textViewEmail = (TextView) listViewItem.findViewById(R.id.user_email_list_textview);
+        TextView textViewEmail = (TextView)
+                listViewItem.findViewById(R.id.user_email_list_textview);
 
-        TextView textViewMobileNumber = (TextView) listViewItem.findViewById(R.id.user_phone_list_textview);
+        TextView textViewMobileNumber = (TextView)
+                listViewItem.findViewById(R.id.user_phone_list_textview);
 
         User user = users.get(position);
 

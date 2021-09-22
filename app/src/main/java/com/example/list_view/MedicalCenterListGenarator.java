@@ -34,13 +34,17 @@ public class MedicalCenterListGenarator extends ArrayAdapter<MedicalCenterReg> {
 
         View listViewItem = inflater.inflate(R.layout.activity_medical_center_list_detail, null, true);
 
-        TextView textViewMedicalCenterName = (TextView) listViewItem.findViewById(R.id.medicalcenter_list_name_textview);
+        TextView textViewMedicalCenterName = (TextView)
+                listViewItem.findViewById(R.id.medicalcenter_list_name_textview);
 
-        TextView textViewMedicalCenterAddress = (TextView) listViewItem.findViewById(R.id.medicalcenter_list_address_textview);
+        TextView textViewMedicalCenterAddress = (TextView)
+                listViewItem.findViewById(R.id.medicalcenter_list_address_textview);
 
-        TextView textViewMedicalCenterEmail = (TextView) listViewItem.findViewById(R.id.medicalcenter_list_mobilenumber_textview);
+        TextView textViewMedicalCenterEmail = (TextView)
+                listViewItem.findViewById(R.id.medicalcenter_list_mobilenumber_textview);
 
-        TextView textViewMedicalCenterMobileNumber = (TextView) listViewItem.findViewById(R.id.medicalcenter_list_email_textview);
+        TextView textViewMedicalCenterMobileNumber = (TextView)
+                listViewItem.findViewById(R.id.medicalcenter_list_email_textview);
 
         MedicalCenterReg medicalCenter = medicalCenters.get(position);
 

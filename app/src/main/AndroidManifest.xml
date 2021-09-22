@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Madpetdoctor">
         <activity
+            android:name=".DoctorListDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".UserListDetailsActivity"
             android:exported="true" />
         <activity

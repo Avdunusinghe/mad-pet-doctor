@@ -6,113 +6,109 @@
     android:layout_height="match_parent"
     tools:context=".MedicalCenterDialogActivity">
 
+
     <EditText
-        android:id="@+id/editTextName"
+        android:id="@+id/mc_up_name_et"
         android:layout_width="307dp"
         android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:hint="Enter name"
+        android:layout_marginTop="88dp"
+        android:hint="@string/medicalcenter_update_name_editText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/spinnerGenres" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName8"
-        android:layout_width="300dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
-
-
-    <Spinner
-        android:id="@+id/spinnerGenres"
-        android:layout_width="371dp"
-        android:layout_height="514dp"
-        android:layout_below="@id/editTextName"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.31"
-        tools:ignore="SpeakableTextPresentCheck"></Spinner>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/spinnerGenres"
-        app:layout_constraintStart_toStartOf="@+id/spinnerGenres"
         tools:ignore="MissingConstraints">
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/buttonUpdateArtist"
+        android:id="@+id/buttonUpdateMc"
         android:layout_width="136dp"
         android:layout_height="48dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="48dp"
         android:layout_weight="1"
         android:text="Update"
-        app:layout_constraintStart_toStartOf="@+id/spinnerGenres"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName12" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mc_up_email_et"
+        app:layout_constraintVertical_bias="0.136" />
 
     <Button
-        android:id="@+id/buttonDeleteArtist"
+        android:id="@+id/buttonDeleteMc"
         android:layout_width="139dp"
         android:layout_height="48dp"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
         android:layout_weight="1"
         android:text="Delete"
-        app:layout_constraintEnd_toEndOf="@+id/spinnerGenres"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName12" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mc_up_email_et"
+        app:layout_constraintVertical_bias="0.136" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName9"
+        android:id="@+id/mc_up_address_et"
         android:layout_width="299dp"
         android:layout_height="49dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/medicalcenter_update_address_editText"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName8" />
+        app:layout_constraintTop_toBottomOf="@+id/mc_up_number_et"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName10"
+        android:id="@+id/mc_up_mobile_et"
         android:layout_width="294dp"
         android:layout_height="49dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/mc_update_mobile_et"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName9" />
+        app:layout_constraintTop_toBottomOf="@+id/mc_up_address_et"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName12"
+        android:id="@+id/mc_up_email_et"
         android:layout_width="285dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="@string/mc_update_email_et"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName10" />
+        app:layout_constraintTop_toBottomOf="@+id/mc_up_mobile_et"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/mc_up_number_et"
+        android:layout_width="288dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/mc_up_number_et"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mc_up_name_et"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

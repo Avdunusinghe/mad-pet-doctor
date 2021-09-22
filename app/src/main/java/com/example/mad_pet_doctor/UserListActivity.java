@@ -41,8 +41,17 @@ public class UserListActivity extends AppCompatActivity {
 
         dbRef = FirebaseDatabase.getInstance().getReference("User");
 
-        //userListView = (ListView)findViewById(R.id.user_listview);
+        userListView = (ListView)findViewById(R.id.user_listview);
 
+
+
+
+
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
 
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -56,6 +65,8 @@ public class UserListActivity extends AppCompatActivity {
                     userList.add(users);
                 }
 
+                UserList userListAdapter = new UserList(UserListActivity.this,userList);
+                userListView.setAdapter(userListAdapter);
 
 
 
@@ -66,5 +77,10 @@ public class UserListActivity extends AppCompatActivity {
 
             }
         });
+
     }
+
+
+
 }
+

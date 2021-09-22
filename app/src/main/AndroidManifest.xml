@@ -19,7 +19,7 @@
         <activity android:name=".AdminHome" />
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".CreateAccount" />
-        <activity android:name=".DoctoreRegistration">
+        <activity android:name=".UserListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

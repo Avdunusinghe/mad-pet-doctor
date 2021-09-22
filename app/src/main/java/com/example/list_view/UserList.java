@@ -35,21 +35,21 @@ public class UserList extends ArrayAdapter<User> {
 
         LayoutInflater inflater = context.getLayoutInflater();
 
-        View listViewItem = inflater.inflate(R.layout.activity_user_list, null, true);
+        View listViewItem = inflater.inflate(R.layout.activity_user_list_details, null, true);
 
-        //TextView textViewName = (TextView) listViewItem.findViewById(R.id.user_name_list_textview);
+        TextView textViewName = (TextView) listViewItem.findViewById(R.id.user_name_list_textview);
 
-       // TextView textViewEmail = (TextView) listViewItem.findViewById(R.id.user_email_list_textview);
+        TextView textViewEmail = (TextView) listViewItem.findViewById(R.id.user_email_list_textview);
 
-       // TextView textViewMobileNumber = (TextView) listViewItem.findViewById(R.id.user_phone_list_textview);
+        TextView textViewMobileNumber = (TextView) listViewItem.findViewById(R.id.user_phone_list_textview);
 
         User user = users.get(position);
 
-        //textViewName.setText(user.getName());
+        textViewName.setText(user.getName());
 
-        //textViewEmail.setText(user.getEmail());
+        textViewEmail.setText(user.getEmail());
 
-       // textViewMobileNumber.setText(user.getPhoneNumber());
+        textViewMobileNumber.setText(user.getPhoneNumber());
 
         return listViewItem;
     }

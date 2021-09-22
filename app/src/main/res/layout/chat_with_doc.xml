@@ -85,8 +85,8 @@
 
     <ImageView
         android:id="@+id/imageView40"
-        android:layout_width="408dp"
-        android:layout_height="588dp"
+        android:layout_width="406dp"
+        android:layout_height="762dp"
         android:contentDescription="@string/doctor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +110,7 @@
         app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878" />
+        app:layout_constraintVertical_bias="0.961" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

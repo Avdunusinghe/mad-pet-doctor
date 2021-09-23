@@ -525,6 +525,7 @@
     <string name="resetPassword_emailEditText" />
     <string name="send_emailBtn">Send Email</string>
     <string name="resetPassword_authTextView">Sign in</string>
+    <string name="btondelete">btondelete</string>
 
 
 </resources>

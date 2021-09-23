@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,52 +34,134 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PetCardDetails extends AppCompatActivity {
-    private RecyclerView scheduleApp;
+    private TextView pcdHeading;
+    private ImageView pcdImage;
+    private TableRow TRHeading;
+    private TextView pcdpetid, pcdpetname, pcdpetownername,pcdupdate, pcddelete;
+    private TextView pcdbreed, pcddateofbirth,pcdage,pcdgender, pcdweight;
+    private RecyclerView pcdRecycleView;
+    private ImageButton pcdUpdateButton, pcdDeleteButton;
+
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private RelativeLayout  CardApp;
-    private ArrayList<PetCardModal> petCardDetailsRVArrayList;
-    private PetCardDetailsRVAdapter petCardDetailsRVAdapter;
+    private ArrayList<PetCardModal> petCardDetailsArrayList;
+    private PetCardDetailsAdapter petCardDetailsAdapter;
+    private PetCardModal petCardModals;
+    private String petId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pet_card_details);
-        scheduleApp = findViewById(R.id.idAppSchedule);
+        pcdHeading = findViewById(R.id.petCardDetailHeading);
+        pcdImage = findViewById(R.id.petCardDetailsImage);
+        TRHeading = findViewById(R.id.PCDRowHeading);
+        pcdpetid = findViewById(R.id.pcdPetID);
+        pcdpetname = findViewById(R.id.pcdPetName);
+        pcdpetownername = findViewById(R.id.pcdPetOwnerName);
+        pcdupdate = findViewById(R.id.pcdUpdateButton);
+        pcddelete =findViewById(R.id.pcdDeleteButton);
+        pcdRecycleView = findViewById(R.id.PCDRecycleViewId);
+
+        pcdUpdateButton = findViewById(R.id.PCDUpdateButton);
+        pcdDeleteButton = findViewById(R.id.PCDDeleteButton);
+
+
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("PetCards");
-        petCardDetailsRVArrayList = new ArrayList<>();
-        scheduleApp.setLayoutManager(new LinearLayoutManager(this));
-        scheduleApp.setAdapter(petCardDetailsRVAdapter);
-        CardApp = findViewById(R.id.homeCard);
+        databaseReference= firebaseDatabase.getReference("PetCards");
+        petCardDetailsArrayList = new ArrayList<>();
+        petCardDetailsAdapter = new PetCardDetailsAdapter(petCardDetailsArrayList,this);
+        pcdRecycleView.setLayoutManager(new LinearLayoutManager(this));
+        pcdRecycleView.setAdapter(petCardDetailsAdapter);
         getAllPetCardDetails();
+
+        petCardModals = getIntent().getParcelableExtra("PetCard");
+        if (petCardModals != null){
+            pcdpetid.setText(petCardModals.getPet_Name());
+            pcdpetname.setText(petCardModals.getPet_Name());
+            pcdbreed.setText(petCardModals.getPet_Breed());
+            pcddateofbirth.setText(petCardModals.getPet_DateOfBirth());
+            pcdage.setText(petCardModals.getPet_Age());
+            pcdgender.setText(petCardModals.getPet_Gender());
+            pcdweight.setText(petCardModals.getPet_Weight());
+            pcdpetownername.setText(petCardModals.getPet_OwnerName());
+            petId = petCardModals.getPet_ID();
+        }
+
+        databaseReference = firebaseDatabase.getReference("PetCards").child(petId);
+        pcdUpdateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String Pet_ID = pcdpetid.getText().toString();
+                String Pet_Name = pcdpetname.getText().toString();
+                String Pet_Breed = pcdbreed.getText().toString();
+                String Pet_DateOfBirth = pcddateofbirth.getText().toString();
+                String Pet_Age = pcdage.getText().toString();
+                String Pet_Gender = pcdgender.getText().toString();
+                String Pet_Weight = pcdweight.getText().toString();
+                String Pet_OwnerName = pcdpetownername.getText().toString();
+
+                Map<String,Object> map = new HashMap<>();
+                map.put("Pet_ID",Pet_ID);
+                map.put("Pet_Name",Pet_Name);
+                map.put("Pet_Breed",Pet_Breed);
+                map.put("Pet_DateOfBirth",Pet_DateOfBirth);
+                map.put("Pet_Age",Pet_Age);
+                map.put("Pet_Gender",Pet_Gender);
+                map.put("Pet_Weight",Pet_Weight);
+                map.put("Pet_OwnerName",Pet_OwnerName);
+
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            databaseReference.updateChildren(map);
+                            Toast.makeText(PetCardDetails.this,"Pet Card Updated...",
+                                    Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(PetCardDetails.this, PetCardDetails.class));
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(PetCardDetails.this,"Pet Card is not Updated...",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+        pcdDeleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deletePetCardDetails();
+            }
+        });
     }
 
     private void getAllPetCardDetails() {
-        petCardDetailsRVArrayList.clear();
+        petCardDetailsArrayList.clear();
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot,
                                      @Nullable String previousChildName) {
-                petCardDetailsRVArrayList.add(snapshot.getValue(PetCardModal.class));
-                petCardDetailsRVAdapter.notifyDataSetChanged();;
+                petCardDetailsArrayList.add(snapshot.getValue(PetCardModal.class));
+                petCardDetailsAdapter.notifyDataSetChanged();;
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot,
                                         @Nullable String previousChildName) {
-                petCardDetailsRVAdapter.notifyDataSetChanged();;
+                petCardDetailsAdapter.notifyDataSetChanged();;
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-                petCardDetailsRVAdapter.notifyDataSetChanged();;
+                petCardDetailsAdapter.notifyDataSetChanged();;
             }
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot snapshot,
                                      @Nullable String previousChildName) {
-                petCardDetailsRVAdapter.notifyDataSetChanged();;
+                petCardDetailsAdapter.notifyDataSetChanged();;
             }
 
             @Override
@@ -87,4 +170,11 @@ public class PetCardDetails extends AppCompatActivity {
             }
         });
     }
+
+    private void deletePetCardDetails(){
+        databaseReference.removeValue();
+        Toast.makeText(this, "Pet Card Deleted", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(PetCardDetails.this, PetCardDetails.class));
+    }
+
 }

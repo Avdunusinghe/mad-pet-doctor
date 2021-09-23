@@ -47,7 +47,7 @@
     <EditText
         android:id="@+id/ETPetId"
         android:layout_width="250dp"
-        android:layout_height="32dp"
+        android:layout_height="40dp"
         android:contentDescription="@string/pcpetid"
         android:ems="10"
         android:inputType="textPersonName"
@@ -72,7 +72,7 @@
     <EditText
         android:id="@+id/ETPetName"
         android:layout_width="250dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,7 +96,7 @@
     <EditText
         android:id="@+id/ETPetBreed"
         android:layout_width="250dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +120,7 @@
     <EditText
         android:id="@+id/ETPetDOB"
         android:layout_width="250dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -143,7 +143,7 @@
     <EditText
         android:id="@+id/ETPetAge"
         android:layout_width="250dp"
-        android:layout_height="33dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -166,7 +166,7 @@
     <EditText
         android:id="@+id/ETPetGender"
         android:layout_width="250dp"
-        android:layout_height="31dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -189,7 +189,7 @@
     <EditText
         android:id="@+id/ETPetWeight"
         android:layout_width="250dp"
-        android:layout_height="31dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -212,7 +212,7 @@
     <EditText
         android:id="@+id/ETPetOwnerName"
         android:layout_width="250dp"
-        android:layout_height="33dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -278,8 +278,8 @@
     <ImageView
         android:id="@+id/imageView55"
         android:layout_width="70dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

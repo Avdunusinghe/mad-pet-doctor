@@ -1,15 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/homeCard"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/idAppSchedule"/>
+    <TextView
+        android:id="@+id/petCardDetailHeading"
+        android:layout_width="250dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/vaccine_report"
+        android:gravity="center"
+        android:text="PET CARD DETAILS"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/petCardDetailsImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/reporticon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/petCardDetailHeading"
+        app:srcCompat="@drawable/icons8_report_64" />
+
+
+    <TableRow
+        android:id="@+id/PCDRowHeading"
+        android:layout_width="385dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:background="#DAD8D8"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/petCardDetailsImage">
+
+        <TextView
+            android:id="@+id/pcdPetID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.1"
+            android:shadowColor="#B69191"
+            android:text="ID"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pcdPetName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="PET NAME"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pcdPetOwnerName"
+            android:layout_width="390dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="OWNER NAME"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pcdUpdateButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="UPDATE"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/pcdDeleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="DELETE"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/PCDRecycleViewId"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PCDRowHeading" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip12"
+        android:layout_width="48dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="6dp"
+        app:chipBackgroundColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip15"
+        android:layout_width="48dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        app:chipBackgroundColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <ImageView
+        android:id="@+id/imageView52"
+        android:layout_width="73dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pet_doc_2" />
+
+    <ImageView
+        android:id="@+id/usericon2"
+        android:layout_width="33dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView52"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user_icon" />
+
+    <TextView
+        android:id="@+id/textView56"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TKSAR"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toEndOf="@+id/imageView52"
+        app:layout_constraintTop_toBottomOf="@+id/usericon2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,14 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".VaccineDetailsActivity">
 
+    <!--<TextView
+        android:layout_width="100dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Vaccine Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/> -->
+
     <TextView
         android:id="@+id/VR_name_list_textview"
-        android:layout_width="255dp"
+        android:layout_width="250dp"
         android:layout_height="28dp"
         android:layout_marginTop="8dp"
         android:text="VR_name_list_textview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.103"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

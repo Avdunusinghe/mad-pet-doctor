@@ -1,83 +1,99 @@
 package com.example.mad_pet_doctor;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 public class MyAppointmnt extends AppCompatActivity {
 
-    Button confirm1, confirm2, confirm3, cancel1, cancel2, cancel3;
+    private TextView Heading, PatientNameEdt, DateEdt, TimeEdt, Column4, Column5;
+    private RecyclerView table;
+    private ImageButton UpdateBtn, DeleteBtn;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
+    private String ScheduleId;
+    private ScheduleModal scheduleModal;
+    private ArrayList<ScheduleModal> scheduleModalArrayList;
+    private TableAdapter tableAdapter;
     ProgressDialog spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_appointmnt);
-        confirm1 = findViewById(R.id.confirm1);
-        cancel1 = findViewById(R.id.cancel1);
-        confirm2 = findViewById(R.id.confirm2);
-        cancel2 = findViewById(R.id.cancel2);
-        confirm3 = findViewById(R.id.confirm3);
-        cancel3 = findViewById(R.id.cancel3);
-        spinner = new ProgressDialog(MyAppointmnt.this);
+        table = findViewById(R.id.idtableSchedule);
+        Heading=findViewById(R.id.dailyrep_1);
+        PatientNameEdt=findViewById(R.id.apptable2);
+        DateEdt=findViewById(R.id.apptable3);
+        TimeEdt=findViewById(R.id.apptable4);
+        Column4=findViewById(R.id.apptable5);
+        Column5=findViewById(R.id.apptable6);
+        UpdateBtn=findViewById(R.id.icondell4);
+        DeleteBtn=findViewById(R.id.icondel14);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference= firebaseDatabase.getReference("Schedules");
+        scheduleModalArrayList = new ArrayList<>();
+        tableAdapter = new TableAdapter(scheduleModalArrayList,this,  this::onCourseClick);
+        table.setLayoutManager(new LinearLayoutManager(this));
+        table.setAdapter(tableAdapter);
+        getAllschedules();
     }
 
-    public void confirm1(View view) {
-        spinner.setTitle("Confirm Appointment");
-        spinner.setMessage("Appointment has been confirmed.");
-        spinner.setCanceledOnTouchOutside(false);
-        spinner.show();
-        Toast.makeText(MyAppointmnt.this, "Appointment has been confirmed.", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(MyAppointmnt.this, MyAppointmentReport.class));
+    private void getAllschedules() {
+        scheduleModalArrayList.clear();
+        databaseReference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull  DataSnapshot snapshot, @Nullable String previousChildName) {
+                scheduleModalArrayList.add(snapshot.getValue(ScheduleModal.class));
+                tableAdapter.notifyDataSetChanged();;
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable  String previousChildName) {
+                tableAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull  DataSnapshot snapshot) {
+                tableAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                tableAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
-    public void cancel1(View view) {
-        spinner.setTitle("Cancel Appointment");
-        spinner.setMessage("Appointment has been cancelled.");
-        spinner.setCanceledOnTouchOutside(false);
-        spinner.show();
-        Toast.makeText(MyAppointmnt.this, "Appointment has been cancelled.", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(MyAppointmnt.this, MyAppointmentReport.class));
-    }
+    public void onCourseClick(int position){
+        startActivity(new Intent(MyAppointmnt.this , PetBookFormActivity.class));
 
-    public void confirm2(View view) {
-        spinner.setTitle("Confirm Appointment");
-        spinner.setMessage("Appointment has been confirmed.");
-        spinner.setCanceledOnTouchOutside(false);
-        spinner.show();
-        Toast.makeText(MyAppointmnt.this, "Appointment has been confirmed.", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(MyAppointmnt.this, MyAppointmentReport.class));
-    }
 
-    public void cancel2(View view) {
-        spinner.setTitle("Cancel Appointment");
-        spinner.setMessage("Appointment has been cancelled.");
-        spinner.setCanceledOnTouchOutside(false);
-        spinner.show();
-        Toast.makeText(MyAppointmnt.this, "Appointment has been cancelled.", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(MyAppointmnt.this, MyAppointmentReport.class));
-    }
-
-    public void confirm3(View view) {
-        spinner.setTitle("Confirm Appointment");
-        spinner.setMessage("Appointment has been confirmed.");
-        spinner.setCanceledOnTouchOutside(false);
-        spinner.show();
-        Toast.makeText(MyAppointmnt.this, "Appointment has been confirmed.", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(MyAppointmnt.this, MyAppointmentReport.class));
-    }
-
-    public void cancel3(View view) {
-        spinner.setTitle("Cancel Appointment");
-        spinner.setMessage("Appointment has been cancelled.");
-        spinner.setCanceledOnTouchOutside(false);
-        spinner.show();
-        Toast.makeText(MyAppointmnt.this, "Appointment has been cancelled.", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(MyAppointmnt.this, MyAppointmentReport.class));
     }
 }

@@ -525,6 +525,12 @@
     <string name="mc_update_mobile_et" />
     <string name="mc_update_email_et" />
     <string name="mc_up_number_et" />
+    <string name="mc_up_name_et" />
+    <string name="mc_up_address_et" />
+    <string name="mc_up_mobile_et" />
+    <string name="mc_up_email_et" />
+    <string name="buttonUpdateMc">Update</string>
+    <string name="buttonDeleteMc">Delete</string>
 
 
 </resources>

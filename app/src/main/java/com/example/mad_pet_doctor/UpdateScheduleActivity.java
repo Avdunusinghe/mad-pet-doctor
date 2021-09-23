@@ -62,7 +62,7 @@ public class UpdateScheduleActivity extends AppCompatActivity {
             scheduleId = scheduleModal.getScheduleId();
         }
 
-        databaseReference = firebaseDatabase.getReference("Schedules");
+        databaseReference = firebaseDatabase.getReference("Schedules").child("scheduleId");
 
         UpdateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,13 +97,12 @@ public class UpdateScheduleActivity extends AppCompatActivity {
             }
         });
 
-        //DeleteBtn.setOnClickListener(new View.OnClickListener() {
-            //@Override
-            //public void onClick(View v) {
+        DeleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-                //DeleteSchedule();
-            //}
-        //});
+                DeleteSchedule(); }
+        });
     }
 
     private void DeleteSchedule(){

@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/dailyrep_1"
-        android:layout_width="220dp"
-        android:layout_height="40dp"
+        android:layout_width="216dp"
+        android:layout_height="30dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="28dp"
@@ -23,8 +23,8 @@
 
     <TableLayout
         android:id="@+id/scheduleapprovaltable"
-        android:layout_width="385dp"
-        android:layout_height="557dp"
+        android:layout_width="389dp"
+        android:layout_height="186dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/scheduleapprovalstable"
         android:paddingLeft="5dp"
@@ -33,274 +33,6 @@
         app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dailyrep_1">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#84ACBD"
-            android:padding="10dp">
-
-
-
-            <TextView
-                android:id="@+id/apptable2"
-                android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="Doc Name" />
-
-            <TextView
-                android:id="@+id/apptable3"
-                android:layout_width="47dp"
-                android:layout_height="35dp"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="Date" />
-
-            <TextView
-                android:id="@+id/apptable4"
-                android:layout_width="46dp"
-                android:layout_height="33dp"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="Time" />
-
-            <TextView
-                android:id="@+id/apptable5"
-                android:layout_width="59dp"
-                android:layout_height="34dp"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="Update" />
-
-            <TextView
-                android:id="@+id/apptable6"
-                android:layout_width="60dp"
-                android:layout_height="34dp"
-                android:fontFamily="sans-serif-black"
-                android:text="Delete"/>
-
-        </TableRow>
-
-        <TableRow
-
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#ffffff"
-            android:padding="10dp">
-
-
-
-            <TextView
-                android:id="@+id/apptable7"
-                android:layout_width="80dp"
-                android:layout_height="33dp"
-                android:layout_weight="1"
-                android:text="Dr Charitha" />
-            <!--android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:fontFamily="sans-serif-black"
-
-                android:text="Dr.Charitha"
-                app:autoSizeTextType="uniform" -->
-
-            <TextView
-                android:id="@+id/apptable79"
-                android:layout_width="wrap_content"
-                android:layout_height="33dp"
-                android:layout_weight="1"
-                android:text="06.Dec" />
-
-            <TextView
-                android:id="@+id/apptable34"
-                android:layout_width="57dp"
-                android:layout_height="35dp"
-                android:layout_weight="1"
-                android:text="4-5PM" />
-
-            <ImageButton
-                android:id="@+id/icondell"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toEndOf="@+id/DocID01"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:srcCompat="@drawable/edit_button" />
-
-            <ImageButton
-                android:id="@+id/icondel1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toEndOf="@+id/DocID01"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:srcCompat="@drawable/delete_button" />
-
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#C6D5DB"
-            android:padding="10dp">
-
-
-
-            <TextView
-                android:id="@+id/apptable10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Dr Sachin" />
-
-            <TextView
-                android:id="@+id/apptable11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="06.Dec" />
-
-            <TextView
-                android:id="@+id/apptable12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="5-6PM" />
-
-            <ImageButton
-                android:id="@+id/icondell1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toEndOf="@+id/DocID01"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:srcCompat="@drawable/edit_button" />
-
-            <ImageButton
-                android:id="@+id/icondel12"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toEndOf="@+id/DocID01"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:srcCompat="@drawable/delete_button" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="#ffffff"
-            android:padding="10dp">
-
-
-
-            <TextView
-                android:id="@+id/apptable22"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Dr.Charitha" />
-
-            <TextView
-                android:id="@+id/apptable23"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="08.Dec" />
-
-            <TextView
-                android:id="@+id/apptable24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="8-9PM" />
-
-            <ImageButton
-                android:id="@+id/icondell3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toEndOf="@+id/DocID01"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:srcCompat="@drawable/edit_button" />
-
-            <ImageButton
-                android:id="@+id/icondel13"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toEndOf="@+id/DocID01"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:srcCompat="@drawable/delete_button" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#C6D5DB"
-            android:padding="10dp">
-
-
-            <TextView
-                android:id="@+id/apptable26"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Dr.Sachin" />
-
-            <TextView
-                android:id="@+id/apptable27"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="09.Dec" />
-
-            <TextView
-                android:id="@+id/apptable28"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="4-6PM" />
-
-            <ImageButton
-                android:id="@+id/icondell4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toEndOf="@+id/DocID01"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:srcCompat="@drawable/edit_button" />
-
-            <ImageButton
-                android:id="@+id/icondel14"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toEndOf="@+id/DocID01"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:srcCompat="@drawable/delete_button" />
-
-        </TableRow>
-
 
     </TableLayout>
 
@@ -409,17 +141,16 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addbton"
-        android:layout_width="54dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="50dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:backgroundTint="@color/white"
         android:clickable="true"
-        android:contentDescription="@string/addbtn"
-        app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
-        app:layout_constraintStart_toEndOf="@+id/dailyrep_1"
-        app:layout_constraintTop_toBottomOf="@+id/usernameId"/>
-        //app:srcCompat="@drawable/icons8_hospital_30" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameId"
+        app:srcCompat="@drawable/add_btn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

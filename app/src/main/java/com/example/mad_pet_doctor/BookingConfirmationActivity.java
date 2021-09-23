@@ -1,14 +1,21 @@
 package com.example.mad_pet_doctor;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.model.BookingModal;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -53,20 +60,35 @@ public class BookingConfirmationActivity extends AppCompatActivity {
         firebaseDatabase= FirebaseDatabase.getInstance();
         bookingModal = getIntent().getParcelableExtra("Booking");
 
-        if(bookingModal != null){
-            PetNameOutput.setText(bookingModal.getAnimalName());
-            OwnerNameOutput.setText(bookingModal.getOwnerName());
-            DateOutput.setText(bookingModal.getAppointmentDate());
-            TimeOutput.setText(bookingModal.getAppointmentTime());
-            bookingId = bookingModal.getBookingId();
-
-        }
-
-        databaseReference = firebaseDatabase.getReference("Boookings").child(bookingId);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Boookings");
 
 
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                for (DataSnapshot datasnapshot : snapshot.getChildren()) {
 
+                    BookingModal bookingModal;
+                    bookingModal = datasnapshot.getValue(BookingModal.class);
+                    String petId = bookingModal.getBookingId();
+                    String petname = bookingModal.getAnimalName();
+                    String ownername = bookingModal.getOwnerName();
+                    String appdate = bookingModal.getAppointmentDate();
+                    String apptime = bookingModal.getAppointmentTime();
 
-    }
-}
+                    RefOutput.setText(petId);
+                    PetNameOutput.setText(petname);
+                    OwnerNameOutput.setText(ownername);
+                    DateOutput.setText(appdate);
+                    TimeOutput.setText(apptime);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(BookingConfirmationActivity.this, "Error occurs to booking" + error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }}

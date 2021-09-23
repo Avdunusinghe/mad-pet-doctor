@@ -19,8 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.net.HttpCookie;
-import java.security.cert.PolicyNode;
+
 
 public class AppointmentDetailsActivity extends AppCompatActivity {
 
@@ -61,18 +60,17 @@ public class AppointmentDetailsActivity extends AppCompatActivity {
         //retrieve
         bookingModal = getIntent().getParcelableExtra("Bookings");
 
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Boookings");
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
 
-                DataSnapshot dataSnapshot = null;
-                if (dataSnapshot != null) {
-                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                    for (DataSnapshot datasnapshot : snapshot.getChildren()) {
 
                         BookingModal bookingModal;
-                        bookingModal = dataSnapshot.getValue(BookingModal.class);
+                        bookingModal = datasnapshot.getValue(BookingModal.class);
 
                         String petname = bookingModal.getAnimalName();
                         String ownername = bookingModal.getOwnerName();
@@ -85,12 +83,12 @@ public class AppointmentDetailsActivity extends AppCompatActivity {
                         input4.setText(apptime);
                     }
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(AppointmentDetailsActivity.this, "Error occurs to booking" + error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        });
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(AppointmentDetailsActivity.this, "Error occurs to booking" + error.toString(), Toast.LENGTH_SHORT).show();
+                }
+            });
 
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override

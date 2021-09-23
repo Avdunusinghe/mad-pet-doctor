@@ -168,7 +168,7 @@
         android:layout_height="25dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/imageView56"
         app:layout_constraintHorizontal_bias="0.0"
@@ -229,15 +229,15 @@
 
     <EditText
         android:id="@+id/input_1"
-        android:layout_width="158dp"
-        android:layout_height="35dp"
+        android:layout_width="173dp"
+        android:layout_height="32dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/cardlabel2"
         app:layout_constraintTop_toBottomOf="@+id/card_head" />
 

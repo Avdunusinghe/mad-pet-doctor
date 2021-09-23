@@ -17,7 +17,12 @@
         </activity>
         <activity android:name=".MedicalProfActivity"></activity>
         <activity android:name=".PetBookFormActivity"></activity>
-        <activity android:name=".ScheduleApprovalsActivity"></activity>
+        <activity android:name=".ScheduleApprovalsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".EnterScheduleActivity">
 
         </activity>
@@ -29,10 +34,7 @@
         </activity>
         <activity android:name=".ContactUsActivity"></activity>
         <activity android:name=".AppointmentDetailsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+
         </activity>
         <activity android:name=".MedicalProfileUserActivity"></activity>
         <activity android:name=".CardPayActivity"></activity>

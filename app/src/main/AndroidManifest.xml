@@ -9,7 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Madpetdoctor">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MedicalCenterListDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DoctorListDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UserListDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ResetPasswordEmailActivity"
+            android:exported="true" />
+
+
+        <activity android:name=".MainActivity" />
+        <activity android:name=".AdminHome" />
+        <activity android:name=".ChangePasswordActivity" />
+        <activity android:name=".CreateAccount" />
+        <activity android:name=".VaccineReport">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,12 +37,7 @@
         <activity android:name=".ActivityMainSideBar" />
         <activity android:name=".VaccineDetails" />
         <activity android:name=".PetCard" />
-        <!-- <activity android:name="." /> -->
-
-        <!--<activity
-            android:name=".VaccineDetailsActivity"
-            android:exported="true"/> -->
-
+        <activity android:name=".DoctorListActivity" />
         <activity android:name=".DetailsOfPets" />
         <activity android:name=".PetCardDetails" />
         <activity android:name=".IntroductionDog" />
@@ -40,7 +53,7 @@
         <activity android:name=".Doctors" />
         <activity android:name=".MedicalProfActivity" />
         <activity android:name=".MedicalCenterList" />
-        
+
     </application>
 
 </manifest>

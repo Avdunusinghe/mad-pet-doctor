@@ -197,7 +197,7 @@
     <string name="blogs">Blogs</string>
     <string name="contactus">ContactUs</string>
     <string name="logout">LogOut</string>
-    
+
     <string name="home_navigation_drawer_open">open navigation drawer </string>
     <string name="Home_navigation_drawer_close">close navigation drawer </string>
 
@@ -277,8 +277,26 @@
     <string name="medicalCentercolName">Center Name</string>
     <string name="medicalcenterColEmail">Email</string>
 
+    <string name="createAcc_confirmPasswordText">Confirm Password</string>
+    <string name="createAcc_ConfirmPasswordEditText" />
+    <string name="resetPasswordEmail_text">Email</string>
+    <string name="resetPassword_emailEditText" />
+    <string name="send_emailBtn">Send Email</string>
+    <string name="resetPassword_authTextView">Sign in</string>
+    <string name="user_name_list_textview" />
+    <string name="user_email_list_textview" />
+    <string name="user_phone_list_textview" />
 
-    <!--Chanukshi-->
+    <string name="doctor_list_name_textview" />
+    <string name="doctor_list_medicalcenter_textview" />
+    <string name="doctor_list_mobilenumber_textview" />
+    <string name="medicalcenter_list_name_textview" />
+    <string name="medicalcenter_list_address_textview" />
+    <string name="medicalcenter_list_mobilenumber_textview" />
+    <string name="medicalcenter_list_email_textview" />
+
+
+ <!--Chanukshi-->
     <!--Chanukshi-->
     <string name="hos_logo">Hospital_Logo</string>
     <string name="hos_heading">Hospital_heading</string>
@@ -376,6 +394,10 @@
     <string name="prof_btn5">APPOINTMENTS</string>
     <string name="addbtn">Add Button</string>
     <string name="usernameId">usernameId</string>
+
+
+
+
 
 
     <!-- Nawanjana MH -->

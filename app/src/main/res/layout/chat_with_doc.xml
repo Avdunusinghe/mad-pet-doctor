@@ -104,7 +104,7 @@
         android:text="@string/chat"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:backgroundTint="#1837E4"
+        app:backgroundTint="#E82196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.94"

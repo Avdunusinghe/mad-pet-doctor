@@ -29,7 +29,6 @@ import java.util.regex.Pattern;
 public class DoctorProfile extends AppCompatActivity {
 
     private TextInputEditText fullNameEdt, docLicenseNoEdt, qualificationEdt, medicalCenterEdt, addressEdt, telNoEdt, emailEdt;
-    private ImageButton docPicBtn;
     private RadioGroup houseCallYesOrNoGroup;
     private RadioButton houseCallYesOrNoBtn;
     Button updateBtn,deleteBtn;
@@ -43,7 +42,6 @@ public class DoctorProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.doctor_profile);
-        docPicBtn = findViewById(R.id.imageButton8);
         fullNameEdt = findViewById(R.id.textInputEditText2);
         docLicenseNoEdt = findViewById(R.id.editText5);
         qualificationEdt = findViewById(R.id.editText6);
@@ -53,7 +51,7 @@ public class DoctorProfile extends AppCompatActivity {
         emailEdt = findViewById(R.id.editText10);
         houseCallYesOrNoGroup = (RadioGroup) findViewById(R.id.radioGroup2);
         updateBtn = findViewById(R.id.auth_loginbtn);
-        deleteBtn = findViewById(R.id.buton2);
+        deleteBtn = findViewById(R.id.button2);
         spinner = new ProgressDialog(DoctorProfile.this);
         fireBaseDatabase = FirebaseDatabase.getInstance();
         doctorReg = getIntent().getParcelableExtra("Doctor");
@@ -67,20 +65,13 @@ public class DoctorProfile extends AppCompatActivity {
             telNoEdt.setText(doctorReg.getTelNo());
             emailEdt.setText(doctorReg.getEmail());
             doctorId = doctorReg.getDoctorId();
-        }
 
-        ImageButton docPicBtn = (ImageButton) findViewById(R.id.imageButton8);
-        docPicBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Upload a picture.", Toast.LENGTH_SHORT).show();
-            }
-        });
+            databaseReference = fireBaseDatabase.getReference("Doctor").child(doctorId);
+        }
     }
     @Override
     protected void onResume() {
         super.onResume();
-        databaseReference = fireBaseDatabase.getReference("Doctor").child(doctorId);
 
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,29 +134,6 @@ public class DoctorProfile extends AppCompatActivity {
                     });
                 }
             }
-
-            private boolean validateEmail() {
-                String email = emailEdt.getText().toString();
-                String EmalFormat = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-
-                if (Pattern.compile(EmalFormat).matcher(email).matches()) {
-                    return true;
-                } else {
-                    Toast.makeText(getApplicationContext(), "Please enter valid email", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-            }
-
-            private boolean validateTelNo() {
-                String phone = telNoEdt.getText().toString();
-
-                if (phone.length() == 10) {
-                    return true;
-                } else {
-                    Toast.makeText(getApplicationContext(), "Please enter valid phone number", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-            }
         });
 
         deleteBtn.setOnClickListener(new View.OnClickListener() {
@@ -174,6 +142,29 @@ public class DoctorProfile extends AppCompatActivity {
                 deleteDoctor();
             }
         });
+    }
+
+    private boolean validateEmail() {
+        String email = emailEdt.getText().toString();
+        String EmalFormat = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+        if (Pattern.compile(EmalFormat).matcher(email).matches()) {
+            return true;
+        } else {
+            Toast.makeText(getApplicationContext(), "Please enter valid email", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+    private boolean validateTelNo() {
+        String phone = telNoEdt.getText().toString();
+
+        if (phone.length() == 10) {
+            return true;
+        } else {
+            Toast.makeText(getApplicationContext(), "Please enter valid phone number", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
     private void deleteDoctor(){

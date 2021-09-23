@@ -25,7 +25,6 @@ import java.util.regex.Pattern;
 public class MedicalCenterRegistration extends AppCompatActivity {
 
     private TextInputEditText medicalCenterNoEdt, nameEdt, addressEdt, telNoEdt, emailEdt;
-    private ImageButton medicalPicBtn;
     private Button submitBtn;
     ProgressDialog spinner;
     private FirebaseDatabase fireBaseDatabase;
@@ -36,7 +35,6 @@ public class MedicalCenterRegistration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.medicalcenter_reg);
-        medicalPicBtn = findViewById(R.id.imageButton);
         medicalCenterNoEdt = findViewById(R.id.textInputEditText3);
         nameEdt = findViewById(R.id.editText);
         addressEdt = findViewById(R.id.editText2);
@@ -46,14 +44,6 @@ public class MedicalCenterRegistration extends AppCompatActivity {
         spinner = new ProgressDialog(MedicalCenterRegistration.this);
         fireBaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = fireBaseDatabase.getReference("MedicalCenter");
-
-        ImageButton medicalPicBtn = (ImageButton) findViewById(R.id.imageButton);
-        medicalPicBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Upload a picture.", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override

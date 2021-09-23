@@ -132,7 +132,7 @@
         android:layout_height="56dp"
         android:text="@string/read_more"
         android:textSize="16sp"
-        app:backgroundTint="#4CAF50"
+        app:backgroundTint="#E82196F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.116"

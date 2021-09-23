@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorListDetailActivity">
+
+    <TextView
+        android:id="@+id/doctor_list_name_textview"
+        android:layout_width="277dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/doctor_list_name_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/doctor_list_medicalcenter_textview"
+        android:layout_width="279dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/doctor_list_medicalcenter_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doctor_list_name_textview" />
+
+    <TextView
+        android:id="@+id/doctor_list_email_textview"
+        android:layout_width="277dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/doctor_list_medicalcenter_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doctor_list_medicalcenter_textview" />
+
+    <TextView
+        android:id="@+id/doctor_list_mobilenumber_textview"
+        android:layout_width="277dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/doctor_list_mobilenumber_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doctor_list_email_textview" />
+</androidx.constraintlayout.widget.ConstraintLayout>

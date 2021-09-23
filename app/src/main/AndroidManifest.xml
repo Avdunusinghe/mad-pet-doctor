@@ -52,12 +52,25 @@
 
 
         <activity
+            android:name=".MedicalCenterListDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DoctorListDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UserListDetailsActivity"
+            android:exported="true" />
+        <activity
             android:name=".ResetPasswordEmailActivity"
             android:exported="true" />
         <activity android:name=".MainActivity" />
         <activity android:name=".AdminHome" />
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".CreateAccount" />
+        <activity android:name=".DoctorListActivity"/>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
         <activity android:name=".AuthActivity">
 
         </activity>

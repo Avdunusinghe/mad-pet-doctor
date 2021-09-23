@@ -29,6 +29,9 @@
         <activity android:name=".AppointmentsActivity">
 
         </activity>
+        <activity android:name=".DoctorProfile">
+
+        </activity>
         <activity android:name=".BookingConfirmationActivity">
 
         </activity>
@@ -36,9 +39,16 @@
         <activity android:name=".AppointmentDetailsActivity">
 
         </activity>
-        <activity android:name=".MedicalProfileUserActivity"></activity>
+        <activity android:name=".MedicalProfileUserActivity">
+
+        </activity>
         <activity android:name=".CardPayActivity"></activity>
-        <activity android:name=".DailyReportsActivity"></activity>
+        <activity android:name=".DailyReportsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
 
 
         <activity

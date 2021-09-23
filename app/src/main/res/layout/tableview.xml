@@ -1,107 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ScheduleApprovalsActivity">
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="3dp"
+    android:layout_gravity="center"
+    android:layout_margin="5dp">
 
 
-    <TableLayout
-        android:id="@+id/scheduleapprovaltable"
-        android:layout_width="396dp"
-        android:layout_height="124dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/scheduleapprovalstable"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dailyrep_1">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/BurlyWood"
+        >
 
         <TableRow
+            android:id="@+id/idtableSchedule"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#84ACBD"
-            android:padding="10dp">
-
-
-            <TextView
-                android:id="@+id/apptable2"
-                android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="Doc Name" />
-
-            <TextView
-                android:id="@+id/apptable3"
-                android:layout_width="47dp"
-                android:layout_height="35dp"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="Date" />
-
-            <TextView
-                android:id="@+id/apptable4"
-                android:layout_width="46dp"
-                android:layout_height="33dp"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="Time" />
-
-            <TextView
-                android:id="@+id/apptable5"
-                android:layout_width="59dp"
-                android:layout_height="34dp"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="Update" />
-
-            <TextView
-                android:id="@+id/apptable6"
-                android:layout_width="60dp"
-                android:layout_height="34dp"
-                android:fontFamily="sans-serif-black"
-                android:text="Delete" />
-
-        </TableRow>
-
-        <TableRow></TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="70dp"
             android:background="#C6D5DB"
             android:padding="10dp">
 
 
             <TextView
                 android:id="@+id/apptable26"
-                android:layout_width="60dp"
-                android:layout_height="35dp"
+                android:layout_width="80dp"
+                android:layout_height="41dp"
                 android:layout_weight="1"
                 android:text="" />
 
             <TextView
                 android:id="@+id/apptable27"
-                android:layout_width="59dp"
-                android:layout_height="35dp"
+                android:layout_width="85dp"
+                android:layout_height="44dp"
                 android:layout_weight="1"
                 android:text="" />
 
             <TextView
                 android:id="@+id/apptable28"
-                android:layout_width="55dp"
-                android:layout_height="38dp"
+                android:layout_width="97dp"
+                android:layout_height="44dp"
                 android:layout_weight="1"
                 android:text="" />
 
             <ImageButton
                 android:id="@+id/icondell4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="54dp"
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="3dp"
@@ -111,8 +59,8 @@
 
             <ImageButton
                 android:id="@+id/icondel14"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="38dp"
+                android:layout_height="54dp"
                 android:layout_marginStart="1dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="3dp"
@@ -123,6 +71,10 @@
         </TableRow>
 
 
-    </TableLayout>
 
-</android.widget.LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

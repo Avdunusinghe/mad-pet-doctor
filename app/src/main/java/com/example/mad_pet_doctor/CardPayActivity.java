@@ -22,6 +22,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayDeque;
+
 public class CardPayActivity extends AppCompatActivity {
 
      private ImageView Hoslogo, CardPic1, CardPic2;
@@ -69,11 +71,13 @@ public class CardPayActivity extends AppCompatActivity {
                  } else if (TextUtils.isEmpty((CVcEdt.getText().toString()))) {
                      Toast.makeText(getApplicationContext(), "Please enter CVC no", Toast.LENGTH_SHORT).show();
                  }else {
+
+                     String Id =databaseReference.push().getKey();
                      String CardHoldername = CardHolderEdt.getText().toString();
                      String CardNumber = CardNoEdt.getText().toString();
                      String ExpiredDate = ExpDateEdt.getText().toString();
                      String CVCNumber = CVcEdt.getText().toString();
-                     PaymentId = CardHoldername;
+                     PaymentId = Id;
                      CardPaymentsModal coursepaymentsmodal = new CardPaymentsModal(CardHoldername, CardNumber, ExpiredDate, CVCNumber, PaymentId);
 
                      databaseReference.addValueEventListener(new ValueEventListener() {
@@ -81,7 +85,7 @@ public class CardPayActivity extends AppCompatActivity {
                          public void onDataChange(@NonNull DataSnapshot snapshot) {
                              databaseReference.child(PaymentId).setValue(coursepaymentsmodal);
                              Toast.makeText(CardPayActivity.this, "Payment Details Added..", Toast.LENGTH_SHORT).show();
-                             startActivity(new Intent(CardPayActivity.this, MedicalProfileUserActivity.class));
+                             startActivity(new Intent(CardPayActivity.this, BookingConfirmationActivity.class));
 
                          }
 

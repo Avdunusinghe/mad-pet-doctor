@@ -21,21 +21,6 @@
         app:layout_constraintStart_toEndOf="@+id/hos_logo1"
         app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
-    <TableLayout
-        android:id="@+id/scheduleapprovaltable"
-        android:layout_width="389dp"
-        android:layout_height="186dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/scheduleapprovalstable"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dailyrep_1">
-
-    </TableLayout>
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
         android:layout_width="411dp"
@@ -151,6 +136,67 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernameId"
         app:srcCompat="@drawable/add_btn" />
+
+
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="389dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="48dp"
+        android:background="#84ACBD"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dailyrep_1">
+
+
+        <TextView
+            android:id="@+id/apptable2"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="Doc Name" />
+
+        <TextView
+            android:id="@+id/apptable3"
+            android:layout_width="47dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="Date" />
+
+        <TextView
+            android:id="@+id/apptable4"
+            android:layout_width="46dp"
+            android:layout_height="33dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="Time" />
+
+        <TextView
+            android:id="@+id/apptable5"
+            android:layout_width="59dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="Update" />
+
+        <TextView
+            android:id="@+id/apptable6"
+            android:layout_width="60dp"
+            android:layout_height="34dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Delete" />
+
+    </TableRow>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idtableSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

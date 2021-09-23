@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,7 +33,7 @@ public class ScheduleApprovalsActivity extends AppCompatActivity {
     private ImageView HosLogo;
     private TextView Heading, DocNameEdt, DateEdt, TimeEdt, Column4, Column5;
     private FloatingActionButton AddBtn;
-    private TableLayout Table;
+    private RecyclerView table;
     private ImageButton UpdateBtn, DeleteBtn;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -48,7 +49,7 @@ public class ScheduleApprovalsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scheduleapprovals);
 
-
+        table = findViewById(R.id.idtableSchedule);
         HosLogo=findViewById(R.id.hos_logo1);
         Heading=findViewById(R.id.dailyrep_1);
         DocNameEdt=findViewById(R.id.apptable2);
@@ -59,54 +60,63 @@ public class ScheduleApprovalsActivity extends AppCompatActivity {
         AddBtn=findViewById(R.id.addbton);
         UpdateBtn=findViewById(R.id.icondell4);
         DeleteBtn=findViewById(R.id.icondel14);
-        scheduleModalArrayList = new ArrayList<>();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        tableAdapter = new TableAdapter(this,scheduleModalArrayList);
-        getAllSchedules();
-
-
-        scheduleModal = getIntent().getParcelableExtra("Schedules");
-
+        databaseReference= firebaseDatabase.getReference("Schedules");
+        scheduleModalArrayList = new ArrayList<>();
+        tableAdapter = new TableAdapter(scheduleModalArrayList,this,  this::onCourseClick);
+        table.setLayoutManager(new LinearLayoutManager(this));
+        table.setAdapter(tableAdapter);
+        getAllschedules();
         AddBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ScheduleApprovalsActivity.this, EnterScheduleActivity.class));
             }
         });
+
+
     }
 
-    private void getAllSchedules() {
+    private void getAllschedules() {
+        scheduleModalArrayList.clear();
+        databaseReference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull  DataSnapshot snapshot, @Nullable String previousChildName) {
+                scheduleModalArrayList.add(snapshot.getValue(ScheduleModal.class));
+                tableAdapter.notifyDataSetChanged();;
 
-            scheduleModalArrayList.clear();
-            databaseReference.addChildEventListener(new ChildEventListener() {
-                @Override
-                public void onChildAdded(@NonNull  DataSnapshot snapshot, @Nullable String previousChildName) {
-                    scheduleModalArrayList.add(snapshot.getValue(ScheduleModal.class));
-                    tableAdapter.notifyDataSetChanged();;
+            }
 
-                }
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable  String previousChildName) {
+                tableAdapter.notifyDataSetChanged();
+            }
 
-                @Override
-                public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable  String previousChildName) {
-                    tableAdapter.notifyDataSetChanged();
-                }
+            @Override
+            public void onChildRemoved(@NonNull  DataSnapshot snapshot) {
+                tableAdapter.notifyDataSetChanged();
+            }
 
-                @Override
-                public void onChildRemoved(@NonNull  DataSnapshot snapshot) {
-                    tableAdapter.notifyDataSetChanged();
-                }
+            @Override
+            public void onChildMoved(@NonNull  DataSnapshot snapshot, @Nullable  String previousChildName) {
+                tableAdapter.notifyDataSetChanged();
+            }
 
-                @Override
-                public void onChildMoved(@NonNull  DataSnapshot snapshot, @Nullable  String previousChildName) {
-                    tableAdapter.notifyDataSetChanged();
-                }
+            @Override
+            public void onCancelled(@NonNull  DatabaseError error) {
 
-                @Override
-                public void onCancelled(@NonNull  DatabaseError error) {
+            }
+        });
+    }
 
-                }
-            });
-        }
+
+    public void onCourseClick(int position){
+        startActivity(new Intent(ScheduleApprovalsActivity.this , PetBookFormActivity.class));
+
+
+    }
+
+
 
     }
 

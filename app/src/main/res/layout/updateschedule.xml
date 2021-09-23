@@ -93,13 +93,29 @@
         android:id="@+id/bton7"
         android:layout_width="117dp"
         android:layout_height="37dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="64dp"
         android:background="#7E90F1"
         android:contentDescription="@string/bton7"
-        android:text="SUBMIT"
+        android:text="UPDATE"
+        app:backgroundTint="@android:color/holo_red_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sched_label4" />
+
+
+    <Button
+        android:id="@+id/btondelete"
+        android:layout_width="117dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:background="#7E90F1"
+        android:contentDescription="@string/btondelete"
+        android:text="DELETE"
         app:backgroundTint="@android:color/holo_red_dark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Time" />
 
     <androidx.appcompat.widget.Toolbar

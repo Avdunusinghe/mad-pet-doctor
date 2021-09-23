@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="3dp"
+    android:layout_gravity="center"
+    android:layout_margin="5dp">
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/BurlyWood"
+    >
+
+    <ImageView
+        android:id="@+id/idAppSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"></ImageView>
+
+    <ImageView
+        android:id="@+id/imageView52"
+        android:layout_width="94dp"
+        android:layout_height="105dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:srcCompat="@drawable/user_icon" />
+
+
+    <TextView
+        android:id="@+id/book_doc"
+        android:layout_width="131dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-9dp"
+        android:layout_marginLeft="-9dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_toEndOf="@+id/imageView52"
+        android:layout_toRightOf="@+id/imageView52"
+        android:contentDescription="@string/book_doc"
+        android:fontFamily="sans-serif-black"
+        android:text="Doctor name" />
+
+    <TextView
+        android:id="@+id/book_doc2"
+        android:layout_width="134dp"
+        android:layout_height="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-15dp"
+        android:layout_marginLeft="-15dp"
+        android:layout_marginTop="69dp"
+        android:layout_toEndOf="@+id/imageView52"
+        android:layout_toRightOf="@+id/imageView52"
+        android:contentDescription="@string/book_doc2"
+        android:fontFamily="sans-serif-black"
+        android:text="Veterinary Surgeon"
+        app:layout_constraintHorizontal_bias="0.011" />
+
+    <Button
+        android:id="@+id/buton"
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-47dp"
+        android:layout_marginLeft="-47dp"
+        android:layout_marginTop="146dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="13dp"
+        android:layout_toEndOf="@+id/book_doc"
+        android:layout_toRightOf="@+id/book_doc"
+        android:contentDescription="@string/buton"
+        android:text="BOOK"
+        app:backgroundTint="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/book_doc3"
+        android:layout_width="67dp"
+        android:layout_height="29dp"
+        android:layout_below="@+id/imageView52"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="14dp"
+        android:contentDescription="@string/book_doc3"
+        android:fontFamily="sans-serif-black"
+        android:text="Date"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/book_doc4"
+        android:layout_width="65dp"
+        android:layout_height="29dp"
+        android:layout_below="@+id/book_doc2"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:layout_toEndOf="@+id/book_doc3"
+        android:layout_toRightOf="@+id/book_doc3"
+        android:contentDescription="@string/book_doc4"
+        android:fontFamily="sans-serif-black"
+        android:text="Time"
+        app:layout_constraintTop_toBottomOf="@+id/book_doc2" />
+
+    <ImageButton
+        android:id="@+id/call_btn"
+        android:layout_width="62dp"
+        android:layout_height="61dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="74dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginRight="29dp"
+        app:backgroundTint="@android:color/holo_red_dark"
+        app:srcCompat="@drawable/call_btn" />
+
+</RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
+

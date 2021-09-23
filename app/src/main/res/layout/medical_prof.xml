@@ -78,7 +78,6 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/hos_logo"
-        app:layout_constraintEnd_toStartOf="@+id/sched_pic"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chip5"

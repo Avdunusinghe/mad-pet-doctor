@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/dailyrep_1"
         android:layout_width="263dp"
-        android:layout_height="47dp"
+        android:layout_height="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
@@ -38,266 +38,106 @@
 
     <ImageView
         android:id="@+id/rep_name1"
-        android:layout_width="92dp"
-        android:layout_height="73dp"
+        android:layout_width="78dp"
+        android:layout_height="54dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/rep_name1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/daailyrep_2"
         app:srcCompat="@drawable/qwe" />
 
-    <TableLayout
-        android:id="@+id/dailyreportstable"
-        android:layout_width="365dp"
-        android:layout_height="306dp"
-        android:layout_marginTop="28dp"
-        android:contentDescription="@string/dailyreportstable"
-        android:paddingLeft="15dp"
-        android:paddingRight="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:background="#84ACBD"
+        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rep_name1">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#84ACBD"
-            android:padding="10dp">
+        <TextView
+            android:id="@+id/table1"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:shadowColor="#B69191"
+            android:text="Reference No"
+            app:autoSizeTextType="uniform" />
 
-            <TextView
-                android:id="@+id/table1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:shadowColor="#B69191"
-                android:text="Reference No"
-                app:autoSizeTextType="uniform" />
+        <TextView
+            android:id="@+id/table2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="Animal ID"
+            app:autoSizeTextType="uniform" />
 
-            <TextView
-                android:id="@+id/table2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="Animal ID"
-                app:autoSizeTextType="uniform" />
+        <TextView
+            android:id="@+id/table3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="Fee"
+            app:autoSizeTextType="uniform" />
 
-            <TextView
-                android:id="@+id/table3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="Fee"
-                app:autoSizeTextType="uniform" />
+    </TableRow>
 
-        </TableRow>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idtableSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow2" />
 
-        <TableRow
-            android:background="@color/white"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/table4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="12345"
-                app:autoSizeTextType="uniform" />
-
-            <TextView
-                android:id="@+id/table5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="123"
-                app:autoSizeTextType="uniform" />
-
-            <TextView
-                android:id="@+id/table6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="2000.00"
-                app:autoSizeTextType="uniform" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="#C6D5DB"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/table7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="23456"
-                app:autoSizeTextType="uniform" />
-
-            <TextView
-                android:id="@+id/table8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="124"
-                app:autoSizeTextType="uniform" />
-
-            <TextView
-                android:id="@+id/table9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="1500.00"
-                app:autoSizeTextType="uniform" />
-
-        </TableRow>
-
-        <TableRow
-
-            android:background="#ffffff"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/table10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="45678"
-                app:autoSizeTextType="uniform" />
-
-            <TextView
-                android:id="@+id/table11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="454"
-                app:autoSizeTextType="uniform" />
-
-            <TextView
-                android:id="@+id/table12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="2500.00"
-                app:autoSizeTextType="uniform" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="#C6D5DB"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/table13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="54321"
-                app:autoSizeTextType="uniform" />
-
-            <TextView
-                android:id="@+id/table14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="543"
-                app:autoSizeTextType="uniform" />
-
-            <TextView
-                android:id="@+id/table15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="1750.00"
-                app:autoSizeTextType="uniform" />
-
-        </TableRow>
-
-        <TableRow
-            android:background="#ffffff"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/table16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="43212"
-                app:autoSizeTextType="uniform" />
-
-            <TextView
-                android:id="@+id/table17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="342"
-                app:autoSizeTextType="uniform" />
-
-            <TextView
-                android:id="@+id/table18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="2000.00"
-                app:autoSizeTextType="uniform" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="328dp"
-            android:background="#C6D5DB"
-            android:padding="10dp">
-
-            <TextView
-                android:id="@+id/table19"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:fontFamily="sans-serif-black"
-                app:autoSizeTextType="uniform" />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:background="#C6D5DB"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idtableSchedule">
 
 
-            <TextView
-                android:id="@+id/table20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:fontFamily="sans-serif-black"
-                android:gravity="center_horizontal"
-                android:text="Total Fee"
-                android:textAlignment="center"
-                app:autoSizeTextType="uniform" />
+        <TextView
+            android:id="@+id/table19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:fontFamily="sans-serif-black"
+            app:autoSizeTextType="uniform" />
 
-            <TextView
-                android:id="@+id/table21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-black"
-                android:text="9750.00"
-                app:autoSizeTextType="uniform" />
+        <TextView
+            android:id="@+id/table20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_horizontal"
+            android:text="Total Fee"
+            android:textAlignment="center"
+            app:autoSizeTextType="uniform" />
 
-        </TableRow>
-    </TableLayout>
+        <TextView
+            android:id="@+id/table21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="9750.00"
+            app:autoSizeTextType="uniform" />
+
+    </TableRow>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
@@ -348,8 +188,8 @@
 
     <ImageView
         android:id="@+id/hos_logo1"
-        android:layout_width="81dp"
-        android:layout_height="71dp"
+        android:layout_width="57dp"
+        android:layout_height="49dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/hos_logo"
         app:layout_constraintEnd_toStartOf="@+id/dailyrep_1"

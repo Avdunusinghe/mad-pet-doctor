@@ -14,19 +14,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Madpetdoctor">
         <activity
+            android:name=".DeleteUserActivity"
+            android:exported="true" />
+        <activity
             android:name=".CilentProfileViewActivity"
             android:exported="true" />
         <activity android:name=".ClientProfile" />
-        <activity android:name=".UpdateScheduleActivity"></activity>
+        <activity android:name=".UpdateScheduleActivity" />
         <activity android:name=".MedicalProfActivity" />
         <activity android:name=".PetBookFormActivity" />
-        <activity android:name=".EnterScheduleActivity"></activity>
-        <activity android:name=".AppointmentsActivity"></activity>
-        <activity android:name=".DoctorProfile"></activity>
-        <activity android:name=".BookingConfirmationActivity"></activity>
+        <activity android:name=".EnterScheduleActivity" />
+        <activity android:name=".AppointmentsActivity" />
+        <activity android:name=".DoctorProfile" />
+        <activity android:name=".BookingConfirmationActivity" />
         <activity android:name=".ContactUsActivity" />
-        <activity android:name=".AppointmentDetailsActivity"></activity>
-        <activity android:name=".MedicalProfileUserActivity"></activity>
+        <activity android:name=".UserListActivity" />
+        <activity android:name=".DoctorListActivity" />
+        <activity android:name=".MedicalCenterList" />
+        <activity android:name=".AppointmentDetailsActivity" />
+        <activity android:name=".MedicalProfileUserActivity" />
         <activity android:name=".CardPayActivity" />
         <activity
             android:name=".MedicalCenterDialogActivity"
@@ -44,10 +50,9 @@
             android:name=".ResetPasswordEmailActivity"
             android:exported="true" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".AdminHome" />
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".CreateAccount" />
-        <activity android:name=".AuthActivity">
+        <activity android:name=".AdminHome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

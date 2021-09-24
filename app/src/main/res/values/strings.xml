@@ -536,6 +536,8 @@
     <string name="emailTextView" />
     <string name="mobileTextView" />
     <string name="viewProfileUpdateButton">Update Profile</string>
+    <string name="userDeleteButton">Delete Account</string>
+    <string name="userDeleteTextView">Please Enter Your Email And Password Delete Your Name</string>
 
 
 </resources>

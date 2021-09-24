@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_admin_home.xml" value="0.6" />
         <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_auth.xml" value="0.31197916666666664" />
         <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_change_password.xml" value="0.1828125" />
         <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_cilent_profile_view.xml" value="0.36666666666666664" />

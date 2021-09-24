@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fdefe9"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -92,7 +93,7 @@
         android:layout_marginTop="28dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center_horizontal"
-        android:text="@string/doctor_registration"
+        android:text="Edit Doctor Profile"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -323,26 +324,20 @@
         android:layout_width="299dp"
         android:layout_height="39dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="161dp"
         android:hint="@string/Email"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView29"
-        app:layout_constraintTop_toBottomOf="@+id/editText9"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/editText9" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="187dp"
         android:layout_height="111dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputEditText2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:srcCompat="@drawable/docreg1" />
+        app:srcCompat="@drawable/docreg1"
+        tools:layout_editor_absoluteX="112dp"
+        tools:layout_editor_absoluteY="148dp" />
 
     <Button
         android:id="@+id/auth_loginbtn"
@@ -355,26 +350,11 @@
         android:textStyle="bold"
         app:backgroundTint="#E82196F3"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2"
-        app:layout_constraintVertical_bias="0.36" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="118dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="28dp"
-        android:background="#BF0B11"
-        android:text="Delete"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:backgroundTint="#DFCD0808"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/auth_loginbtn" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView30"
+        app:layout_constraintVertical_bias="0.829" />
 
     <RadioGroup
         android:id="@+id/radioGroup2"

@@ -15,13 +15,14 @@
         android:theme="@style/Theme.Madpetdoctor">
         <activity android:name=".UpdateScheduleActivity">
         </activity>
-        <activity android:name=".MedicalProfActivity"></activity>
-        <activity android:name=".PetBookFormActivity"></activity>
+        <activity android:name=".MedicalProfActivity">
+
+        </activity>
+        <activity android:name=".PetBookFormActivity">
+
+        </activity>
         <activity android:name=".ScheduleApprovalsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+
         </activity>
         <activity android:name=".EnterScheduleActivity">
 
@@ -35,19 +36,20 @@
         <activity android:name=".BookingConfirmationActivity">
 
         </activity>
-        <activity android:name=".ContactUsActivity"></activity>
+        <activity android:name=".ContactUsActivity">
+
+        </activity>
         <activity android:name=".AppointmentDetailsActivity">
 
         </activity>
         <activity android:name=".MedicalProfileUserActivity">
 
         </activity>
-        <activity android:name=".CardPayActivity"></activity>
+        <activity android:name=".CardPayActivity">
+
+        </activity>
         <activity android:name=".DailyReportsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+
         </activity>
 
 
@@ -68,30 +70,48 @@
         <activity android:name=".BlogContent"/>
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".CreateAccount" />
-<<<<<<< HEAD
+
         <activity android:name=".AuthActivity"/>
         <activity android:name=".ChatWithDoc"/>
-        <activity android:name=".ChatWindow"/>
+        <activity android:name=".ChatWindow">
+
+        </activity>
         <activity android:name=".HealthTips"/>
         <activity android:name=".Dog"/>
         <activity android:name=".DailyReport"/>
-        <activity android:name=".MyAppointmnt"/>
-        <activity android:name=".DoctorListActivity"/>
-        <activity android:name=".DoctoreRegistration"/>
-        <activity android:name=".MedicalCenterRegistration"/>
-        <activity android:name=".MyAppointmentReport"/>
-        <activity android:name=".Doctors"/>
-        <activity android:name=".BlogMenu"/>
-        <activity android:name=".DoctorProfile">
-=======
-        <activity android:name=".DoctorListActivity"/>
->>>>>>> 72a3f752d33ed3127dacf7c5bf56d8dd43fe0e5a
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
-        <activity android:name=".AuthActivity">
+        <activity android:name=".MyAppointmnt">
 
         </activity>
+        <activity android:name=".DoctorListActivity">
+
+        </activity>
+        <activity android:name=".DoctorEditList">
+
+        </activity>
+        <activity android:name=".MedCenterEditList">
+
+        </activity>
+        <activity android:name=".DoctoreRegistration">
+
+        </activity>
+
+        <activity android:name=".MedicalCenterRegistration">
+
+        </activity>
+        <activity android:name=".MyAppointmentReport">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Doctors">
+
+        </activity>
+        <activity android:name=".BlogMenu">
+
+        </activity>
+
     </application>
 
 </manifest>

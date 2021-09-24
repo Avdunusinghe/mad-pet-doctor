@@ -31,7 +31,7 @@ public class DoctorProfile extends AppCompatActivity {
     private TextInputEditText fullNameEdt, docLicenseNoEdt, qualificationEdt, medicalCenterEdt, addressEdt, telNoEdt, emailEdt;
     private RadioGroup houseCallYesOrNoGroup;
     private RadioButton houseCallYesOrNoBtn;
-    Button updateBtn,deleteBtn;
+    Button updateBtn;
     ProgressDialog spinner;
     private FirebaseDatabase fireBaseDatabase;
     private DatabaseReference databaseReference;
@@ -51,11 +51,8 @@ public class DoctorProfile extends AppCompatActivity {
         emailEdt = findViewById(R.id.editText10);
         houseCallYesOrNoGroup = (RadioGroup) findViewById(R.id.radioGroup2);
         updateBtn = findViewById(R.id.auth_loginbtn);
-        deleteBtn = findViewById(R.id.button2);
-<<<<<<< HEAD
         spinner = new ProgressDialog(DoctorProfile.this);
-=======
->>>>>>> 72a3f752d33ed3127dacf7c5bf56d8dd43fe0e5a
+
         fireBaseDatabase = FirebaseDatabase.getInstance();
         doctorReg = getIntent().getParcelableExtra("Doctor");
 
@@ -136,13 +133,6 @@ public class DoctorProfile extends AppCompatActivity {
                         }
                     });
                 }
-            }
-        });
-
-        deleteBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteDoctor();
             }
         });
     }

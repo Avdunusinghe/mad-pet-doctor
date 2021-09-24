@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fdefe9"
     tools:context=".MyAppointmnt">
 
     <androidx.appcompat.widget.Toolbar
@@ -84,8 +85,8 @@
 
     <TableRow
         android:id="@+id/tableRow"
-        android:layout_width="384dp"
-        android:layout_height="42dp"
+        android:layout_width="409dp"
+        android:layout_height="48dp"
         android:layout_margin="30dp"
         android:background="#E29DAAED"
         android:padding="10dp"
@@ -98,16 +99,16 @@
 
         <TextView
             android:id="@+id/apptable2"
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
+            android:layout_width="99dp"
+            android:layout_height="38dp"
             android:layout_weight="1"
             android:fontFamily="sans-serif-black"
             android:text="Patient Name" />
 
         <TextView
             android:id="@+id/apptable3"
-            android:layout_width="47dp"
-            android:layout_height="35dp"
+            android:layout_width="66dp"
+            android:layout_height="34dp"
             android:layout_weight="1"
             android:fontFamily="sans-serif-black"
             android:text="Date" />
@@ -121,27 +122,22 @@
             android:text="Time" />
 
         <TextView
-            android:id="@+id/apptable5"
-            android:layout_width="59dp"
-            android:layout_height="34dp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-black"
-            android:text="Confirm" />
-
-        <TextView
             android:id="@+id/apptable6"
             android:layout_width="60dp"
             android:layout_height="34dp"
             android:fontFamily="sans-serif-black"
-            android:text="Remove" />
+            android:text="Action" />
 
     </TableRow>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idtableSchedule"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="411dp"
+        android:layout_height="502dp"
         android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableRow" />
 

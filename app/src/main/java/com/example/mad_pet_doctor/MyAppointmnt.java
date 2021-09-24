@@ -9,13 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.model.ScheduleModal;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,13 +25,13 @@ public class MyAppointmnt extends AppCompatActivity {
 
     private TextView Heading, PatientNameEdt, DateEdt, TimeEdt, Column4, Column5;
     private RecyclerView table;
-    private ImageButton UpdateBtn, DeleteBtn;
+    private ImageButton ConfirmBtn, IgnoreBtn;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private String ScheduleId;
     private ScheduleModal scheduleModal;
     private ArrayList<ScheduleModal> scheduleModalArrayList;
-    private TableAdapter tableAdapter;
+    private TableAdapterAppointment tableAdapterAppointment;
     ProgressDialog spinner;
 
     @Override
@@ -48,40 +45,39 @@ public class MyAppointmnt extends AppCompatActivity {
         TimeEdt=findViewById(R.id.apptable4);
         Column4=findViewById(R.id.apptable5);
         Column5=findViewById(R.id.apptable6);
-        UpdateBtn=findViewById(R.id.icondell4);
-        DeleteBtn=findViewById(R.id.icondel14);
+        ConfirmBtn=findViewById(R.id.confirm);
+        IgnoreBtn=findViewById(R.id.ignore);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference= firebaseDatabase.getReference("Schedules");
         scheduleModalArrayList = new ArrayList<>();
-        tableAdapter = new TableAdapter(scheduleModalArrayList,this,  this::onCourseClick);
+        tableAdapterAppointment = new TableAdapterAppointment(scheduleModalArrayList,this,  this::onCourseClick);
         table.setLayoutManager(new LinearLayoutManager(this));
-        table.setAdapter(tableAdapter);
-        getAllschedules();
+        table.setAdapter(tableAdapterAppointment);
+        getAllSchedules();
     }
 
-    private void getAllschedules() {
+    private void getAllSchedules() {
         scheduleModalArrayList.clear();
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onChildAdded(@NonNull  DataSnapshot snapshot, @Nullable String previousChildName) {
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 scheduleModalArrayList.add(snapshot.getValue(ScheduleModal.class));
-                tableAdapter.notifyDataSetChanged();;
-
+                tableAdapterAppointment.notifyDataSetChanged();
             }
 
             @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable  String previousChildName) {
-                tableAdapter.notifyDataSetChanged();
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                tableAdapterAppointment.notifyDataSetChanged();
             }
 
             @Override
-            public void onChildRemoved(@NonNull  DataSnapshot snapshot) {
-                tableAdapter.notifyDataSetChanged();
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                tableAdapterAppointment.notifyDataSetChanged();
             }
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                tableAdapter.notifyDataSetChanged();
+                tableAdapterAppointment.notifyDataSetChanged();
             }
 
             @Override
@@ -91,9 +87,12 @@ public class MyAppointmnt extends AppCompatActivity {
         });
     }
 
+
     public void onCourseClick(int position){
-        startActivity(new Intent(MyAppointmnt.this , PetBookFormActivity.class));
-
-
+        startActivity(new Intent(MyAppointmnt.this , MyAppointmentReport.class));
+        spinner.setTitle("Ignore Appointment");
+        spinner.setMessage("Please Wait while deleting.");
+        spinner.setCanceledOnTouchOutside(false);
+        spinner.show();
     }
 }

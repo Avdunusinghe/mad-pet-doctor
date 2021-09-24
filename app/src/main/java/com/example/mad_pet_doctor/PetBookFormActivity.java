@@ -132,13 +132,14 @@ public class  PetBookFormActivity extends AppCompatActivity {
                 } else if (TextUtils.isEmpty((AppTimeEdt.getText().toString()))) {
                     Toast.makeText(getApplicationContext(), "Please select Time", Toast.LENGTH_SHORT).show();
                 } else {
+                    String Id = databaseReference.push().getKey();
                     String AnimalName = AnimalNameEdt.getText().toString();
                     String OwnerName = OwnerNameEdt.getText().toString();
                     String OwnerPhone = OwnerPhoneEdt.getText().toString();
                     String Address = AddressEdt.getText().toString();
                     String AppointmentDate = AppDateEdt.getText().toString();
                     String AppointmentTime = AppTimeEdt.getText().toString();
-                    BookingId = AnimalName;
+                    BookingId = Id;
                     BookingModal bookingModal = new BookingModal(AnimalName, OwnerName, OwnerPhone, Address, AppointmentDate, AppointmentTime, BookingId);
 
                     databaseReference.addValueEventListener(new ValueEventListener() {

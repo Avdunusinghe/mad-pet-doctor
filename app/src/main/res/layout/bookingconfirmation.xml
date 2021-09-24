@@ -303,7 +303,7 @@
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip5"
-        android:layout_width="44dp"
+        android:layout_width="45dp"
         android:layout_height="25dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="112dp"
@@ -318,7 +318,7 @@
         android:id="@+id/chip9"
         android:layout_width="45dp"
         android:layout_height="25dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         app:chipBackgroundColor="#000000"

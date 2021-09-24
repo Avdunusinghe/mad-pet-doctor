@@ -71,6 +71,7 @@ public class BookingConfirmationActivity extends AppCompatActivity {
 
                     BookingModal bookingModal;
                     bookingModal = datasnapshot.getValue(BookingModal.class);
+                    assert bookingModal != null;
                     String petId = bookingModal.getBookingId();
                     String petname = bookingModal.getAnimalName();
                     String ownername = bookingModal.getOwnerName();
@@ -86,9 +87,10 @@ public class BookingConfirmationActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(BookingConfirmationActivity.this, "Error occurs to booking" + error.toString(), Toast.LENGTH_SHORT).show();
+            public void onCancelled(@NonNull  DatabaseError error) {
+
             }
+
         });
 
     }}

@@ -54,7 +54,7 @@ public class AppointmentsActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull  DataSnapshot snapshot, @Nullable  String previousChildName) {
                 scheduleModalArrayList.add(snapshot.getValue(ScheduleModal.class));
-                scheduleAdapter.notifyDataSetChanged();;
+                scheduleAdapter.notifyDataSetChanged();
 
             }
 

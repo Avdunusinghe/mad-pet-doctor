@@ -12,13 +12,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.model.CardPaymentsModal;
+import com.example.model.DailyReportModal;
 import com.example.model.ScheduleModal;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.ArrayList;
 
 public class DailyReportsActivity extends AppCompatActivity {
@@ -28,8 +28,8 @@ public class DailyReportsActivity extends AppCompatActivity {
     public RecyclerView dailyreportsapp;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private CardPaymentsModal cardPaymentsModal;
-    private ArrayList<CardPaymentsModal> cardPaymentsModalArrayList;
+    private DailyReportModal dailyReportModal;
+    private ArrayList<DailyReportModal> dailyReportModalArrayList;
     private DailyReportsAdapter dailyReportsAdapter;
 
     @Override
@@ -44,9 +44,9 @@ public class DailyReportsActivity extends AppCompatActivity {
         Date= findViewById(R.id.daailyrep_2);
         dailyreportsapp = findViewById(R.id.idtableSchedule);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference= firebaseDatabase.getReference("CardPayments");
-        cardPaymentsModalArrayList = new ArrayList<>();
-        dailyReportsAdapter = new DailyReportsAdapter(cardPaymentsModalArrayList,this);
+        databaseReference= firebaseDatabase.getReference("DailyReports");
+        dailyReportModalArrayList= new ArrayList<>();
+        dailyReportsAdapter = new DailyReportsAdapter(dailyReportModalArrayList,this);
         dailyreportsapp.setLayoutManager(new LinearLayoutManager(this));
         dailyreportsapp.setAdapter(dailyReportsAdapter);
         getAllschedules();
@@ -54,11 +54,11 @@ public class DailyReportsActivity extends AppCompatActivity {
     }
 
     private void getAllschedules() {
-        cardPaymentsModalArrayList.clear();
+        dailyReportModalArrayList.clear();
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                cardPaymentsModalArrayList.add(snapshot.getValue(CardPaymentsModal.class));
+                dailyReportModalArrayList.add(snapshot.getValue(DailyReportModal.class));
                 dailyReportsAdapter.notifyDataSetChanged();;
 
             }

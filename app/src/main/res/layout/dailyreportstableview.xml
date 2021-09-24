@@ -24,7 +24,6 @@
             android:background="#C6D5DB"
             android:padding="10dp">
 
-
             <TextView
                 android:id="@+id/table4"
                 android:layout_width="45dp"
@@ -35,8 +34,17 @@
                 app:autoSizeTextType="uniform" />
 
             <TextView
+                android:id="@+id/tablenew4"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-black"
+                android:text=""
+                app:autoSizeTextType="uniform" />
+
+            <TextView
                 android:id="@+id/table5"
-                android:layout_width="85dp"
+                android:layout_width="67dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-black"
@@ -45,11 +53,11 @@
 
             <TextView
                 android:id="@+id/table6"
-                android:layout_width="0dp"
+                android:layout_width="35dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-black"
-                android:text="2000.00"
+                android:text=""
                 app:autoSizeTextType="uniform" />
 
         </TableRow>

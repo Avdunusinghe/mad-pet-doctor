@@ -276,9 +276,7 @@
 
     <string name="createAcc_confirmPasswordText">Confirm Password</string>
     <string name="createAcc_ConfirmPasswordEditText" />
-    <string name="resetPasswordEmail_text">Email</string>
     <string name="resetPassword_emailEditText" />
-    <string name="send_emailBtn">Send Email</string>
     <string name="resetPassword_authTextView">Sign in</string>
     <string name="user_name_list_textview" />
     <string name="user_email_list_textview" />
@@ -543,6 +541,8 @@
     <string name="deleteUserPasswordEditText" />
     <string name="deleteUserSubmitButton">Submit</string>
     <string name="deleteUserEmailEditText" />
+    <string name="resetPasswordEmail_text">Email</string>
+    <string name="send_emailBtn">Send Link</string>
 
 
 </resources>

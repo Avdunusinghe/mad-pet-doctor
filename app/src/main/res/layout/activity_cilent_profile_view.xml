@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ClientProfile">
+    tools:context=".CilentProfileViewActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/app_toolbar"
@@ -20,25 +20,25 @@
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip9"
-        android:layout_width="36dp"
-        android:layout_height="47dp"
+        android:layout_width="44dp"
+        android:layout_height="28dp"
         android:layout_marginTop="4dp"
         android:background="@color/black"
         app:chipSurfaceColor="#1E1C1C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip13"
-        android:layout_width="15dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="45dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="24dp"
         android:background="@color/black"
         app:chipBackgroundColor="#2B2828"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -89,77 +89,37 @@
         android:id="@+id/clientProfile_nameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="56dp"
         android:text="@string/clientProfile_nameText"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.155"
+        app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView48" />
-
-    <EditText
-        android:id="@+id/editProfile_nameEditText"
-        android:layout_width="258dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/editProfile_nameEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.379"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clientProfile_nameText" />
-
-    <EditText
-        android:id="@+id/editProfile_emailEditText"
-        android:layout_width="257dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/editProfile_emailEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.416"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editProfile_emailText" />
 
     <TextView
         android:id="@+id/editProfile_emailText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="32dp"
         android:text="@string/editProfile_emailText"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editProfile_nameEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/clientProfile_nameText" />
 
     <TextView
         android:id="@+id/editProfile_mobileText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:text="@string/editProfile_mobileText"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editProfile_emailEditText" />
-
-    <EditText
-        android:id="@+id/editProfile_movileNumberEditText"
-        android:layout_width="273dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="@string/editProfile_movileNumberEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.42"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editProfile_mobileText" />
+        app:layout_constraintTop_toBottomOf="@+id/editProfile_emailText" />
 
     <View
         android:id="@+id/view"
@@ -169,20 +129,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_toolbar" />
-
-    <Button
-        android:id="@+id/clientProfileSavebtn"
-        android:layout_width="113dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="32dp"
-        android:text="@string/clientProfileSavebtn"
-        app:backgroundTint="#EA3F3F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.419"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editProfile_movileNumberEditText"
-        app:layout_constraintVertical_bias="0.217" />
 
     <TextView
         android:id="@+id/clientProfileText"
@@ -196,6 +142,54 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameViewText"
+        android:layout_width="191dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/nameViewText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.736"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView48" />
+
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="193dp"
+        android:layout_height="24dp"
+        android:text="@string/emailTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.487" />
+
+    <TextView
+        android:id="@+id/mobileTextView"
+        android:layout_width="186dp"
+        android:layout_height="24dp"
+        android:text="@string/mobileTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailTextView"
+        app:layout_constraintVertical_bias="0.082" />
+
+    <Button
+        android:id="@+id/viewProfileUpdateButton"
+        android:layout_width="197dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/viewProfileUpdateButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mobileTextView"
+        app:layout_constraintVertical_bias="0.341" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

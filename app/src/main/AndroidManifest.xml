@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mad_pet_doctor">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
@@ -13,39 +13,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Madpetdoctor">
-        <activity android:name=".UpdateScheduleActivity">
-        </activity>
-        <activity android:name=".MedicalProfActivity"></activity>
-        <activity android:name=".PetBookFormActivity"></activity>
-
-        <activity android:name=".EnterScheduleActivity">
-
-        </activity>
-        <activity android:name=".AppointmentsActivity">
-
-        </activity>
-        <activity android:name=".DoctorProfile">
-
-        </activity>
-        <activity android:name=".BookingConfirmationActivity">
-
-        </activity>
-        <activity android:name=".ContactUsActivity"></activity>
-        <activity android:name=".AppointmentDetailsActivity">
-
-        </activity>
-        <activity android:name=".MedicalProfileUserActivity">
-
-        </activity>
-        <activity android:name=".CardPayActivity"></activity>
-        <activity android:name=".DailyReportsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-
-
+        <activity
+            android:name=".CilentProfileViewActivity"
+            android:exported="true" />
+        <activity android:name=".ClientProfile" />
+        <activity android:name=".UpdateScheduleActivity"></activity>
+        <activity android:name=".MedicalProfActivity" />
+        <activity android:name=".PetBookFormActivity" />
+        <activity android:name=".EnterScheduleActivity"></activity>
+        <activity android:name=".AppointmentsActivity"></activity>
+        <activity android:name=".DoctorProfile"></activity>
+        <activity android:name=".BookingConfirmationActivity"></activity>
+        <activity android:name=".ContactUsActivity" />
+        <activity android:name=".AppointmentDetailsActivity"></activity>
+        <activity android:name=".MedicalProfileUserActivity"></activity>
+        <activity android:name=".CardPayActivity" />
         <activity
             android:name=".MedicalCenterDialogActivity"
             android:exported="true" />
@@ -65,7 +47,7 @@
         <activity android:name=".AdminHome" />
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".CreateAccount" />
-        <activity android:name=".ScheduleApprovalsActivity">
+        <activity android:name=".AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

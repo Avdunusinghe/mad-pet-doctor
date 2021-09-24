@@ -532,6 +532,10 @@
     <string name="mc_up_email_et" />
     <string name="buttonUpdateMc">Update</string>
     <string name="buttonDeleteMc">Delete</string>
+    <string name="nameViewText" />
+    <string name="emailTextView" />
+    <string name="mobileTextView" />
+    <string name="viewProfileUpdateButton">Update Profile</string>
 
 
 </resources>

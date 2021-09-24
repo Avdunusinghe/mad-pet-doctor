@@ -25,13 +25,13 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
       private ArrayList<ScheduleModal> scheduleModalArrayList;
       private Context context;
       int lastPos = -1;
-      private CourseClickInterface courseClickInterface;
+     // private CourseClickInterface courseClickInterface;
 
 
-    public ScheduleAdapter(ArrayList<ScheduleModal> scheduleModalArrayList, Context context, CourseClickInterface courseClickInterface) {
+    public ScheduleAdapter(ArrayList<ScheduleModal> scheduleModalArrayList, Context context) {
         this.scheduleModalArrayList = scheduleModalArrayList;
         this.context = context;
-        this.courseClickInterface = courseClickInterface;
+        //this.courseClickInterface = courseClickInterface;
     }
 
     @Override
@@ -50,8 +50,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
         holder.BookBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                courseClickInterface.onCourseClick(position);
+                //courseClickInterface.onCourseClick(position);
             }
         });
 

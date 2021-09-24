@@ -25,9 +25,9 @@ public class ClientProfile extends AppCompatActivity {
 
     String userId;
 
-    EditText name,phoneNumber;
+    EditText name,phoneNumber,email;
 
-    TextView email;
+   // TextView email;
 
     Button updateUserBtn;
 
@@ -84,9 +84,9 @@ public class ClientProfile extends AppCompatActivity {
 
                 if(snapshot.hasChildren()){
 
-                    name.setText(snapshot.child("name").getValue().toString());
-
                     email.setText(snapshot.child("email").getValue().toString());
+
+                    name.setText(snapshot.child("name").getValue().toString());
 
                     phoneNumber.setText(snapshot.child("phoneNumber").getValue().toString());
                 }
@@ -109,23 +109,19 @@ public class ClientProfile extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                    dbRef.child("email").setValue(email.getText().toString().trim());
+
                     dbRef.child("name").setValue(name.getText().toString().trim());
 
-                    dbRef.child("phoneNumber").setValue(name.getText().toString().trim());
+                    dbRef.child("phoneNumber").setValue(phoneNumber.getText().toString().trim());
 
-                    spinner.setTitle("Update Profile");
-
-                    spinner.setMessage("Please Wait");
-
-                    spinner.setCanceledOnTouchOutside(false);
-
-                    spinner.show();
 
                     Toast.makeText(getApplicationContext(),
                             "Succefully updated detils",
                             Toast.LENGTH_SHORT)
                             .show();
-                    Intent intent = new Intent(ClientProfile.this, ClientProfile.class);
+
+                    Intent intent = new Intent(ClientProfile.this, CilentProfileViewActivity.class);
                     startActivity(intent);
                 }
 

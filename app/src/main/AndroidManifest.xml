@@ -27,7 +27,7 @@
         <activity android:name=".AdminHome" />
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".CreateAccount" />
-        <activity android:name=".PetCardDetails">
+        <activity android:name=".VaccineReport">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,7 +39,7 @@
         <activity android:name=".PetCard" />
         <activity android:name=".DoctorListActivity" />
         <activity android:name=".DetailsOfPets" />
-        <activity android:name=".VaccineReport" />
+        <activity android:name=".PetCardDetails" />
         <activity android:name=".IntroductionDog" />
         <activity android:name=".DogDiseasesAndVaccines" />
         <activity android:name=".DogNutritionAndGrowth" />

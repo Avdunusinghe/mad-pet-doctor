@@ -41,7 +41,7 @@ public class PetCardDetails extends AppCompatActivity {
     private TextView pcdbreed, pcddateofbirth,pcdage,pcdgender, pcdweight;
     private RecyclerView pcdRecycleView;
     private ImageButton pcdUpdateButton, pcdDeleteButton;
-
+    private Chip HomeChip1, HomeChip2;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private ArrayList<PetCardModal> petCardDetailsArrayList;
@@ -65,8 +65,8 @@ public class PetCardDetails extends AppCompatActivity {
 
         pcdUpdateButton = findViewById(R.id.PCDUpdateButton);
         pcdDeleteButton = findViewById(R.id.PCDDeleteButton);
-
-
+        HomeChip1 = findViewById(R.id.chip12);
+        HomeChip2 = findViewById(R.id.chip15);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference= firebaseDatabase.getReference("PetCards");
         petCardDetailsArrayList = new ArrayList<>();
@@ -75,9 +75,9 @@ public class PetCardDetails extends AppCompatActivity {
         pcdRecycleView.setAdapter(petCardDetailsAdapter);
         getAllPetCardDetails();
 
-        petCardModals = getIntent().getParcelableExtra("PetCard");
+        petCardModals = getIntent().getParcelableExtra("PetCards");
         if (petCardModals != null){
-            pcdpetid.setText(petCardModals.getPet_Name());
+            pcdpetid.setText(petCardModals.getPet_ID());
             pcdpetname.setText(petCardModals.getPet_Name());
             pcdbreed.setText(petCardModals.getPet_Breed());
             pcddateofbirth.setText(petCardModals.getPet_DateOfBirth());
@@ -88,8 +88,21 @@ public class PetCardDetails extends AppCompatActivity {
             petId = petCardModals.getPet_ID();
         }
 
-        databaseReference = firebaseDatabase.getReference("PetCards").child(petId);
-        pcdUpdateButton.setOnClickListener(new View.OnClickListener() {
+        HomeChip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PetCardDetails.this, ActivityMainSideBar.class));
+            }
+        });
+        HomeChip2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PetCardDetails.this, ActivityMainSideBar.class));
+            }
+        });
+
+       /*databaseReference = firebaseDatabase.getReference("PetCard").child(petId);
+       pcdUpdateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String Pet_ID = pcdpetid.getText().toString();
@@ -134,10 +147,10 @@ public class PetCardDetails extends AppCompatActivity {
             public void onClick(View v) {
                 deletePetCardDetails();
             }
-        });
+        });*/
     }
 
-    private void getAllPetCardDetails() {
+    private void getAllPetCardDetails(){
         petCardDetailsArrayList.clear();
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override

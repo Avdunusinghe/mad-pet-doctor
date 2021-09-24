@@ -80,7 +80,7 @@ public class ActivityMainSideBar extends AppCompatActivity {
         NavButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ActivityMainSideBar.this, VaccineDetailsActivity.class));
+                startActivity(new Intent(ActivityMainSideBar.this, VaccineReport.class));
             }
         });
 

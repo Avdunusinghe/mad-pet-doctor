@@ -71,16 +71,6 @@ public class CilentProfileViewActivity extends AppCompatActivity {
             }
         });
 
-        deleteUserAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                deleteUserAccount();
-
-
-            }
-        });
-
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -103,35 +93,20 @@ public class CilentProfileViewActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-    }
-
-
-    private  void deleteUserAccount(){
-
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        user.delete().addOnCompleteListener(new OnCompleteListener<Void>() {
+        deleteUserAccount.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onComplete(@NonNull Task<Void> task) {
+            public void onClick(View v) {
 
-                if(task.isSuccessful()){
+                Intent intent = new Intent(CilentProfileViewActivity.this,DeleteUserActivity.class);
 
+                startActivity(intent);
 
-                    Toast.makeText(getApplicationContext(),
-                            "Succefully Delete Account",
-                            Toast.LENGTH_SHORT)
-                            .show();
-
-                    Intent intent = new Intent(CilentProfileViewActivity.this, AuthActivity.class);
-                    startActivity(intent);
-
-                }
             }
         });
-    }
 
+
+
+
+    }
 
 }

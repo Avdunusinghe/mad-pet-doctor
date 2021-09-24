@@ -21,10 +21,8 @@ public class DeleteUserActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_user);
-        //deleteUserSubmitButton.deleteUserPasswordEditText,deleteUserEmailEditText
         final EditText email = findViewById(R.id.deleteUserEmailEditText);
         final EditText password = findViewById(R.id.deleteUserPasswordEditText);
         Button submit = findViewById(R.id.deleteUserSubmitButton);
@@ -33,6 +31,7 @@ public class DeleteUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                deleteUser(email.getText().toString(), password.getText().toString());
 
             }
         });

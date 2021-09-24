@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Beige"
+
     tools:context=".MainActivity">
 
 
     <ImageView
         android:id="@+id/hos_logo1"
-        android:layout_width="75dp"
-        android:layout_height="65dp"
+        android:layout_width="79dp"
+        android:layout_height="70dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="8dp"
@@ -21,14 +23,13 @@
 
     <Button
         android:id="@+id/prof_btn4"
-        android:layout_width="340dp"
-        android:layout_height="40dp"
+        android:layout_width="339dp"
+        android:layout_height="45dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/prof_btn1"
         android:text="SCHEDULES"
         app:backgroundTint="@color/BurlyWood"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
 
@@ -36,11 +37,12 @@
         android:id="@+id/prof_btn5"
         android:layout_width="350dp"
         android:layout_height="46dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:contentDescription="@string/prof_btn2"
         android:text="DOC REGISTRATION"
         app:backgroundTint="@color/Peru"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
 
@@ -48,12 +50,12 @@
         android:id="@+id/prof_btn3"
         android:layout_width="346dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/prof_btn3"
         android:text="DAILY REPORTS"
         app:backgroundTint="@color/Goldenrod"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintHorizontal_bias="0.446"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
 
@@ -61,32 +63,33 @@
         android:id="@+id/imageButton5"
         android:layout_width="145dp"
         android:layout_height="72dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="132dp"
         android:layout_marginRight="132dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/hos_logo1"
         app:layout_constraintTop_toBottomOf="@+id/toolbar3"
         app:srcCompat="@drawable/overtime_1" />
 
     <ImageButton
         android:id="@+id/imageButton6"
-        android:layout_width="148dp"
-        android:layout_height="65dp"
+        android:layout_width="150dp"
+        android:layout_height="71dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/prof_btn4"
         app:srcCompat="@drawable/edit_user_male" />
 
     <ImageButton
         android:id="@+id/imageButton7"
-        android:layout_width="163dp"
-        android:layout_height="66dp"
+        android:layout_width="166dp"
+        android:layout_height="74dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/prof_btn5"
         app:srcCompat="@drawable/medical_history" />
@@ -114,33 +117,27 @@
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip5"
-        android:layout_width="44dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
+        android:layout_width="48dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="24dp"
+        android:background="#000000"
         app:chipBackgroundColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/imageView56"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/toolbar3"
-        app:layout_constraintTop_toTopOf="@+id/chip9" />
-
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chip9"
-        android:layout_width="45dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
-        app:chipBackgroundColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/imageView56"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.011"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip9"
+        android:layout_width="48dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="8dp"
+        android:background="#000000"
+        app:chipBackgroundColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.011"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView52"
@@ -155,14 +152,15 @@
 
     <ImageView
         android:id="@+id/imageView56"
-        android:layout_width="64dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="75dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/toolbar3"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pet_doc_2" />
+
     <TextView
         android:id="@+id/usernameId"
         android:layout_width="wrap_content"
@@ -173,7 +171,7 @@
         android:textColor="@color/black"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView52" />
 

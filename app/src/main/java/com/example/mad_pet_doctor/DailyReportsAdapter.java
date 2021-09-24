@@ -40,14 +40,13 @@ public class DailyReportsAdapter  extends RecyclerView.Adapter<DailyReportsAdapt
     }
 
     @Override
-    public void onBindViewHolder(@NonNull  DailyReportsAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull  ViewHolder holder, int position) {
         DailyReportModal dailyReportModal = dailyReportModalArrayList.get(position);
         holder.Date.setText(dailyReportModal.getDate());
-        holder.NoOfAppointments.setText(dailyReportModal.getNumberOfAppointments());
-        holder.FeePerOne.setText(dailyReportModal.getAppointmentFee());
-        holder.totalFee.setText(dailyReportModal.getFee());
+        holder.NoOfAppointments.setText(Integer.toString(dailyReportModal.getNumberOfAppointments()));
+        holder.FeePerOne.setText(Integer.toString(dailyReportModal.getAppointmentFee()));
+        holder.totalFee.setText(Integer.toString(dailyReportModal.getFee()));
         setAnimation(holder.itemView, position);
-
     }
 
 

@@ -41,58 +41,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar4" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chip16"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="16dp"
-        app:chipBackgroundColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chip17"
-        android:layout_width="49dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="35dp"
-        app:chipBackgroundColor="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.002"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView56"
-        android:layout_width="71dp"
-        android:layout_height="54dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.403"
-        app:layout_constraintStart_toEndOf="@+id/chip16"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pet_doc_2" />
-
-    <ImageView
-        android:id="@+id/usericon3"
-        android:layout_width="30dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginLeft="112dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar4"
-        app:layout_constraintHorizontal_bias="0.166"
-        app:layout_constraintStart_toEndOf="@+id/imageView56"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user_icon" />
-
-    <TextView
-        android:id="@+id/textView57"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TKSAR"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar4"
-        app:layout_constraintHorizontal_bias="0.912"
-        app:layout_constraintStart_toEndOf="@+id/imageView56"
-        app:layout_constraintTop_toBottomOf="@+id/usericon3" />
 
     <ImageView
         android:id="@+id/hos_logo1"
@@ -100,10 +48,10 @@
         android:layout_height="58dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:contentDescription="@string/hos_logo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chip17"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar4"
         app:srcCompat="@drawable/hospital" />
 
     <TextView
@@ -291,6 +239,68 @@
         app:layout_constraintHorizontal_bias="0.931"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pet_input6" />
+
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip9"
+        android:layout_width="48dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="20dp"
+        android:background="#000000"
+        app:chipBackgroundColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip13"
+        android:layout_width="48dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="36dp"
+        android:background="#000000"
+        app:chipBackgroundColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView55"
+        android:layout_width="70dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/pet_doc_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pet_doc_2" />
+
+    <ImageView
+        android:id="@+id/usericon"
+        android:layout_width="31dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginLeft="116dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/user_icon"
+        app:layout_constraintHorizontal_bias="0.741"
+        app:layout_constraintStart_toEndOf="@+id/imageView55"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/user_icon" />
+
+    <TextView
+        android:id="@+id/usernameid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="4dp"
+        android:text="JGACH"
+        app:layout_constraintHorizontal_bias="0.768"
+        app:layout_constraintStart_toEndOf="@+id/imageView55"
+        app:layout_constraintTop_toBottomOf="@+id/usericon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

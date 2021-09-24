@@ -8,15 +8,16 @@
 
     <Button
         android:id="@+id/SAVE"
-        android:layout_width="135dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="263dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
         android:contentDescription="@string/vaccinereportsave"
         android:text="SAVE"
         app:backgroundTint="#EF0E0E"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vaccinepriceinput" />
+        app:layout_constraintTop_toBottomOf="@+id/confirm3" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -34,7 +35,7 @@
         android:id="@+id/vaccinename"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="25dp"
         android:contentDescription="@string/vdvaccinename"
         android:text="VACCINE NAME"
         android:textStyle="bold"
@@ -57,6 +58,44 @@
         app:layout_constraintTop_toBottomOf="@+id/vaccinenameinput" />
 
     <TextView
+        android:id="@+id/noofvaccines"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="15dp"
+        android:text="NO OF VACCINES : "
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vaccinedateinput" />
+
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="90dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:text="PRICE : "
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noofvaccines" />
+
+
+    <TextView
+        android:id="@+id/totalprice"
+        android:layout_width="130dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:text="TOTAL PRICE : "
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/price" />
+
+    <!--<TextView
         android:id="@+id/vaccineprice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vaccinedateinput" />
+        app:layout_constraintTop_toBottomOf="@+id/" /> -->
 
     <View
         android:id="@+id/view"
@@ -91,7 +130,66 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
+    <Button
+        android:id="@+id/confirm3"
+        android:layout_width="263dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:onClick="calculateBtn"
+        android:text="Calculate"
+        app:backgroundTint="#4B66FB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/totalFee" />
+
+    <TextView
+        android:id="@+id/totalFee"
+        android:layout_width="132dp"
+        android:layout_height="35dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="24dp"
+        android:text="Result"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/totalprice"
+        app:layout_constraintTop_toBottomOf="@+id/priceinput" />
+
     <EditText
+        android:id="@+id/priceinput"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="1dp"
+        android:contentDescription="@string/vdvaccineprice"
+        android:ems="12"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/price"
+        app:layout_constraintTop_toBottomOf="@+id/noofvaccineinput" />
+
+    <EditText
+        android:id="@+id/noofvaccineinput"
+        android:layout_width="116dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/vdvaccineprice"
+        android:ems="12"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/noofvaccines"
+        app:layout_constraintTop_toBottomOf="@+id/vaccinedateinput" />
+
+    <!--<EditText
         android:id="@+id/vaccinepriceinput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -102,7 +200,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vaccineprice" />
+        app:layout_constraintTop_toBottomOf="@+id/vaccineprice" /> -->
 
     <EditText
         android:id="@+id/vaccinedateinput"

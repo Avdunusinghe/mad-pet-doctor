@@ -34,9 +34,13 @@ public class VaccineDetails extends AppCompatActivity {
 
     private TextView VaccineDetailsHeading;
     private ImageView VaccineDetailsPageImage;
-    private TextView PetID, VaccineName, VaccineDate, VaccinePrice;
-    private EditText PetIdEdt, VaccineNameEdt, VaccineDateEdt, VaccinePriceEdt;
-    private Button SAVE;
+    private TextView PetID, VaccineName, VaccineDate;
+    private TextView NoOfVaccines, VaccinePrice, VaccineTotalPrice;
+    private TextView PriceResult;
+
+    private EditText PetIdEdt, VaccineNameEdt, VaccineDateEdt;
+    private EditText NoOfVaccinesEdt, VaccinePriceEdt;
+    private Button CALCULATION,SAVE;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private String petName;
@@ -53,16 +57,23 @@ public class VaccineDetails extends AppCompatActivity {
         VaccineDetailsPageImage = findViewById(R.id.imageView10);
         VaccineName = findViewById(R.id.vaccinename);
         VaccineDate = findViewById(R.id.vaccinedate);
-        VaccinePrice = findViewById(R.id.vaccineprice);
+        NoOfVaccines =findViewById(R.id.noofvaccines);
+        VaccinePrice = findViewById(R.id.price);
+        VaccineTotalPrice =findViewById(R.id.totalprice);
+        PriceResult = findViewById(R.id.totalFee);
+
         VaccineNameEdt = findViewById(R.id.vaccinenameinput);
         VaccineDateEdt = findViewById(R.id.vaccinedateinput);
-        VaccinePriceEdt = findViewById(R.id.vaccinepriceinput);
+        NoOfVaccinesEdt = findViewById(R.id.noofvaccineinput);
+        VaccinePriceEdt = findViewById(R.id.priceinput);
         HomeChip1 = findViewById(R.id.chip9);
         HomeChip2 = findViewById(R.id.chip13);
         SAVE = findViewById(R.id.SAVE);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("VaccineDetails");
+
+
 
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
@@ -108,13 +119,13 @@ public class VaccineDetails extends AppCompatActivity {
                 else if (TextUtils.isEmpty((VaccineDateEdt.getText().toString()))) {
                     Toast.makeText(getApplicationContext(), "Please Enter Vaccine Date", Toast.LENGTH_SHORT).show();
                 }
-                else if (TextUtils.isEmpty((VaccinePriceEdt.getText().toString()))) {
-                    Toast.makeText(getApplicationContext(), "Please Enter Vaccine Price", Toast.LENGTH_SHORT).show();
+                else if (TextUtils.isEmpty((PriceResult.getText().toString()))) {
+                  Toast.makeText(getApplicationContext(), "Please Enter Vaccine Price", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     String Vaccine_Name_Edt = VaccineNameEdt.getText().toString();
                     String Vaccine_Date_Edt = VaccineDateEdt.getText().toString();
-                    String Vaccine_Price_Edt = VaccinePriceEdt.getText().toString();
+                    int Vaccine_Price_Edt = Integer.parseInt(PriceResult.getText().toString());
                     petName = Vaccine_Name_Edt;
 
                     VaccineDetailsModal vaccine_details_Model = new VaccineDetailsModal(petName, Vaccine_Date_Edt, Vaccine_Price_Edt);
@@ -140,5 +151,23 @@ public class VaccineDetails extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         VaccineDateEdt.setText(sdf.format(myCalendar.getTime()));
+    }
+
+    public void calculateBtn(View view) {
+
+        int NOVaccines = Integer.parseInt(NoOfVaccinesEdt.getText().toString());
+        NoOfVaccinesEdt.setText("");
+
+        int Amount = Integer.parseInt(VaccinePriceEdt.getText().toString());
+        VaccinePriceEdt.setText("");
+
+        //int num1 = Integer.parseInt(NoOfVaccinesEdt.setText());
+        //int num2 = Integer.parseInt(drCharge.getText().toString());
+
+        int total = NOVaccines * Amount;
+
+        PriceResult.setText(String.valueOf(total));
+        //ReportId = Id;
+        //VaccineDetailsModal vaccineDetailsModal = new VaccineDetailsModal(Id, date, num1, num2, total);
     }
 }

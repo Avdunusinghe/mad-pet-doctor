@@ -7,11 +7,12 @@ import android.widget.RadioGroup;
 public class VaccineDetailsModal implements Parcelable{
     String Vaccine_Name_Edt ;
     String Vaccine_Date_Edt ;
-    String Vaccine_Price_Edt ;
+    int Vaccine_Price_Edt ;
 
     public VaccineDetailsModal(){}
 
-    public VaccineDetailsModal(String vaccine_Name_Edt, String vaccine_Date_Edt, String vaccine_Price_Edt) {
+
+    public VaccineDetailsModal(String vaccine_Name_Edt, String vaccine_Date_Edt, int vaccine_Price_Edt) {
         Vaccine_Name_Edt = vaccine_Name_Edt;
         Vaccine_Date_Edt = vaccine_Date_Edt;
         Vaccine_Price_Edt = vaccine_Price_Edt;
@@ -20,7 +21,7 @@ public class VaccineDetailsModal implements Parcelable{
     protected VaccineDetailsModal(Parcel in) {
         Vaccine_Name_Edt = in.readString();
         Vaccine_Date_Edt = in.readString();
-        Vaccine_Price_Edt = in.readString();
+        Vaccine_Price_Edt = in.readInt();
     }
 
     public static final Creator<VaccineDetailsModal> CREATOR = new Creator<VaccineDetailsModal>() {
@@ -51,11 +52,11 @@ public class VaccineDetailsModal implements Parcelable{
         Vaccine_Date_Edt = vaccine_Date_Edt;
     }
 
-    public String getVaccine_Price_Edt() {
+    public int getVaccine_Price_Edt() {
         return Vaccine_Price_Edt;
     }
 
-    public void setVaccine_Price_Edt(String vaccine_Price_Edt) {
+    public void setVaccine_Price_Edt(int vaccine_Price_Edt) {
         Vaccine_Price_Edt = vaccine_Price_Edt;
     }
 
@@ -68,6 +69,6 @@ public class VaccineDetailsModal implements Parcelable{
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(Vaccine_Name_Edt);
         dest.writeString(Vaccine_Date_Edt);
-        dest.writeString(Vaccine_Price_Edt);
+        dest.writeInt(Vaccine_Price_Edt);
     }
 }

@@ -40,6 +40,7 @@ public class VaccineReport extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private VaccineDetailsModal vaccineDetailsModal;
     private Chip HomeChip1, HomeChip2;
+    //private TextView TotalPrice, Amount;
 
     ListView vaccineReportListView;
     List<VaccineDetailsModal> vaccineReportList;
@@ -62,6 +63,8 @@ public class VaccineReport extends AppCompatActivity {
         VRHeading =  findViewById(R.id.vaccineReportHeading);
         VRImage = findViewById(R.id.vaccineReportImage);
         VRAddButton = findViewById(R.id.VaccineReportAddButton);
+        //TotalPrice = findViewById(R.id.calculationId);
+        //Amount = findViewById(R.id.calculationAmount);
         DoneButton = findViewById(R.id.savebutton);
         HomeChip1 = findViewById(R.id.chip12);
         HomeChip2 = findViewById(R.id.chip15);
@@ -105,9 +108,7 @@ public class VaccineReport extends AppCompatActivity {
                 vaccineReportList.clear();
 
                 for(DataSnapshot VaccineDetailDataSnapshot:snapshot.getChildren()){
-
                     VaccineDetailsModal vaccineDetailsModals = VaccineDetailDataSnapshot.getValue(VaccineDetailsModal.class);
-
                     vaccineReportList.add(vaccineDetailsModals);
                 }
 

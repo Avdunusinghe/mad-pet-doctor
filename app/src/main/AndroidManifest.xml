@@ -53,6 +53,8 @@
         <activity android:name=".ChangePasswordActivity" />
         <activity android:name=".CreateAccount" />
         <activity android:name=".AdminHome" />
+
+
         <activity android:name=".AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

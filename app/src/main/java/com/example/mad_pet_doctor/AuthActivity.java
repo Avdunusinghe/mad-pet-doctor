@@ -201,6 +201,7 @@ public class AuthActivity extends AppCompatActivity {
 
     public boolean validateMail()
     {
+        //check email
         String emailInput = email.getText().toString();
         String emailPattern = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 

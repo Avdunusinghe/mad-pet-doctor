@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="554dp"
+        android:layout_height="899dp"
+        android:alpha="0.3"
+        android:contentDescription="@string/introductionofdogimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homepagepetimage1" />
+
     <Button
         android:id="@+id/SAVE"
         android:layout_width="263dp"
@@ -13,11 +23,12 @@
         android:layout_marginTop="12dp"
         android:contentDescription="@string/vaccinereportsave"
         android:text="SAVE"
+        android:onClick="SAVE"
         app:backgroundTint="#EF0E0E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confirm3" />
+        app:layout_constraintTop_toBottomOf="@+id/totalFee" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -39,6 +50,7 @@
         android:contentDescription="@string/vdvaccinename"
         android:text="VACCINE NAME"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.275"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +64,7 @@
         android:contentDescription="@string/vdvaccinedate"
         android:text="VACCINE DATE"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,6 +77,7 @@
         android:layout_marginTop="15dp"
         android:text="NO OF VACCINES : "
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,6 +91,7 @@
         android:layout_marginTop="16dp"
         android:text="PRICE : "
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.242"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,6 +105,7 @@
         android:layout_marginTop="16dp"
         android:text="TOTAL PRICE : "
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.277"
         app:layout_constraintStart_toStartOf="parent"
@@ -125,12 +141,13 @@
         android:text="VACCINE DETAILS"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
-    <Button
+    <!-- <Button
         android:id="@+id/confirm3"
         android:layout_width="263dp"
         android:layout_height="45dp"
@@ -146,7 +163,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/totalFee" />
+        app:layout_constraintTop_toBottomOf="@+id/totalFee" /> -->
 
     <TextView
         android:id="@+id/totalFee"
@@ -160,6 +177,7 @@
         android:layout_marginTop="24dp"
         android:text="Result"
         android:textSize="16sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/totalprice"
         app:layout_constraintTop_toBottomOf="@+id/priceinput" />
 
@@ -185,6 +203,7 @@
         android:layout_marginTop="4dp"
         android:contentDescription="@string/vdvaccineprice"
         android:ems="12"
+        android:textColor="@color/black"
         android:inputType="textPersonName"
         app:layout_constraintStart_toEndOf="@+id/noofvaccines"
         app:layout_constraintTop_toBottomOf="@+id/vaccinedateinput" />
@@ -208,6 +227,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:ems="12"
+        android:textColor="@color/black"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -220,6 +240,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:ems="12"
+        android:textColor="@color/black"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -230,7 +251,7 @@
         android:id="@+id/toolbar2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -243,7 +264,7 @@
         android:id="@+id/chip9"
         android:layout_width="48dp"
         android:layout_height="28dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -254,7 +275,7 @@
         android:id="@+id/chip13"
         android:layout_width="48dp"
         android:layout_height="28dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="26dp"
         android:background="#5A0F0F"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/toolbar2"
@@ -266,7 +287,7 @@
         android:id="@+id/imageView55"
         android:layout_width="69dp"
         android:layout_height="54dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -277,7 +298,7 @@
         android:id="@+id/usericon"
         android:layout_width="31dp"
         android:layout_height="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.857"
         app:layout_constraintStart_toEndOf="@+id/imageView55"

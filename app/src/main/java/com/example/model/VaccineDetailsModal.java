@@ -7,21 +7,26 @@ import android.widget.RadioGroup;
 public class VaccineDetailsModal implements Parcelable{
     String Vaccine_Name_Edt ;
     String Vaccine_Date_Edt ;
+    int No_of_Vaccines;
     int Vaccine_Price_Edt ;
+    int Vaccine_Total_price;
 
     public VaccineDetailsModal(){}
 
-
-    public VaccineDetailsModal(String vaccine_Name_Edt, String vaccine_Date_Edt, int vaccine_Price_Edt) {
+    public VaccineDetailsModal(String vaccine_Name_Edt, String vaccine_Date_Edt, int no_of_Vaccines, int vaccine_Price_Edt, int vaccine_Total_price) {
         Vaccine_Name_Edt = vaccine_Name_Edt;
         Vaccine_Date_Edt = vaccine_Date_Edt;
+        No_of_Vaccines = no_of_Vaccines;
         Vaccine_Price_Edt = vaccine_Price_Edt;
+        Vaccine_Total_price = vaccine_Total_price;
     }
 
     protected VaccineDetailsModal(Parcel in) {
         Vaccine_Name_Edt = in.readString();
         Vaccine_Date_Edt = in.readString();
+        No_of_Vaccines = in.readInt();
         Vaccine_Price_Edt = in.readInt();
+        Vaccine_Total_price = in.readInt();
     }
 
     public static final Creator<VaccineDetailsModal> CREATOR = new Creator<VaccineDetailsModal>() {
@@ -52,12 +57,28 @@ public class VaccineDetailsModal implements Parcelable{
         Vaccine_Date_Edt = vaccine_Date_Edt;
     }
 
+    public int getNo_of_Vaccines() {
+        return No_of_Vaccines;
+    }
+
+    public void setNo_of_Vaccines(int no_of_Vaccines) {
+        No_of_Vaccines = no_of_Vaccines;
+    }
+
     public int getVaccine_Price_Edt() {
         return Vaccine_Price_Edt;
     }
 
     public void setVaccine_Price_Edt(int vaccine_Price_Edt) {
         Vaccine_Price_Edt = vaccine_Price_Edt;
+    }
+
+    public int getVaccine_Total_price() {
+        return Vaccine_Total_price;
+    }
+
+    public void setVaccine_Total_price(int vaccine_Total_price) {
+        Vaccine_Total_price = vaccine_Total_price;
     }
 
     @Override
@@ -69,6 +90,8 @@ public class VaccineDetailsModal implements Parcelable{
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(Vaccine_Name_Edt);
         dest.writeString(Vaccine_Date_Edt);
+        dest.writeInt(No_of_Vaccines);
         dest.writeInt(Vaccine_Price_Edt);
+        dest.writeInt(Vaccine_Total_price);
     }
 }

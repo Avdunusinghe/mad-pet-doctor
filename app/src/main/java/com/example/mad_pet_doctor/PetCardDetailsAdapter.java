@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.model.PetCardModal;
+import com.example.model.VaccineDetailsModal;
 
 import java.util.ArrayList;
 
@@ -40,6 +41,16 @@ public class PetCardDetailsAdapter  extends RecyclerView.Adapter<PetCardDetailsA
         holder.PetNamePCD.setText(petCardModal.getPet_Name());
         holder.PetOwnerNamePCD.setText(petCardModal.getPet_OwnerName());
         setAnimation(holder.itemView, position);
+
+        holder.DeleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View row = (View) v.getParent();
+                ViewGroup container = ((ViewGroup)row.getParent());
+                container.removeView(row);
+                container.invalidate();
+            }
+        });
     }
 
     private void setAnimation(View itemView, int position) {
@@ -58,17 +69,14 @@ public class PetCardDetailsAdapter  extends RecyclerView.Adapter<PetCardDetailsA
 
     public class ViewHolder extends  RecyclerView.ViewHolder{
         public TextView PetIdPCD , PetNamePCD, PetOwnerNamePCD;
-        //private Button BookBtn;
-        //private ImageButton CallBtn;
+        private ImageButton DeleteButton;
 
         public ViewHolder(@NonNull  View itemView) {
             super(itemView);
             PetIdPCD = itemView.findViewById(R.id.PCDId);
             PetNamePCD = itemView.findViewById(R.id.PCDName);
             PetOwnerNamePCD = itemView.findViewById(R.id.PCDOwnerName);
-            //BookBtn= itemView.findViewById(R.id.button);
-            //CallBtn= itemView.findViewById(R.id.call_btn);
-
+            DeleteButton = itemView.findViewById(R.id.PCDDeleteButton);
         }
     }
 

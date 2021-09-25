@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <SearchView
-        android:id="@+id/searchView3"
-        android:layout_width="384dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
-        android:background="#F5F5DC"
-        android:contentDescription="@string/search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="554dp"
+        android:layout_height="899dp"
+        android:alpha="0.3"
+        android:contentDescription="@string/introductionofdogimage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homepagepetimage1" />
 
     <ImageView
         android:id="@+id/HomeImage1"
         android:layout_width="56dp"
         android:layout_height="51dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="112dp"
         android:contentDescription="@string/pet_foot01"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subheading1"
         app:srcCompat="@drawable/pet_foot" />
@@ -34,7 +33,7 @@
         android:id="@+id/HomeImage2"
         android:layout_width="54dp"
         android:layout_height="51dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="88dp"
         android:contentDescription="@string/pet_foot2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.078"
@@ -46,14 +45,17 @@
         android:id="@+id/subheading1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:contentDescription="@string/doctor_text"
-        android:text="Doctors"
+        android:text="DOCTORS"
+        android:textColor="@color/black"
+        android:textSize="26dp"
+        android:gravity=""
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintHorizontal_bias="0.351"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView3" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
 
     <TextView
         android:id="@+id/subheading2"
@@ -63,12 +65,14 @@
         android:layout_marginLeft="104dp"
         android:layout_marginTop="50dp"
         android:contentDescription="@string/medical_center"
-        android:text="Medical Center"
+        android:text="MEDICAL CENTERS"
+        android:textColor="@color/black"
+        android:textSize="26dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/docname4" />
+        app:layout_constraintTop_toBottomOf="@+id/docname6" />
 
-    <com.google.android.gms.maps.MapView
+    <!-- <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
         android:layout_width="380dp"
         android:layout_height="145dp"
@@ -78,16 +82,18 @@
         android:layout_marginTop="20dp"
         android:contentDescription="@string/mapview"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/medicalcenter4" />
+        app:layout_constraintTop_toBottomOf="@+id/medicalcenter4" /> -->
 
     <TextView
         android:id="@+id/medicalcenter1"
-        android:layout_width="139dp"
+        android:layout_width="150dp"
         android:layout_height="21dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         android:text="Jeewaka Hospital"
+        android:textColor="@color/black"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subheading2" />
 
@@ -95,8 +101,10 @@
         android:id="@+id/medicalcenter2"
         android:layout_width="141dp"
         android:layout_height="21dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="Asiri Hospital"
+        android:textColor="@color/black"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,8 +114,10 @@
         android:id="@+id/medicalcenter3"
         android:layout_width="141dp"
         android:layout_height="21dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="Hemas Hospital"
+        android:textColor="@color/black"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
@@ -117,18 +127,46 @@
         android:id="@+id/medicalcenter4"
         android:layout_width="141dp"
         android:layout_height="21dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="GoldenKey Hospital"
+        android:textColor="@color/black"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/medicalcenter3" />
 
+    <TextView
+        android:id="@+id/medicalcenter5"
+        android:layout_width="141dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="16dp"
+        android:text="M+ Hospital"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medicalcenter4" />
+
+    <TextView
+        android:id="@+id/medicalcenter6"
+        android:layout_width="180dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="16dp"
+        android:text="Pet Home Hospital"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.519"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medicalcenter5" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -150,7 +188,7 @@
         android:id="@+id/chip9"
         android:layout_width="48dp"
         android:layout_height="28dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.0"
@@ -161,7 +199,7 @@
         android:id="@+id/chip13"
         android:layout_width="48dp"
         android:layout_height="28dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="24dp"
         android:background="#5A0F0F"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/toolbar2"
@@ -173,7 +211,7 @@
         android:id="@+id/imageView55"
         android:layout_width="65dp"
         android:layout_height="55dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -183,7 +221,7 @@
         android:id="@+id/usericon"
         android:layout_width="31dp"
         android:layout_height="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toEndOf="@+id/imageView55"
@@ -204,10 +242,10 @@
         android:id="@+id/locationButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="90dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="50dp"
-        app:layout_constraintStart_toEndOf="@+id/docname1"
+        android:layout_marginTop="112dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subheading1"
         app:srcCompat="@drawable/home_location" />
 
@@ -215,10 +253,13 @@
         android:id="@+id/docname1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
         android:text="Dr.Mahinda Rajapksha"
+        android:textColor="@color/black"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subheading1" />
 
@@ -226,10 +267,13 @@
         android:id="@+id/docname2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="16dp"
         android:text="Dr.Gotabaya Rajapaksha"
+        android:textColor="@color/black"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/docname1" />
 
@@ -237,8 +281,11 @@
         android:id="@+id/docname3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="16dp"
         android:text="Dr.Besil Rajapksha"
+        android:textColor="@color/black"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.382"
         app:layout_constraintStart_toStartOf="parent"
@@ -248,20 +295,51 @@
         android:id="@+id/docname4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="16dp"
         android:text="Dr.Namal Rajapksha"
+        android:textColor="@color/black"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/docname3" />
+
+    <TextView
+        android:id="@+id/docname5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="16dp"
+        android:text="Dr.Gamage JGACH"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/docname4" />
+
+    <TextView
+        android:id="@+id/docname6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="16dp"
+        android:text="Dr.Roy Dunusinghe"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.421"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/docname5" />
 
     <ImageButton
         android:id="@+id/hospitalButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="88dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintHorizontal_bias="0.955"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subheading2"
         app:srcCompat="@drawable/home_hospital" />

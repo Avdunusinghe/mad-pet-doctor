@@ -34,16 +34,16 @@ public class VaccineDetails extends AppCompatActivity {
 
     private TextView VaccineDetailsHeading;
     private ImageView VaccineDetailsPageImage;
-    private TextView PetID, VaccineName, VaccineDate;
+    private TextView VaccineName, VaccineDate;
     private TextView NoOfVaccines, VaccinePrice, VaccineTotalPrice;
     private TextView PriceResult;
 
-    private EditText PetIdEdt, VaccineNameEdt, VaccineDateEdt;
+    private EditText VaccineNameEdt, VaccineDateEdt;
     private EditText NoOfVaccinesEdt, VaccinePriceEdt;
-    private Button CALCULATION,SAVE;
+    private Button SAVE;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
-    private String petName;
+    private String VaccineNameID;
     private VaccineDetailsModal vaccineDetailsModal;
     final Calendar myCalendar = Calendar.getInstance();
     private Chip HomeChip1, HomeChip2;
@@ -60,32 +60,20 @@ public class VaccineDetails extends AppCompatActivity {
         NoOfVaccines =findViewById(R.id.noofvaccines);
         VaccinePrice = findViewById(R.id.price);
         VaccineTotalPrice =findViewById(R.id.totalprice);
-        PriceResult = findViewById(R.id.totalFee);
 
         VaccineNameEdt = findViewById(R.id.vaccinenameinput);
         VaccineDateEdt = findViewById(R.id.vaccinedateinput);
         NoOfVaccinesEdt = findViewById(R.id.noofvaccineinput);
         VaccinePriceEdt = findViewById(R.id.priceinput);
+        //PriceResult = findViewById(R.id.totalFee);
+        PriceResult = (TextView)findViewById(R.id.totalFee);
+
         HomeChip1 = findViewById(R.id.chip9);
         HomeChip2 = findViewById(R.id.chip13);
         SAVE = findViewById(R.id.SAVE);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("VaccineDetails");
-
-
-
-        DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                // TODO Auto-generated method stub
-                myCalendar.set(Calendar.YEAR, year);
-                myCalendar.set(Calendar.MONTH, monthOfYear);
-                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                updateLabel();
-            }
-        };
 
         HomeChip1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,74 +88,62 @@ public class VaccineDetails extends AppCompatActivity {
             }
         });
 
+        DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                updateLabel();
+            }
+        };
         VaccineDateEdt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 new DatePickerDialog(VaccineDetails.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
-
-        SAVE.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (TextUtils.isEmpty((VaccineNameEdt.getText().toString()))) {
-                    Toast.makeText(getApplicationContext(), "Please Enter Vaccine Name", Toast.LENGTH_SHORT).show();
-                }
-                else if (TextUtils.isEmpty((VaccineDateEdt.getText().toString()))) {
-                    Toast.makeText(getApplicationContext(), "Please Enter Vaccine Date", Toast.LENGTH_SHORT).show();
-                }
-                else if (TextUtils.isEmpty((PriceResult.getText().toString()))) {
-                  Toast.makeText(getApplicationContext(), "Please Enter Vaccine Price", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    String Vaccine_Name_Edt = VaccineNameEdt.getText().toString();
-                    String Vaccine_Date_Edt = VaccineDateEdt.getText().toString();
-                    int Vaccine_Price_Edt = Integer.parseInt(PriceResult.getText().toString());
-                    petName = Vaccine_Name_Edt;
-
-                    VaccineDetailsModal vaccine_details_Model = new VaccineDetailsModal(petName, Vaccine_Date_Edt, Vaccine_Price_Edt);
-                    databaseReference.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            databaseReference.child(petName).setValue(vaccine_details_Model);
-                            Toast.makeText(VaccineDetails.this, "Vaccine Details Added.....", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(VaccineDetails.this, VaccineReport.class));
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-                            Toast.makeText(VaccineDetails.this, "Error is " + error.toString(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-            }
-        });
     }
+
     private void updateLabel() {
         String myFormat = "MM/dd/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
         VaccineDateEdt.setText(sdf.format(myCalendar.getTime()));
     }
 
-    public void calculateBtn(View view) {
+    public void SAVE(View view) {
+        if (TextUtils.isEmpty((VaccineNameEdt.getText().toString()))) {
+            Toast.makeText(getApplicationContext(), "Please Enter Vaccine Name", Toast.LENGTH_SHORT).show();
+        } else if (TextUtils.isEmpty((VaccineDateEdt.getText().toString()))) {
+            Toast.makeText(getApplicationContext(), "Please Enter Vaccine Date", Toast.LENGTH_SHORT).show();
+        }  else {
+            String Vaccine_Name_Edt = VaccineNameEdt.getText().toString();
+            String Vaccine_Date_Edt = VaccineDateEdt.getText().toString();
+            int No_of_Vaccines = Integer.parseInt(NoOfVaccinesEdt.getText().toString());
+            int Vaccine_Price_Edt = Integer.parseInt(VaccinePriceEdt.getText().toString());
 
-        int NOVaccines = Integer.parseInt(NoOfVaccinesEdt.getText().toString());
-        NoOfVaccinesEdt.setText("");
+            int total = No_of_Vaccines * Vaccine_Price_Edt;
+            PriceResult.setText(String.valueOf(total));
 
-        int Amount = Integer.parseInt(VaccinePriceEdt.getText().toString());
-        VaccinePriceEdt.setText("");
+            int Vaccine_Total_price = Integer.parseInt(PriceResult.getText().toString());
+            VaccineNameID = Vaccine_Name_Edt;
 
-        //int num1 = Integer.parseInt(NoOfVaccinesEdt.setText());
-        //int num2 = Integer.parseInt(drCharge.getText().toString());
+            VaccineDetailsModal vaccine_details_Model = new VaccineDetailsModal(VaccineNameID, Vaccine_Date_Edt, No_of_Vaccines, Vaccine_Price_Edt, Vaccine_Total_price);
+            databaseReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    databaseReference.child(VaccineNameID).setValue(vaccine_details_Model);
+                    Toast.makeText(VaccineDetails.this, "Vaccine Details Added.....", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(VaccineDetails.this, VaccineReport.class));
+                }
 
-        int total = NOVaccines * Amount;
-
-        PriceResult.setText(String.valueOf(total));
-        //ReportId = Id;
-        //VaccineDetailsModal vaccineDetailsModal = new VaccineDetailsModal(Id, date, num1, num2, total);
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(VaccineDetails.this, "Error is " + error.toString(), Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 }

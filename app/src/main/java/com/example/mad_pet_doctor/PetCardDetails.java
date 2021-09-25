@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -42,6 +43,7 @@ public class PetCardDetails extends AppCompatActivity {
     private RecyclerView pcdRecycleView;
     private ImageButton pcdUpdateButton, pcdDeleteButton;
     private Chip HomeChip1, HomeChip2;
+    private ImageButton addPetcard;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private ArrayList<PetCardModal> petCardDetailsArrayList;
@@ -59,14 +61,15 @@ public class PetCardDetails extends AppCompatActivity {
         pcdpetid = findViewById(R.id.pcdPetID);
         pcdpetname = findViewById(R.id.pcdPetName);
         pcdpetownername = findViewById(R.id.pcdPetOwnerName);
-        pcdupdate = findViewById(R.id.pcdUpdateButton);
+        //pcdupdate = findViewById(R.id.pcdUpdateButton);
         pcddelete =findViewById(R.id.pcdDeleteButton);
         pcdRecycleView = findViewById(R.id.PCDRecycleViewId);
 
-        pcdUpdateButton = findViewById(R.id.PCDUpdateButton);
+        //pcdUpdateButton = findViewById(R.id.PCDUpdateButton);
         pcdDeleteButton = findViewById(R.id.PCDDeleteButton);
         HomeChip1 = findViewById(R.id.chip12);
         HomeChip2 = findViewById(R.id.chip15);
+        addPetcard = findViewById(R.id.petCardAddButton);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference= firebaseDatabase.getReference("PetCards");
         petCardDetailsArrayList = new ArrayList<>();
@@ -100,54 +103,12 @@ public class PetCardDetails extends AppCompatActivity {
                 startActivity(new Intent(PetCardDetails.this, ActivityMainSideBar.class));
             }
         });
-
-       /*databaseReference = firebaseDatabase.getReference("PetCard").child(petId);
-       pcdUpdateButton.setOnClickListener(new View.OnClickListener() {
+        addPetcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Pet_ID = pcdpetid.getText().toString();
-                String Pet_Name = pcdpetname.getText().toString();
-                String Pet_Breed = pcdbreed.getText().toString();
-                String Pet_DateOfBirth = pcddateofbirth.getText().toString();
-                String Pet_Age = pcdage.getText().toString();
-                String Pet_Gender = pcdgender.getText().toString();
-                String Pet_Weight = pcdweight.getText().toString();
-                String Pet_OwnerName = pcdpetownername.getText().toString();
-
-                Map<String,Object> map = new HashMap<>();
-                map.put("Pet_ID",Pet_ID);
-                map.put("Pet_Name",Pet_Name);
-                map.put("Pet_Breed",Pet_Breed);
-                map.put("Pet_DateOfBirth",Pet_DateOfBirth);
-                map.put("Pet_Age",Pet_Age);
-                map.put("Pet_Gender",Pet_Gender);
-                map.put("Pet_Weight",Pet_Weight);
-                map.put("Pet_OwnerName",Pet_OwnerName);
-
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            databaseReference.updateChildren(map);
-                            Toast.makeText(PetCardDetails.this,"Pet Card Updated...",
-                                    Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(PetCardDetails.this, PetCardDetails.class));
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(PetCardDetails.this,"Pet Card is not Updated...",
-                                Toast.LENGTH_SHORT).show();
-                    }
-                });
+                startActivity(new Intent(PetCardDetails.this, PetCard.class));
             }
         });
-
-        pcdDeleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deletePetCardDetails();
-            }
-        });*/
     }
 
     private void getAllPetCardDetails(){
@@ -183,11 +144,4 @@ public class PetCardDetails extends AppCompatActivity {
             }
         });
     }
-
-    private void deletePetCardDetails(){
-        databaseReference.removeValue();
-        Toast.makeText(this, "Pet Card Deleted", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(PetCardDetails.this, PetCardDetails.class));
-    }
-
 }

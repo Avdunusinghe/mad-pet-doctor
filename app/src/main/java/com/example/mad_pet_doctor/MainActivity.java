@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity {
     private Chip HomeChip1, HomeChip2;
     private ImageView HomeImage, UserIcon;
     private TextView UserName;
-    private SearchView SearchBar;
+    //private SearchView SearchBar;
     private TextView SubHeading1,SubHeading2;
     private ImageView Image1, Image2;
     private TextView DocName1, DocName2, MedicalCenter1, MedicalCenter2;
     private ImageButton LocationButton, HospitalButton;
-    private MapView MapView;
+    //private MapView MapView;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
 
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         UserName = findViewById(R.id.usernameid);
 
         //Home page details
-        SearchBar = findViewById(R.id.searchView3);
+        //SearchBar = findViewById(R.id.searchView3);
         SubHeading1 = findViewById(R.id.subheading1);
         SubHeading2 = findViewById(R.id.subheading2);
         Image1 = findViewById(R.id.HomeImage1);
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         DocName2 = findViewById(R.id.docname2);
         MedicalCenter1 = findViewById(R.id.medicalcenter1);
         MedicalCenter2 = findViewById(R.id.medicalcenter2);
-        MapView = findViewById(R.id.mapView);
+        //MapView = findViewById(R.id.mapView);
         LocationButton = findViewById(R.id.locationButton);
         HospitalButton = findViewById(R.id.hospitalButton);
 
@@ -97,4 +97,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void SAVE(View view) {
+    }
 }

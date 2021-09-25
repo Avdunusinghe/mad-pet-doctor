@@ -20,8 +20,8 @@
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip9"
-        android:layout_width="36dp"
-        android:layout_height="47dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginTop="4dp"
         android:background="@color/black"
         app:chipSurfaceColor="#1E1C1C"
@@ -32,8 +32,8 @@
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip13"
-        android:layout_width="15dp"
-        android:layout_height="46dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginTop="4dp"
         android:background="@color/black"
         app:chipBackgroundColor="#2B2828"

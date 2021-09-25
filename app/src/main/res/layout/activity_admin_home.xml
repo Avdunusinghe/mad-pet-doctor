@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".AdminHome">
 
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="529dp"
+        android:layout_height="825dp"
+        android:alpha="0.3"
+        android:contentDescription="@string/introductionofdogimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homepageimage1" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
@@ -76,7 +85,7 @@
         android:id="@+id/usernameid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TKSAR"
+        android:text="Ashen"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toEndOf="@+id/imageView55"

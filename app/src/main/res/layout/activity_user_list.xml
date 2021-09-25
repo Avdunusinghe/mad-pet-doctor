@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".UserListActivity">
 
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="580dp"
+        android:layout_height="864dp"
+        android:alpha="0.3"
+        android:contentDescription="@string/introductionofdogimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homepageimage1" />
+
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"

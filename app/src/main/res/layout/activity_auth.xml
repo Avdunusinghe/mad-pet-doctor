@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".AuthActivity">
 
+
+
     <ImageView
         android:id="@+id/auth_logo"
         android:layout_width="242dp"

@@ -7,6 +7,17 @@
     tools:context=".DeleteUserActivity">
 
     <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="580dp"
+        android:layout_height="864dp"
+        android:alpha="0.3"
+        android:contentDescription="@string/introductionofdogimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homepageimage1" />
+
+
+    <ImageView
         android:id="@+id/imageView"
         android:layout_width="382dp"
         android:layout_height="280dp"
@@ -92,6 +103,7 @@
         android:layout_height="50dp"
         android:layout_marginBottom="16dp"
         android:text="@string/deleteUserSubmitButton"
+        app:backgroundTint="#F44336"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

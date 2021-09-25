@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".CreateAccount">
 
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="516dp"
+        android:layout_height="770dp"
+        android:alpha="0.3"
+        android:contentDescription="@string/introductionofdogimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homepageimage1" />
+
+
     <ImageView
         android:id="@+id/imageView42"
         android:layout_width="226dp"

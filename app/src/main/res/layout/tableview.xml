@@ -47,17 +47,6 @@
                 android:text="" />
 
             <ImageButton
-                android:id="@+id/icondell4"
-                android:layout_width="wrap_content"
-                android:layout_height="54dp"
-                android:layout_marginStart="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="3dp"
-                app:layout_constraintStart_toEndOf="@+id/DocID01"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:srcCompat="@drawable/edit_button" />
-
-            <ImageButton
                 android:id="@+id/icondel14"
                 android:layout_width="38dp"
                 android:layout_height="54dp"

@@ -1,6 +1,8 @@
 package com.example.mad_pet_doctor;
 
+import android.app.Notification;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.app.Activity;
 import android.content.Context;
@@ -22,6 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.model.ScheduleModal;
+import com.google.firebase.database.collection.LLRBNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +36,8 @@ public class TableAdapterAppointment extends RecyclerView.Adapter<TableAdapterAp
     private TableAdapterAppointment.CourseClickInterface courseClickInterface;
 
 
-    public TableAdapterAppointment(ArrayList<ScheduleModal> scheduleModalArrayList, Context context, TableAdapterAppointment.CourseClickInterface courseClickInterface) {
+    public TableAdapterAppointment(ArrayList<ScheduleModal> scheduleModalArrayList, Context context,
+                                   TableAdapterAppointment.CourseClickInterface courseClickInterface) {
         this.scheduleModalArrayList = scheduleModalArrayList;
         this.context = context;
         this.courseClickInterface = courseClickInterface;
@@ -55,7 +59,8 @@ public class TableAdapterAppointment extends RecyclerView.Adapter<TableAdapterAp
         holder.ConfirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                courseClickInterface.onCourseClick(position);
+                holder.ConfirmBtn.setBackgroundColor(Color.GREEN);
+                //courseClickInterface.onCourseClick(position);
             }
         });
 
@@ -95,8 +100,8 @@ public class TableAdapterAppointment extends RecyclerView.Adapter<TableAdapterAp
             DoctorName = itemView.findViewById(R.id.apptable26);
             Date = itemView.findViewById(R.id.apptable27);
             Time = itemView.findViewById(R.id.apptable28);
-            ConfirmBtn= itemView.findViewById(R.id.icondell4);
-            IgnoreBtn= itemView.findViewById(R.id.icondel14);
+            ConfirmBtn= itemView.findViewById(R.id.confirm);
+            IgnoreBtn= itemView.findViewById(R.id.ignore);
 
         }
     }

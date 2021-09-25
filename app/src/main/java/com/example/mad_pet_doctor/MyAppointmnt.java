@@ -89,7 +89,7 @@ public class MyAppointmnt extends AppCompatActivity {
 
 
     public void onCourseClick(int position){
-        startActivity(new Intent(MyAppointmnt.this , MyAppointmentReport.class));
+        startActivity(new Intent(MyAppointmnt.this , MyAppointmnt.class));
         spinner.setTitle("Ignore Appointment");
         spinner.setMessage("Please Wait while deleting.");
         spinner.setCanceledOnTouchOutside(false);

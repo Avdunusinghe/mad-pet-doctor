@@ -55,12 +55,6 @@ public class TableAdapterDoc extends RecyclerView.Adapter<TableAdapterDoc.ViewHo
         holder.MedicalCenter.setText(doctorReg.getMedicalCenter());
         holder.TelNo.setText(doctorReg.getTelNo());
         setAnimation(holder.itemView, position);
-        holder.UpdateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                courseClickInterface.onCourseClick(position);
-            }
-        });
 
         holder.DeleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,14 +84,13 @@ public class TableAdapterDoc extends RecyclerView.Adapter<TableAdapterDoc.ViewHo
 
     public class ViewHolder extends  RecyclerView.ViewHolder{
         public TextView DoctorName , MedicalCenter, TelNo;
-        private ImageButton UpdateBtn, DeleteBtn;
+        private ImageButton  DeleteBtn;
 
         public ViewHolder(@NonNull  View itemView) {
             super(itemView);
             DoctorName = itemView.findViewById(R.id.apptable26);
             MedicalCenter = itemView.findViewById(R.id.apptable27);
             TelNo = itemView.findViewById(R.id.apptable28);
-            UpdateBtn= itemView.findViewById(R.id.icondell4);
             DeleteBtn= itemView.findViewById(R.id.icondel14);
 
         }

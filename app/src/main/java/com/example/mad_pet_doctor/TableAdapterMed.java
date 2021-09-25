@@ -24,7 +24,8 @@ public class TableAdapterMed extends RecyclerView.Adapter<TableAdapterMed.ViewHo
     private TableAdapterMed.CourseClickInterface courseClickInterface;
     private DatabaseReference databaseReference;
 
-    public TableAdapterMed(ArrayList<MedicalCenterReg> medicalCenterRegArrayList, Context context, TableAdapterMed.CourseClickInterface courseClickInterface) {
+    public TableAdapterMed(ArrayList<MedicalCenterReg> medicalCenterRegArrayList, Context context,
+                           TableAdapterMed.CourseClickInterface courseClickInterface) {
         this.medicalCenterRegArrayList = medicalCenterRegArrayList;
         this.context = context;
         this.courseClickInterface = courseClickInterface;
@@ -43,12 +44,6 @@ public class TableAdapterMed extends RecyclerView.Adapter<TableAdapterMed.ViewHo
         holder.Address.setText(medicalCenterReg.getAddress());
         holder.TelNo.setText(medicalCenterReg.getTelNo());
         setAnimation(holder.itemView, position);
-        holder.UpdateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                courseClickInterface.onCourseClick(position);
-            }
-        });
 
         holder.DeleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,16 +73,14 @@ public class TableAdapterMed extends RecyclerView.Adapter<TableAdapterMed.ViewHo
 
     public class ViewHolder extends  RecyclerView.ViewHolder{
         public TextView Name , Address, TelNo;
-        private ImageButton UpdateBtn, DeleteBtn;
+        private ImageButton DeleteBtn;
 
         public ViewHolder(@NonNull  View itemView) {
             super(itemView);
             Name = itemView.findViewById(R.id.apptable26);
             Address = itemView.findViewById(R.id.apptable27);
             TelNo = itemView.findViewById(R.id.apptable28);
-            UpdateBtn= itemView.findViewById(R.id.icondell4);
             DeleteBtn= itemView.findViewById(R.id.icondel14);
-
         }
     }
 

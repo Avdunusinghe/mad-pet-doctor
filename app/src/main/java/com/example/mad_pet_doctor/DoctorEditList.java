@@ -47,7 +47,6 @@ public class DoctorEditList extends AppCompatActivity {
         Column4=findViewById(R.id.apptable5);
         Column5=findViewById(R.id.apptable6);
         AddBtn=findViewById(R.id.addbton);
-        UpdateBtn=findViewById(R.id.icondell4);
         DeleteBtn=findViewById(R.id.icondel14);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference= firebaseDatabase.getReference("Doctor");

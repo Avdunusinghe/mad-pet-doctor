@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".AdminHome">
 
+
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/app_toolbar"
-        android:layout_width="408dp"
-        android:layout_height="51dp"
+        android:id="@+id/toolbar2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -17,14 +19,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip9"
         android:layout_width="48dp"
         android:layout_height="28dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="10dp"
         app:chipBackgroundColor="#000000"
-
+        app:layout_constraintEnd_toStartOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,28 +46,42 @@
         android:layout_marginTop="24dp"
         android:background="#5A0F0F"
         app:chipBackgroundColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/user_Profile_icon"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="4dp"
+        android:id="@+id/imageView55"
+        android:layout_width="65dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.958"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pet_doc_2" />
+
+    <ImageView
+        android:id="@+id/usericon"
+        android:layout_width="31dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintStart_toEndOf="@+id/imageView55"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user_icon" />
 
-    <View
-        android:id="@+id/view"
+    <TextView
+        android:id="@+id/usernameid"
         android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:background="@color/gray"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/app_toolbar" />
+        android:layout_height="wrap_content"
+        android:text="TKSAR"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintStart_toEndOf="@+id/imageView55"
+        app:layout_constraintTop_toBottomOf="@+id/usericon" />
+
 
     <ImageView
         android:id="@+id/imageView57"

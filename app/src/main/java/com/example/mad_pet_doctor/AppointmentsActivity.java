@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.example.model.ScheduleModal;
@@ -46,7 +47,10 @@ public class AppointmentsActivity extends AppCompatActivity {
         cardApp = findViewById(R.id.homeCard);
         getAllschedules();
 
+
+
     }
+
 
     private void getAllschedules(){
         scheduleModalArrayList.clear();

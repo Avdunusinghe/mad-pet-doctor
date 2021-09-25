@@ -8,12 +8,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.model.CardPaymentsModal;
 import com.example.model.DailyReportModal;
 import com.example.model.ScheduleModal;
+import com.google.android.material.chip.Chip;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,6 +27,7 @@ public class DailyReportsActivity extends AppCompatActivity {
 
     private ImageView Hoslogo, ReportsImage;
     private TextView Headings, Date;
+    private Chip HomeChip1,HomeChip2;
     public RecyclerView dailyreportsapp;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -42,6 +45,8 @@ public class DailyReportsActivity extends AppCompatActivity {
         ReportsImage= findViewById(R.id.rep_name1);
         Headings = findViewById(R.id.dailyrep_1);
         Date= findViewById(R.id.daailyrep_2);
+        HomeChip1 = findViewById(R.id.chip5);
+        HomeChip2 = findViewById(R.id.chip9);
         dailyreportsapp = findViewById(R.id.idtableSchedule);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference= firebaseDatabase.getReference("DailyReports");
@@ -50,6 +55,19 @@ public class DailyReportsActivity extends AppCompatActivity {
         dailyreportsapp.setLayoutManager(new LinearLayoutManager(this));
         dailyreportsapp.setAdapter(dailyReportsAdapter);
         getAllschedules();
+
+        HomeChip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DailyReportsActivity.this, ActivityMainSideBar.class));
+            }
+        });
+        HomeChip2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DailyReportsActivity.this, ActivityMainSideBar.class));
+            }
+        });
 
     }
 

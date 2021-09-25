@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.model.ScheduleModal;
+import com.google.android.material.chip.Chip;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -33,6 +34,7 @@ public class ScheduleApprovalsActivity extends AppCompatActivity {
     private ImageView HosLogo;
     private TextView Heading, DocNameEdt, DateEdt, TimeEdt, Column4, Column5;
     private FloatingActionButton AddBtn;
+    private Chip HomeChip1,HomeChip2;
     private RecyclerView table;
     private ImageButton UpdateBtn, DeleteBtn;
     private FirebaseDatabase firebaseDatabase;
@@ -53,6 +55,8 @@ public class ScheduleApprovalsActivity extends AppCompatActivity {
         table = findViewById(R.id.idtableSchedule);
         HosLogo=findViewById(R.id.hos_logo1);
         Heading=findViewById(R.id.dailyrep_1);
+        HomeChip1 = findViewById(R.id.chip5);
+        HomeChip2 = findViewById(R.id.chip9);
         DocNameEdt=findViewById(R.id.apptable2);
         DateEdt=findViewById(R.id.apptable3);
         TimeEdt=findViewById(R.id.apptable4);
@@ -81,6 +85,19 @@ public class ScheduleApprovalsActivity extends AppCompatActivity {
             }
         });
 
+
+        HomeChip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ScheduleApprovalsActivity.this, ActivityMainSideBar.class));
+            }
+        });
+        HomeChip2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ScheduleApprovalsActivity.this, ActivityMainSideBar.class));
+            }
+        });
 
     }
 

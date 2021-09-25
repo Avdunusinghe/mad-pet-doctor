@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.model.DailyReportModal;
+import com.google.android.material.chip.Chip;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,6 +28,7 @@ public class MedCenterDailyReportActivity extends AppCompatActivity {
 
     private EditText totalPatient, drCharge,dateEdt;
     private TextView totalFee;
+    private Chip HomeChip1,HomeChip2;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private String ReportId;
@@ -36,12 +38,27 @@ public class MedCenterDailyReportActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.med_daily_reports);
+        HomeChip1 = findViewById(R.id.chip5);
+        HomeChip2 = findViewById(R.id.chip9);
         dateEdt = findViewById(R.id.totalPatient2);
         totalPatient = findViewById(R.id.totalPatient);
         drCharge = findViewById(R.id.drCharge);
         totalFee = (TextView) findViewById(R.id.totalFee);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference= firebaseDatabase.getReference("DailyReports");
+
+        HomeChip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MedCenterDailyReportActivity.this, ActivityMainSideBar.class));
+            }
+        });
+        HomeChip2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MedCenterDailyReportActivity.this, ActivityMainSideBar.class));
+            }
+        });
 
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 

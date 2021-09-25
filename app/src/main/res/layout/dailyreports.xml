@@ -88,11 +88,10 @@
 
     </TableRow>
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idtableSchedule"
-        android:layout_width="401dp"
-        android:layout_height="393dp"
+        android:layout_width="395dp"
+        android:layout_height="241dp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -189,7 +188,7 @@
         android:layout_height="58dp"
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="@+id/toolbar3"
-        app:layout_constraintHorizontal_bias="0.429"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/toolbar3"
         app:layout_constraintTop_toTopOf="@+id/toolbar3"
         app:srcCompat="@drawable/pet_doc_2" />

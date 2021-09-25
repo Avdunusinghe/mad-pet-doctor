@@ -85,7 +85,7 @@
         android:id="@+id/usernameid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="Ashen"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.901"
         app:layout_constraintStart_toEndOf="@+id/imageView55"
@@ -178,7 +178,7 @@
 
     <Button
         android:id="@+id/clientProfileSavebtn"
-        android:layout_width="113dp"
+        android:layout_width="175dp"
         android:layout_height="48dp"
         android:layout_marginTop="32dp"
         android:text="@string/clientProfileSavebtn"

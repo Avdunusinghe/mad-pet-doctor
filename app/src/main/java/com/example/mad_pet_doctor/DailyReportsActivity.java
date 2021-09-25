@@ -16,6 +16,7 @@ import com.example.model.CardPaymentsModal;
 import com.example.model.DailyReportModal;
 import com.example.model.ScheduleModal;
 import com.google.android.material.chip.Chip;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +29,7 @@ public class DailyReportsActivity extends AppCompatActivity {
     private ImageView Hoslogo, ReportsImage;
     private TextView Headings, Date;
     private Chip HomeChip1,HomeChip2;
+    private FloatingActionButton addBtn;
     public RecyclerView dailyreportsapp;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
@@ -47,6 +49,7 @@ public class DailyReportsActivity extends AppCompatActivity {
         Date= findViewById(R.id.daailyrep_2);
         HomeChip1 = findViewById(R.id.chip5);
         HomeChip2 = findViewById(R.id.chip9);
+        addBtn = findViewById(R.id.caldaily);
         dailyreportsapp = findViewById(R.id.idtableSchedule);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference= firebaseDatabase.getReference("DailyReports");
@@ -55,6 +58,13 @@ public class DailyReportsActivity extends AppCompatActivity {
         dailyreportsapp.setLayoutManager(new LinearLayoutManager(this));
         dailyreportsapp.setAdapter(dailyReportsAdapter);
         getAllschedules();
+        //add button
+        addBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DailyReportsActivity.this, MedCenterDailyReportActivity.class));
+            }
+        });
 
         HomeChip1.setOnClickListener(new View.OnClickListener() {
             @Override

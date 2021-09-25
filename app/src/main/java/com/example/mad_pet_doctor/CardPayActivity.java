@@ -47,6 +47,8 @@ public class CardPayActivity extends AppCompatActivity {
          Hoslogo = findViewById(R.id.hos_logo);
          CardPic1 = findViewById(R.id.cardpic2);
          CardPic2 = findViewById(R.id.cardpic1);
+         HomeChip1 = findViewById(R.id.chip5);
+         HomeChip2 = findViewById(R.id.chip9);
          CardHolderEdt = findViewById(R.id.input_1);
          CardNoEdt = findViewById(R.id.input_2);
          ExpDateEdt = findViewById(R.id.editTextDate2);
@@ -68,6 +70,7 @@ public class CardPayActivity extends AppCompatActivity {
                 startActivity(new Intent(CardPayActivity.this, ActivityMainSideBar.class));
             }
         });
+
         HomeChip2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

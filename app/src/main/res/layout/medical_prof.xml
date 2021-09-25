@@ -14,9 +14,12 @@
         android:layout_height="match_parent"
         android:alpha="0.3"
         android:contentDescription="@string/introductionofdogimage"
-        app:srcCompat="@drawable/newqqq"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/newqqq" />
 
     <ImageView
         android:id="@+id/hos_logo1"
@@ -34,26 +37,26 @@
         android:id="@+id/prof_btn4"
         android:layout_width="339dp"
         android:layout_height="45dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:contentDescription="@string/prof_btn1"
         android:text="SCHEDULES"
         app:backgroundTint="@color/BurlyWood"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
 
     <Button
         android:id="@+id/prof_btn5"
         android:layout_width="350dp"
         android:layout_height="46dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:contentDescription="@string/prof_btn2"
-        android:text="CALCULATE DAILY APPOINTENTS"
+        android:text="MY PROFILE"
         app:backgroundTint="@color/Peru"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
 
     <Button
         android:id="@+id/prof_btn3"
@@ -64,22 +67,22 @@
         android:text="DAILY REPORTS"
         app:backgroundTint="@color/Goldenrod"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintHorizontal_bias="0.692"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
 
     <ImageButton
         android:id="@+id/imageButton5"
-        android:layout_width="145dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="130dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="132dp"
         android:layout_marginRight="132dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/hos_logo1"
         app:layout_constraintTop_toBottomOf="@+id/toolbar3"
-        app:srcCompat="@drawable/overtime_1" />
+        app:srcCompat="@drawable/icons8_user_50" />
 
     <ImageButton
         android:id="@+id/imageButton6"
@@ -87,20 +90,20 @@
         android:layout_height="74dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prof_btn4"
+        app:layout_constraintTop_toBottomOf="@+id/prof_btn5"
         app:srcCompat="@drawable/report" />
 
     <ImageButton
         android:id="@+id/imageButton7"
-        android:layout_width="166dp"
-        android:layout_height="74dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
+        android:layout_width="138dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prof_btn5"
+        app:layout_constraintTop_toBottomOf="@+id/prof_btn4"
         app:srcCompat="@drawable/medical_history" />
 
     <androidx.appcompat.widget.Toolbar

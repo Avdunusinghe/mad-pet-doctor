@@ -47,12 +47,12 @@ public class MedCenterDailyReportActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference= firebaseDatabase.getReference("DailyReports");
 
-        HomeChip1.setOnClickListener(new View.OnClickListener() {
+       /* HomeChip1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MedCenterDailyReportActivity.this, ActivityMainSideBar.class));
             }
-        });
+        });*/
         HomeChip2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

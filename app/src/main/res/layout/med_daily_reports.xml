@@ -4,13 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fdefe9"
     tools:context=".MedCenterDailyReportActivity">
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.3"
+        android:contentDescription="@string/introductionofdogimage"
+        app:srcCompat="@drawable/newqqq"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -31,7 +42,7 @@
         android:id="@+id/chip9"
         android:layout_width="48dp"
         android:layout_height="28dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:background="#000000"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +54,7 @@
         android:id="@+id/chip13"
         android:layout_width="48dp"
         android:layout_height="28dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:background="#000000"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +65,7 @@
     <ImageView
         android:id="@+id/imageView55"
         android:layout_width="70dp"
-        android:layout_height="58dp"
+        android:layout_height="45dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/pet_doc_2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +78,7 @@
         android:id="@+id/usericon"
         android:layout_width="31dp"
         android:layout_height="25dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:contentDescription="@string/user_icon"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.741"

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fdefe9"
     tools:context=".MainActivity">
 
 
@@ -91,7 +92,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/idtableSchedule"
         android:layout_width="401dp"
-        android:layout_height="193dp"
+        android:layout_height="393dp"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
         app:layout_constraintStart_toStartOf="parent"

@@ -7,6 +7,17 @@
     tools:context=".MainActivity">
 
 
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.3"
+        android:contentDescription="@string/introductionofdogimage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/newqqq"
+        tools:layout_editor_absoluteX="-1dp" />
+
+
     <TextView
         android:id="@+id/dailyrep_1"
         android:layout_width="216dp"
@@ -71,12 +82,11 @@
         android:id="@+id/hos_logo1"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
         android:contentDescription="@string/hos_logo"
 
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/chip5"
         app:srcCompat="@drawable/hospital" />
@@ -136,12 +146,13 @@
 
     <TableRow
         android:id="@+id/tableRow"
-        android:layout_width="389dp"
-        android:layout_height="57dp"
+        android:layout_width="373dp"
+        android:layout_height="54dp"
         android:layout_marginTop="48dp"
         android:background="#84ACBD"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.605"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dailyrep_1">
 
@@ -171,14 +182,6 @@
             android:text="Time" />
 
         <TextView
-            android:id="@+id/apptable5"
-            android:layout_width="59dp"
-            android:layout_height="34dp"
-            android:layout_weight="1"
-            android:fontFamily="sans-serif-black"
-            android:text="Update" />
-
-        <TextView
             android:id="@+id/apptable6"
             android:layout_width="60dp"
             android:layout_height="34dp"
@@ -187,10 +190,16 @@
 
     </TableRow>
 
+
     <androidx.recyclerview.widget.RecyclerView
+
         android:id="@+id/idtableSchedule"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="364dp"
+        android:layout_height="283dp"
+
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableRow" />
 

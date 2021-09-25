@@ -3,12 +3,16 @@ package com.example.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ScheduleModal implements Parcelable {
     private String Id;
     private String DoctorName;
     private String Date;
     private String Time;
     private String ScheduleId;
+
 
     public ScheduleModal(){
 
@@ -21,6 +25,8 @@ public class ScheduleModal implements Parcelable {
         Time = time;
         ScheduleId = scheduleId;
     }
+
+
 
     protected ScheduleModal(Parcel in) {
         Id = in.readString();

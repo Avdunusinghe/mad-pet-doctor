@@ -49,22 +49,29 @@ public class ScheduleApprovalsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.scheduleapprovals);
 
+        //declare
         table = findViewById(R.id.idtableSchedule);
         HosLogo=findViewById(R.id.hos_logo1);
         Heading=findViewById(R.id.dailyrep_1);
         DocNameEdt=findViewById(R.id.apptable2);
         DateEdt=findViewById(R.id.apptable3);
         TimeEdt=findViewById(R.id.apptable4);
-        Column4=findViewById(R.id.apptable5);
+        //Column4=findViewById(R.id.apptable5);
         Column5=findViewById(R.id.apptable6);
         AddBtn=findViewById(R.id.addbton);
-        UpdateBtn=findViewById(R.id.icondell4);
+        //UpdateBtn=findViewById(R.id.icondell4);
         DeleteBtn=findViewById(R.id.icondel14);
+
+        //dbconnection
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference= firebaseDatabase.getReference("Schedules");
+
+        //arraylist
         scheduleModalArrayList = new ArrayList<>();
         tableAdapter = new TableAdapter(scheduleModalArrayList,this,  this::onCourseClick);
         table.setLayoutManager(new LinearLayoutManager(this));
+
+        //table
         table.setAdapter(tableAdapter);
         getAllschedules();
         AddBtn.setOnClickListener(new View.OnClickListener() {
@@ -83,7 +90,7 @@ public class ScheduleApprovalsActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull  DataSnapshot snapshot, @Nullable String previousChildName) {
                 scheduleModalArrayList.add(snapshot.getValue(ScheduleModal.class));
-                tableAdapter.notifyDataSetChanged();;
+                tableAdapter.notifyDataSetChanged();
 
             }
 
@@ -111,7 +118,7 @@ public class ScheduleApprovalsActivity extends AppCompatActivity {
 
 
     public void onCourseClick(int position){
-        startActivity(new Intent(ScheduleApprovalsActivity.this , PetBookFormActivity.class));
+        startActivity(new Intent(ScheduleApprovalsActivity.this , UpdateScheduleActivity.class));
 
 
     }

@@ -4,8 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fdefe9"
     tools:context=".MainActivity">
 
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.3"
+        android:contentDescription="@string/introductionofdogimage"
+        app:srcCompat="@drawable/newqqq"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <ImageView
         android:id="@+id/cardpic1"
@@ -25,8 +36,8 @@
         android:id="@+id/cardpic2"
         android:layout_width="82dp"
         android:layout_height="47dp"
-        android:layout_marginStart="224dp"
-        android:layout_marginLeft="224dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginLeft="188dp"
         android:layout_marginTop="12dp"
         android:contentDescription="@string/cardpic2"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +92,6 @@
         android:layout_marginStart="52dp"
         android:layout_marginLeft="52dp"
         android:layout_marginTop="16dp"
-        android:background="#FBF7F7"
         android:contentDescription="@string/cardlabel4"
         android:fontFamily="sans-serif-black"
         android:text="CVC"
@@ -228,15 +238,15 @@
 
     <EditText
         android:id="@+id/input_1"
-        android:layout_width="173dp"
-        android:layout_height="32dp"
+        android:layout_width="175dp"
+        android:layout_height="46dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.142"
         app:layout_constraintStart_toEndOf="@+id/cardlabel2"
         app:layout_constraintTop_toBottomOf="@+id/card_head" />
 

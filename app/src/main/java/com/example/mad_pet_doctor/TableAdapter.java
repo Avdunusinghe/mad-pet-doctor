@@ -34,7 +34,8 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder> 
     private TableAdapter.CourseClickInterface courseClickInterface;
 
 
-    public TableAdapter(ArrayList<ScheduleModal> scheduleModalArrayList, Context context, TableAdapter.CourseClickInterface courseClickInterface) {
+
+    public TableAdapter(ArrayList<ScheduleModal> scheduleModalArrayList, Context context, CourseClickInterface courseClickInterface) {
         this.scheduleModalArrayList = scheduleModalArrayList;
         this.context = context;
         this.courseClickInterface = courseClickInterface;
@@ -53,21 +54,26 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder> 
         holder.Date.setText(scheduleModal.getDate());
         holder.Time.setText(scheduleModal.getTime());
         setAnimation(holder.itemView, position);
-        holder.UpdateBtn.setOnClickListener(new View.OnClickListener() {
+        /*holder.UpdateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 courseClickInterface.onCourseClick(position);
             }
-        });
+        });*/
 
-        holder.DeleteBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                courseClickInterface.onCourseClick(position);
+        holder.DeleteBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override public void onClick(View v)
+            {
+                View row = (View) v.getParent();
+                ViewGroup container = ((ViewGroup)row.getParent());
+                container.removeView(row);
+                container.invalidate();
             }
         });
     }
+
 
 
     private void setAnimation(View itemView, int position) {
@@ -84,6 +90,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder> 
         return scheduleModalArrayList.size();
     }
 
+    //implement fields
     public class ViewHolder extends  RecyclerView.ViewHolder{
         public TextView DoctorName , Date, Time;
         private ImageButton UpdateBtn, DeleteBtn;
@@ -93,8 +100,10 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder> 
             DoctorName = itemView.findViewById(R.id.apptable26);
             Date = itemView.findViewById(R.id.apptable27);
             Time = itemView.findViewById(R.id.apptable28);
-            UpdateBtn= itemView.findViewById(R.id.icondell4);
+            //UpdateBtn= itemView.findViewById(R.id.icondell4);
             DeleteBtn= itemView.findViewById(R.id.icondel14);
+
+
 
         }
     }
@@ -102,4 +111,6 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder> 
     public interface CourseClickInterface{
         void onCourseClick(int position);
     }
+
+
 }

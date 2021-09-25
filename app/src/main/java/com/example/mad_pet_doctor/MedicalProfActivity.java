@@ -45,7 +45,7 @@ public class MedicalProfActivity extends AppCompatActivity {
         DocRegistrationBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MedicalProfActivity.this, DoctoreRegistration.class);
+                Intent i = new Intent(MedicalProfActivity.this,MedCenterDailyReportActivity.class);
                 startActivity(i);
             }
         });

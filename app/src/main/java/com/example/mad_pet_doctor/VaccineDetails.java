@@ -65,7 +65,6 @@ public class VaccineDetails extends AppCompatActivity {
         VaccineDateEdt = findViewById(R.id.vaccinedateinput);
         NoOfVaccinesEdt = findViewById(R.id.noofvaccineinput);
         VaccinePriceEdt = findViewById(R.id.priceinput);
-        //PriceResult = findViewById(R.id.totalFee);
         PriceResult = (TextView)findViewById(R.id.totalFee);
 
         HomeChip1 = findViewById(R.id.chip9);

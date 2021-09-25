@@ -28,7 +28,6 @@ import java.util.Calendar;
 import java.util.Locale;
 
 public class PetCard extends AppCompatActivity {
-
     private TextView PetCardHeading;
     private ImageView PetCardImage;
     private TextView petid, petname, breed, petdateofbirth, petage, petgender, petweight,petownername;
@@ -41,12 +40,10 @@ public class PetCard extends AppCompatActivity {
     private PetCardModal petCardModal;
     final Calendar myCalendar = Calendar.getInstance();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pet_card);
-
         PetCardHeading = findViewById(R.id.petcard);
         PetCardImage = findViewById(R.id.imageView17);
         petid = findViewById(R.id.TVPetId);

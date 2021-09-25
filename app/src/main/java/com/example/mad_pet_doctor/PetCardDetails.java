@@ -61,11 +61,9 @@ public class PetCardDetails extends AppCompatActivity {
         pcdpetid = findViewById(R.id.pcdPetID);
         pcdpetname = findViewById(R.id.pcdPetName);
         pcdpetownername = findViewById(R.id.pcdPetOwnerName);
-        //pcdupdate = findViewById(R.id.pcdUpdateButton);
         pcddelete =findViewById(R.id.pcdDeleteButton);
         pcdRecycleView = findViewById(R.id.PCDRecycleViewId);
 
-        //pcdUpdateButton = findViewById(R.id.PCDUpdateButton);
         pcdDeleteButton = findViewById(R.id.PCDDeleteButton);
         HomeChip1 = findViewById(R.id.chip12);
         HomeChip2 = findViewById(R.id.chip15);

@@ -18,17 +18,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
-    //private Toolbar Toolbar;
     private View View_bar;
     private Chip HomeChip1, HomeChip2;
     private ImageView HomeImage, UserIcon;
     private TextView UserName;
-    //private SearchView SearchBar;
     private TextView SubHeading1,SubHeading2;
     private ImageView Image1, Image2;
     private TextView DocName1, DocName2, MedicalCenter1, MedicalCenter2;
     private ImageButton LocationButton, HospitalButton;
-    //private MapView MapView;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
 
@@ -36,14 +33,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //FirebaseDatabase get instance
         firebaseDatabase = FirebaseDatabase.getInstance();
-
-        //Home page Tool bar
-        //Toolbar toolbar = findViewById(R.id.toolbar2);
-        //setSupportActionBar(toolbar);
-
         View_bar = findViewById(R.id.view);
         HomeChip1 = findViewById(R.id.chip9);
         HomeChip2 = findViewById(R.id.chip13);
@@ -51,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
         UserIcon = findViewById(R.id.usericon);
         UserName = findViewById(R.id.usernameid);
 
-        //Home page details
-        //SearchBar = findViewById(R.id.searchView3);
         SubHeading1 = findViewById(R.id.subheading1);
         SubHeading2 = findViewById(R.id.subheading2);
         Image1 = findViewById(R.id.HomeImage1);
@@ -61,11 +49,9 @@ public class MainActivity extends AppCompatActivity {
         DocName2 = findViewById(R.id.docname2);
         MedicalCenter1 = findViewById(R.id.medicalcenter1);
         MedicalCenter2 = findViewById(R.id.medicalcenter2);
-        //MapView = findViewById(R.id.mapView);
         LocationButton = findViewById(R.id.locationButton);
         HospitalButton = findViewById(R.id.hospitalButton);
 
-        //Home Page Side Bar
         HomeChip1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,16 +64,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ActivityMainSideBar.class));
             }
         });
-
-        //Location Button
         LocationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, Doctors.class));
             }
         });
-
-        //Medical Center
         HospitalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

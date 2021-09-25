@@ -34,11 +34,9 @@ public class VaccineReport extends AppCompatActivity {
     private TextView vrName,vrDate,vrNoofVaccines, vrPrice,vrTotalPrice;
     private Button DoneButton;
     private String VRID;
-
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private Chip HomeChip1, HomeChip2;
-
     private RecyclerView vrRecycleView;
     private ArrayList<VaccineDetailsModal> vaccineDetailsModalArrayList;
     private VaccineReportAdapter vaccineReportAdapter;
@@ -50,7 +48,6 @@ public class VaccineReport extends AppCompatActivity {
         setContentView(R.layout.vaccine_report_list);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("VaccineDetails");
-
         VRHeading =  findViewById(R.id.vaccineReportHeading);
         VRImage = findViewById(R.id.vaccineReportImage);
         VRAddButton = findViewById(R.id.VaccineReportAddButton);

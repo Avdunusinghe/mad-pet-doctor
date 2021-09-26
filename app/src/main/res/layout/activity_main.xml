@@ -15,7 +15,8 @@
         android:contentDescription="@string/introductionofdogimage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/homepagepetimage1" />
+        app:srcCompat="@drawable/homepagepetimage1"
+        />
 
     <ImageView
         android:id="@+id/HomeImage1"

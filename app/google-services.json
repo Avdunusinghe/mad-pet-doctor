@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "413481846897",
+    "project_id": "mad-pet-doctor",
+    "storage_bucket": "mad-pet-doctor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413481846897:android:9fca26467ed870e258b3d0",
+        "android_client_info": {
+          "package_name": "com.example.mad_pet_doctor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413481846897-3l2pjlinrcqngb6tp9r18vud1nuaqhpf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVixfFEQL2H8Mglu1qD0IWC5D_gAAqP4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "413481846897-3l2pjlinrcqngb6tp9r18vud1nuaqhpf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

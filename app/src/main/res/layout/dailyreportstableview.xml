@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="3dp"
+    android:layout_gravity="center"
+    android:layout_margin="5dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/BurlyWood"
+        >
+
+        <TableRow
+            android:id="@+id/idtableReports"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:background="#C6D5DB"
+            android:padding="10dp">
+
+
+            <TextView
+                android:id="@+id/table4"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-black"
+                android:text=""
+                app:autoSizeTextType="uniform" />
+
+            <TextView
+                android:id="@+id/table5"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-black"
+                android:text=""
+                app:autoSizeTextType="uniform" />
+
+            <TextView
+                android:id="@+id/table6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-black"
+                android:text="2000.00"
+                app:autoSizeTextType="uniform" />
+
+        </TableRow>
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

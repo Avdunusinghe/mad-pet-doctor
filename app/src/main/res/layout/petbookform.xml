@@ -73,7 +73,7 @@
         android:layout_marginTop="36dp"
         android:contentDescription="@string/confirm_1"
         android:fontFamily="sans-serif-black"
-        android:text="PET 01"
+        android:text="PET "
         android:textColor="@color/black"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toStartOf="@+id/pet_pic1"

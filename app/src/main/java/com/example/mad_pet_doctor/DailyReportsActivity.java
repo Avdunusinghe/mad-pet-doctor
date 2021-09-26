@@ -88,24 +88,19 @@ public class DailyReportsActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 dailyReportModalArrayList.add(snapshot.getValue(DailyReportModal.class));
                 dailyReportsAdapter.notifyDataSetChanged();;
-
             }
-
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable  String previousChildName) {
                 dailyReportsAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onChildRemoved(@NonNull  DataSnapshot snapshot) {
                 dailyReportsAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onChildMoved(@NonNull  DataSnapshot snapshot, @Nullable  String previousChildName) {
                 dailyReportsAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 

@@ -59,31 +59,24 @@ public class AppointmentsActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull  DataSnapshot snapshot, @Nullable  String previousChildName) {
                 scheduleModalArrayList.add(snapshot.getValue(ScheduleModal.class));
                 scheduleAdapter.notifyDataSetChanged();
-
             }
-
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable  String previousChildName) {
                 scheduleAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onChildRemoved(@NonNull  DataSnapshot snapshot) {
                 scheduleAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onChildMoved(@NonNull  DataSnapshot snapshot, @Nullable  String previousChildName) {
                 scheduleAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull  DatabaseError error) {
-
             }
         });
     }
-
     public void onCourseClick(int position){
         startActivity(new Intent(AppointmentsActivity.this , PetBookFormActivity.class));
 

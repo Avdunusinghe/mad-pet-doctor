@@ -17,10 +17,7 @@
 
         </activity>
         <activity android:name=".MedicalProfActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+
         </activity>
         <activity android:name=".PetBookFormActivity">
 
@@ -29,7 +26,10 @@
 
         </activity>
         <activity android:name=".ScheduleApprovalsActivity">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".EnterScheduleActivity">
 

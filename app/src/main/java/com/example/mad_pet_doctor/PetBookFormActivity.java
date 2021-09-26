@@ -71,12 +71,12 @@ public class  PetBookFormActivity extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference("Boookings");
 
 
-        HomeChip1.setOnClickListener(new View.OnClickListener() {
+      /*  HomeChip1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(PetBookFormActivity.this, ActivityMainSideBar.class));
             }
-        });
+        });*/
         HomeChip2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

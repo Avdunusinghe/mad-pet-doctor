@@ -79,7 +79,6 @@ public class BookingConfirmationActivity extends AppCompatActivity {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Boookings");
 
-
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

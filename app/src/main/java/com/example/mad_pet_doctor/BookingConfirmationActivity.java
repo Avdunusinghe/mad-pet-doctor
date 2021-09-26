@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.model.BookingModal;
+import com.google.android.material.chip.Chip;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,6 +24,7 @@ import java.util.Map;
 public class BookingConfirmationActivity extends AppCompatActivity {
 
     private ImageView HosLogo;
+    private Chip HomeChip1,HomeChip2;
     private TextView Heading, Slogan, Address,Country, Phone , Mail, ConfirmHeading,  RefNo , RefOutput, AnimalName , PetNameOutput, OwnerName , OwnerNameOutput,
     AppDate, DateOutput,  AppTime, TimeOutput, TotalFee, FeeOutput, MessageLine;
     private FirebaseDatabase firebaseDatabase;
@@ -39,6 +41,8 @@ public class BookingConfirmationActivity extends AppCompatActivity {
         HosLogo = findViewById(R.id.hos_logo1);
         Heading = findViewById(R.id.dailyrep_1);
         Slogan = findViewById(R.id.daailyrep_2);
+        HomeChip1 = findViewById(R.id.chip5);
+        HomeChip2 = findViewById(R.id.chip9);
         Address = findViewById(R.id.confirm_3);
         Country = findViewById(R.id.confirm_4);
         Phone = findViewById(R.id.confirm_5);
@@ -60,8 +64,20 @@ public class BookingConfirmationActivity extends AppCompatActivity {
         firebaseDatabase= FirebaseDatabase.getInstance();
         bookingModal = getIntent().getParcelableExtra("Booking");
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Boookings");
+        HomeChip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BookingConfirmationActivity.this, ActivityMainSideBar.class));
+            }
+        });
+        HomeChip2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BookingConfirmationActivity.this, ActivityMainSideBar.class));
+            }
+        });
 
+        databaseReference = FirebaseDatabase.getInstance().getReference("Boookings");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -71,6 +87,7 @@ public class BookingConfirmationActivity extends AppCompatActivity {
 
                     BookingModal bookingModal;
                     bookingModal = datasnapshot.getValue(BookingModal.class);
+                    assert bookingModal != null;
                     String petId = bookingModal.getBookingId();
                     String petname = bookingModal.getAnimalName();
                     String ownername = bookingModal.getOwnerName();
@@ -86,9 +103,10 @@ public class BookingConfirmationActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(BookingConfirmationActivity.this, "Error occurs to booking" + error.toString(), Toast.LENGTH_SHORT).show();
+            public void onCancelled(@NonNull  DatabaseError error) {
+
             }
+
         });
 
     }}

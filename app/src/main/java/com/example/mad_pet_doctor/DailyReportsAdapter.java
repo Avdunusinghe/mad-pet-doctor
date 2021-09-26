@@ -15,19 +15,20 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.model.CardPaymentsModal;
+import com.example.model.DailyReportModal;
 
 
 import java.util.ArrayList;
 
 public class DailyReportsAdapter  extends RecyclerView.Adapter<DailyReportsAdapter.ViewHolder> {
-    private ArrayList<CardPaymentsModal> cardPaymentModalArrayList;
+    private ArrayList<DailyReportModal> dailyReportModalArrayList;
     private Context context;
     int lastPos = -1;
 
 
 
-    public DailyReportsAdapter(ArrayList<CardPaymentsModal> cardPaymentModalArrayList, Context context) {
-        this.cardPaymentModalArrayList = cardPaymentModalArrayList;
+    public DailyReportsAdapter(ArrayList<DailyReportModal> dailyReportModalArrayList, Context context) {
+        this.dailyReportModalArrayList = dailyReportModalArrayList;
         this.context = context;
 
     }
@@ -39,12 +40,13 @@ public class DailyReportsAdapter  extends RecyclerView.Adapter<DailyReportsAdapt
     }
 
     @Override
-    public void onBindViewHolder(@NonNull  DailyReportsAdapter.ViewHolder holder, int position) {
-        CardPaymentsModal cardPaymentsModal = cardPaymentModalArrayList.get(position);
-        holder.RefNo.setText(cardPaymentsModal.getPaymentId());
-        holder.CardHolderName.setText(cardPaymentsModal.getCardHolderName());
+    public void onBindViewHolder(@NonNull  ViewHolder holder, int position) {
+        DailyReportModal dailyReportModal = dailyReportModalArrayList.get(position);
+        holder.Date.setText(dailyReportModal.getDate());
+        holder.NoOfAppointments.setText(Integer.toString(dailyReportModal.getNumberOfAppointments()));
+        holder.FeePerOne.setText(Integer.toString(dailyReportModal.getAppointmentFee()));
+        holder.totalFee.setText(Integer.toString(dailyReportModal.getFee()));
         setAnimation(holder.itemView, position);
-
     }
 
 
@@ -59,17 +61,19 @@ public class DailyReportsAdapter  extends RecyclerView.Adapter<DailyReportsAdapt
     @Override
     public int getItemCount() {
 
-        return cardPaymentModalArrayList.size();
+        return dailyReportModalArrayList.size();
     }
 
     public class ViewHolder extends  RecyclerView.ViewHolder{
-        private TextView CardHolderName, RefNo;
+        private TextView Date, NoOfAppointments, FeePerOne, totalFee;
 
 
         public ViewHolder(@NonNull  View itemView) {
             super(itemView);
-            CardHolderName = itemView.findViewById(R.id.table5);
-            RefNo = itemView.findViewById(R.id.table1);
+           Date = itemView.findViewById(R.id.table4);
+           NoOfAppointments = itemView.findViewById(R.id.tablenew4);
+           FeePerOne= itemView.findViewById(R.id.table5);
+           totalFee=itemView.findViewById(R.id.table6);
 
 
         }

@@ -3,6 +3,7 @@ package com.example.mad_pet_doctor;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -28,10 +29,10 @@ import java.util.regex.Pattern;
 public class DoctorProfile extends AppCompatActivity {
 
     private TextInputEditText fullNameEdt, docLicenseNoEdt, qualificationEdt, medicalCenterEdt, addressEdt, telNoEdt, emailEdt;
-    private ImageButton docPicBtn;
     private RadioGroup houseCallYesOrNoGroup;
     private RadioButton houseCallYesOrNoBtn;
-    private Button updateBtn,deleteBtn;
+    Button updateBtn;
+    ProgressDialog spinner;
     private FirebaseDatabase fireBaseDatabase;
     private DatabaseReference databaseReference;
     private String doctorId;
@@ -41,7 +42,6 @@ public class DoctorProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.doctor_profile);
-        docPicBtn = findViewById(R.id.imageButton8);
         fullNameEdt = findViewById(R.id.textInputEditText2);
         docLicenseNoEdt = findViewById(R.id.editText5);
         qualificationEdt = findViewById(R.id.editText6);
@@ -49,11 +49,12 @@ public class DoctorProfile extends AppCompatActivity {
         addressEdt = findViewById(R.id.editText8);
         telNoEdt = findViewById(R.id.editText9);
         emailEdt = findViewById(R.id.editText10);
-        houseCallYesOrNoGroup = (RadioGroup)findViewById(R.id.radioGroup2);
+        houseCallYesOrNoGroup = (RadioGroup) findViewById(R.id.radioGroup2);
         updateBtn = findViewById(R.id.auth_loginbtn);
-        deleteBtn = findViewById(R.id.button2);
+        spinner = new ProgressDialog(DoctorProfile.this);
+
         fireBaseDatabase = FirebaseDatabase.getInstance();
-        doctorReg = getIntent().getParcelableExtra("DoctorRegs");
+        doctorReg = getIntent().getParcelableExtra("Doctor");
 
         if (doctorReg != null) {
             fullNameEdt.setText(doctorReg.getFullName());
@@ -64,17 +65,13 @@ public class DoctorProfile extends AppCompatActivity {
             telNoEdt.setText(doctorReg.getTelNo());
             emailEdt.setText(doctorReg.getEmail());
             doctorId = doctorReg.getDoctorId();
+
+            databaseReference = fireBaseDatabase.getReference("Doctor").child(doctorId);
         }
-
-        ImageButton docPicBtn = (ImageButton)findViewById(R.id.imageButton8);
-        docPicBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Upload a picture.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        databaseReference = fireBaseDatabase.getReference("DoctorReg").child(doctorId);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
 
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,10 +100,14 @@ public class DoctorProfile extends AppCompatActivity {
                     String address = addressEdt.getText().toString();
                     String telNo = telNoEdt.getText().toString();
                     String email = emailEdt.getText().toString();
+                    spinner.setTitle("Update Doctor");
+                    spinner.setMessage("Please Wait while Validate the Details");
+                    spinner.setCanceledOnTouchOutside(false);
+                    spinner.show();
 
-                    int selectedValue=houseCallYesOrNoGroup.getCheckedRadioButtonId();
-                    houseCallYesOrNoBtn=(RadioButton)findViewById(selectedValue);
-                    Toast.makeText(DoctorProfile.this,houseCallYesOrNoBtn.getText(),Toast.LENGTH_SHORT).show();
+                    int selectedValue = houseCallYesOrNoGroup.getCheckedRadioButtonId();
+                    houseCallYesOrNoBtn = (RadioButton) findViewById(selectedValue);
+                    Toast.makeText(DoctorProfile.this, houseCallYesOrNoBtn.getText(), Toast.LENGTH_SHORT).show();
 
                     Map<String, Object> map = new HashMap<>();
                     map.put("fullName", fullName);
@@ -133,38 +134,30 @@ public class DoctorProfile extends AppCompatActivity {
                     });
                 }
             }
-
-            private boolean validateEmail() {
-                String email = emailEdt.getText().toString();
-                String EmalFormat = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-
-                if (Pattern.compile(EmalFormat).matcher(email).matches()) {
-                    return true;
-                } else {
-                    Toast.makeText(getApplicationContext(), "Please enter valid email", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-            }
-
-            private boolean validateTelNo() {
-                String phone = telNoEdt.getText().toString();
-
-                if (phone.length() == 10) {
-                    return true;
-                } else {
-                    Toast.makeText(getApplicationContext(), "Please enter valid phone number", Toast.LENGTH_SHORT).show();
-                    return false;
-                }
-            }
         });
+    }
 
+    private boolean validateEmail() {
+        String email = emailEdt.getText().toString();
+        String EmalFormat = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
-        deleteBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteDoctor();
-            }
-        });
+        if (Pattern.compile(EmalFormat).matcher(email).matches()) {
+            return true;
+        } else {
+            Toast.makeText(getApplicationContext(), "Please enter valid email", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+    }
+
+    private boolean validateTelNo() {
+        String phone = telNoEdt.getText().toString();
+
+        if (phone.length() == 10) {
+            return true;
+        } else {
+            Toast.makeText(getApplicationContext(), "Please enter valid phone number", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 
     private void deleteDoctor(){

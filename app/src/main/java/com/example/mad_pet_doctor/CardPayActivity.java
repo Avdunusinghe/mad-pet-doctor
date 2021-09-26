@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.model.CardPaymentsModal;
+import com.google.android.material.chip.Chip;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,6 +30,7 @@ public class CardPayActivity extends AppCompatActivity {
      private ImageView Hoslogo, CardPic1, CardPic2;
      private EditText CardHolderEdt, CardNoEdt , ExpDateEdt, CVcEdt;
      private CheckBox Confirmbox;
+     private Chip HomeChip1,HomeChip2;
      private TextView CardPayHeading, CardholderName, CardNo , Expdate , CVC;
      private Button PayBtn;
      private FirebaseDatabase firebasedatabase;
@@ -45,6 +47,8 @@ public class CardPayActivity extends AppCompatActivity {
          Hoslogo = findViewById(R.id.hos_logo);
          CardPic1 = findViewById(R.id.cardpic2);
          CardPic2 = findViewById(R.id.cardpic1);
+         HomeChip1 = findViewById(R.id.chip5);
+         HomeChip2 = findViewById(R.id.chip9);
          CardHolderEdt = findViewById(R.id.input_1);
          CardNoEdt = findViewById(R.id.input_2);
          ExpDateEdt = findViewById(R.id.editTextDate2);
@@ -58,6 +62,21 @@ public class CardPayActivity extends AppCompatActivity {
          PayBtn = findViewById(R.id.bton6);
          firebasedatabase = FirebaseDatabase.getInstance();
          databaseReference = firebasedatabase.getReference("CardPayments");
+
+
+        HomeChip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CardPayActivity.this, ActivityMainSideBar.class));
+            }
+        });
+
+        HomeChip2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CardPayActivity.this, ActivityMainSideBar.class));
+            }
+        });
 
          PayBtn.setOnClickListener(new View.OnClickListener() {
              @Override

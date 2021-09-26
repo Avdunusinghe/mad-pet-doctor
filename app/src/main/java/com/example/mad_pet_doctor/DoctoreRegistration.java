@@ -28,7 +28,6 @@ import java.util.regex.Pattern;
 public class DoctoreRegistration extends AppCompatActivity {
 
     private TextInputEditText fullNameEdt, docLicenseNoEdt, qualificationEdt, medicalCenterEdt, addressEdt, telNoEdt, emailEdt;
-    private ImageButton docPicBtn;
     private RadioGroup houseCallYesOrNoGroup;
     private RadioButton houseCallYesOrNoBtn;
     Button submitBtn;
@@ -42,7 +41,6 @@ public class DoctoreRegistration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.doctore_registration);
-        docPicBtn = findViewById(R.id.imageButton8);
         fullNameEdt = findViewById(R.id.textInputEditText2);
         docLicenseNoEdt = findViewById(R.id.editText5);
         qualificationEdt = findViewById(R.id.editText6);
@@ -55,14 +53,6 @@ public class DoctoreRegistration extends AppCompatActivity {
         spinner = new ProgressDialog(DoctoreRegistration.this);
         fireBaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = fireBaseDatabase.getReference("Doctor");
-
-        ImageButton docPicBtn = (ImageButton) findViewById(R.id.imageButton8);
-        docPicBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Upload a picture.", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override
@@ -100,17 +90,17 @@ public class DoctoreRegistration extends AppCompatActivity {
                     spinner.setMessage("Please Wait while Validate the Details");
                     spinner.setCanceledOnTouchOutside(false);
                     spinner.show();
-                    doctorId = fullName;
+                    String id = databaseReference.push().getKey();
 
                     int selectedValue = houseCallYesOrNoGroup.getCheckedRadioButtonId();
                     houseCallYesOrNoBtn = (RadioButton) findViewById(selectedValue);
                     Toast.makeText(DoctoreRegistration.this, houseCallYesOrNoBtn.getText(), Toast.LENGTH_SHORT).show();
 
-                    DoctorReg DoctorReg = new DoctorReg(doctorId, fullName, docLicenseNo, qualification, medicalCenter, address, telNo, email);
+                    DoctorReg DoctorReg = new DoctorReg(id, fullName, docLicenseNo, qualification, medicalCenter, address, telNo, email);
                     databaseReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            databaseReference.child(doctorId).setValue(DoctorReg);
+                            databaseReference.child(id).setValue(DoctorReg);
                             Toast.makeText(DoctoreRegistration.this, "Doctor Registered Successfully.", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(DoctoreRegistration.this, Doctors.class));
                         }

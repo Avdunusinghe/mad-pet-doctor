@@ -175,6 +175,24 @@ public class  PetBookFormActivity extends AppCompatActivity {
                     });
                 }
             }
+
+            public boolean validateMobileNumber()
+            {
+                String phone = OwnerPhoneEdt.getText().toString();
+
+                if(phone.length() == 10)
+                {
+                    return true;
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),
+                            "Please enter valid phone number",
+                            Toast.LENGTH_SHORT)
+                            .show();
+                    return false;
+                }
+
+            }
         });
 
     }
@@ -185,4 +203,5 @@ public class  PetBookFormActivity extends AppCompatActivity {
 
         AppDateEdt.setText(sdf.format(myCalendar.getTime()));
     }
+
 }

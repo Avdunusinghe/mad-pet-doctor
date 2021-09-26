@@ -3,40 +3,43 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/drawable/call_btn.xml" value="0.22604166666666667" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/drawable/confirm.xml" value="0.22604166666666667" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/drawable/delete_button.xml" value="0.22604166666666667" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_admin_home.xml" value="0.2" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_auth.xml" value="0.2" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_change_password.xml" value="0.4" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_cilent_profile_view.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_client_profile.xml" value="0.264" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_create_account.xml" value="0.264" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_delete_user.xml" value="0.4" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_doctor_list.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_doctor_list_detail.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_main_sidebar.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_medical_center_dialog.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_medical_center_list.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_medical_center_list_detail.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_reset_password_email.xml" value="0.536" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_user_list.xml" value="0.2" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/activity_user_list_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/appointment_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/blog_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/cardpay.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/daily_report.xml" value="0.25416666666666665" />
+        <entry key="..\:/Android/madpetdoctor/app/src/main/res/layout/doctors.xml" value="0.190625" />
         <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/activity_admin_home.xml" value="0.10371376811594203" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/activity_doctor_list.xml" value="0.14947916666666666" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/appointments.xml" value="0.14739583333333334" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/blog_content.xml" value="0.22" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/blog_menu.xml" value="0.25" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/bookingconfirmation.xml" value="0.14739583333333334" />
+        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/activity_main.xml" value="0.15260416666666668" />
+        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/blog_content.xml" value="0.14166666666666666" />
+        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/blog_menu.xml" value="0.14166666666666666" />
         <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/cat_originofbreed.xml" value="0.15260416666666668" />
         <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/chat_window.xml" value="0.25" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/chat_with_doc.xml" value="0.22" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/custom_chat_window.xml" value="0.14166666666666666" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/daily_report.xml" value="0.18" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/dailyreports.xml" value="0.14739583333333334" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/doctor_getlist.xml" value="0.2" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/doctor_list.xml" value="0.18" />
+        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/chat_with_doc.xml" value="0.15104166666666666" />
         <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/doctor_profile.xml" value="0.25" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/doctore_registration.xml" value="0.25" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/doctors.xml" value="0.25" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/enterschedule.xml" value="0.14739583333333334" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/health_tips.xml" value="0.33" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/medi_list.xml" value="0.33" />
+        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/doctore_registration.xml" value="0.33" />
+        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/doctors.xml" value="0.22" />
+        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/health_tips.xml" value="0.14166666666666666" />
         <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/medical_prof.xml" value="0.22" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/medical_prof_user.xml" value="0.18" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/medicalcenter_reg.xml" value="0.33" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/my_appointmnt.xml" value="0.25" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/myappointment_report.xml" value="0.33" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/petbookform.xml" value="0.14739583333333334" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/scheduleapprovals.xml" value="0.22" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/table_view2.xml" value="0.16" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/tableview.xml" value="0.14166666666666666" />
-        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/updateschedule.xml" value="0.14166666666666666" />
+        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/medical_prof_user.xml" value="0.15416666666666667" />
+        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/medicalcenter_reg.xml" value="0.25" />
+        <entry key="..\:/Projects/mad-pet-doctor/app/src/main/res/layout/myappointment_report.xml" value="0.22" />
       </map>
     </option>
   </component>

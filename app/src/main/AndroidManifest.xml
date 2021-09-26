@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mad_pet_doctor">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Madpetdoctor">
+
         <activity android:name=".UpdateScheduleActivity">
         </activity>
         <activity android:name=".MedicalProfActivity">
@@ -53,7 +54,21 @@
         </activity>
 
 
+<activity
+            android:name=".DeleteUserActivity"
+            android:exported="true" />
         <activity
+            android:name=".CilentProfileViewActivity"
+            android:exported="true" />
+
+        <activity android:name=".UserListActivity" />
+        <activity android:name=".DoctorListActivity" />
+        <activity android:name=".MedicalCenterList" />
+
+        <activity
+            android:name=".MedicalCenterDialogActivity"
+            android:exported="true" />
+<activity
             android:name=".MedicalCenterListDetailActivity"
             android:exported="true" />
         <activity
@@ -66,6 +81,7 @@
             android:name=".ResetPasswordEmailActivity"
             android:exported="true" />
         <activity android:name=".MainActivity" />
+
         <activity android:name=".AdminHome" />
         <activity android:name=".BlogContent"/>
         <activity android:name=".ChangePasswordActivity" />
@@ -82,9 +98,7 @@
         <activity android:name=".MyAppointmnt">
 
         </activity>
-        <activity android:name=".DoctorListActivity">
 
-        </activity>
         <activity android:name=".DoctorEditList">
 
         </activity>
@@ -106,9 +120,14 @@
 
         </activity>
         <activity android:name=".BlogMenu">
+
+
+
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
             </intent-filter>
         </activity>
 

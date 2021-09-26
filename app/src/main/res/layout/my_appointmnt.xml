@@ -4,13 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MyAppointmnt">
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="554dp"
+        android:layout_height="899dp"
+        android:alpha="0.3"
+        android:contentDescription="@string/introductionofdogimage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homepagepetimage1" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -29,8 +42,8 @@
 
     <ImageView
         android:id="@+id/imageView55"
-        android:layout_width="70dp"
-        android:layout_height="58dp"
+        android:layout_width="62dp"
+        android:layout_height="42dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/pet_doc_2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +56,7 @@
         android:id="@+id/usericon"
         android:layout_width="31dp"
         android:layout_height="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:contentDescription="@string/user_icon"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.862"
@@ -53,11 +66,11 @@
 
     <TextView
         android:id="@+id/usernameid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="37dp"
+        android:layout_height="17dp"
         android:text="@string/mhn"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toEndOf="@+id/imageView55"
         app:layout_constraintTop_toBottomOf="@+id/usericon" />
 
@@ -65,6 +78,7 @@
         android:id="@+id/textView3"
         android:layout_width="318dp"
         android:layout_height="44dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center_horizontal"
         android:text="@string/my_appointments"
@@ -73,439 +87,76 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#000000"
         android:textSize="34sp"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow16"
+        app:layout_constraintBottom_toTopOf="@+id/tableRow"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView55" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="111dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="3dp"
-        android:text="@string/confirm"
-        app:backgroundTint="#1B35C5"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="111dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="4dp"
-        android:text="@string/confirm"
-        app:backgroundTint="#1B35C5"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
-        app:layout_constraintEnd_toStartOf="@+id/button8"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="111dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="4dp"
-        android:text="@string/confirm"
-        app:backgroundTint="#1B35C5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button9"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="111dp"
-        android:layout_height="37dp"
-        android:text="@string/cancel"
-        app:backgroundTint="#F40B0B"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow19"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="111dp"
-        android:layout_height="37dp"
-        android:text="@string/cancel"
-        app:backgroundTint="#F40B0B"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow24"
-        app:layout_constraintVertical_bias="0.75" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="111dp"
-        android:layout_height="37dp"
-        android:text="@string/cancel"
-        app:backgroundTint="#F40B0B"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow28"
-        app:layout_constraintVertical_bias="0.666" />
-
     <TableRow
-        android:id="@+id/tableRow16"
-        android:layout_width="361dp"
-        android:layout_height="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow17"
+        android:id="@+id/tableRow"
+        android:layout_width="409dp"
+        android:layout_height="48dp"
+        android:background="#E29DAAED"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/idtableSchedule"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-        <TextView
-            android:id="@+id/textView55"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/patient_name"
-            android:textColor="#000000"
-            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView36"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sachin"
-            android:textColor="#000000" />
+            android:id="@+id/apptable2"
+            android:layout_width="77dp"
+            android:layout_height="38dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="Patient Name" />
+
+        <TextView
+            android:id="@+id/apptable3"
+            android:layout_width="66dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="Date" />
+
+        <TextView
+            android:id="@+id/apptable4"
+            android:layout_width="46dp"
+            android:layout_height="33dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-black"
+            android:text="Time" />
+
+        <TextView
+            android:id="@+id/apptable6"
+            android:layout_width="60dp"
+            android:layout_height="34dp"
+            android:fontFamily="sans-serif-black"
+            android:text="Action" />
 
     </TableRow>
 
-    <TableRow
-        android:id="@+id/tableRow25"
-        android:layout_width="360dp"
-        android:layout_height="27dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow26"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idtableSchedule"
+        android:layout_width="411dp"
+        android:layout_height="502dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/textView57"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/patient_name"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView38"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/chanukshi"
-            android:textColor="#000000" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow20"
-        android:layout_width="360dp"
-        android:layout_height="26dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow23"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/textView35"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/patient_name"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView31"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ashen"
-            android:textColor="#000000" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow17"
-        android:layout_width="361dp"
-        android:layout_height="26dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow18"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow16">
-
-        <TextView
-            android:id="@+id/textView58"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/medicalCenter1"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView39"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/m_hospital"
-            android:textColor="#000000" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow23"
-        android:layout_width="360dp"
-        android:layout_height="26dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow22"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/textView59"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/medicalCenter1"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView42"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/m_hospital"
-            android:textColor="#000000" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow26"
-        android:layout_width="358dp"
-        android:layout_height="26dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow27"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/textView32"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/medicalCenter1"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView81"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/m_hospital"
-            android:textColor="#000000" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow18"
-        android:layout_width="361dp"
-        android:layout_height="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow19"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow17">
-
-        <TextView
-            android:id="@+id/textView60"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/date"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView40"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_2021_08_181"
-            android:textColor="#000000" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow22"
-        android:layout_width="360dp"
-        android:layout_height="25dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/textView61"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/date"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView79"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_2021_08_181"
-            android:textColor="#000000" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow27"
-        android:layout_width="358dp"
-        android:layout_height="24dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow28"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/textView33"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/date"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView83"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_2021_08_181"
-            android:textColor="#000000" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow19"
-        android:layout_width="361dp"
-        android:layout_height="27dp"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow18"
-        app:layout_constraintVertical_bias="0.218">
-
-        <TextView
-            android:id="@+id/textView34"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/time"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView41"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_8_00_p_m"
-            android:textColor="#000000" />
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow24"
-        android:layout_width="361dp"
-        android:layout_height="31dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/textView56"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/time"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView80"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_8_10_p_m"
-            android:textColor="#000000" />
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow28"
-        android:layout_width="358dp"
-        android:layout_height="24dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/textView54"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/time"
-            android:textColor="#000000"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView84"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_8_20_p_m"
-            android:textColor="#000000" />
-    </TableRow>
-
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="349dp"
-        android:layout_height="18dp"
-        android:layout_marginBottom="4dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="Autofill,LabelFor" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName3"
-        android:layout_width="351dp"
-        android:layout_height="19dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow25"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="Autofill,LabelFor" />
+        app:layout_constraintTop_toBottomOf="@+id/tableRow" />
 
     <com.google.android.material.chip.Chip
         android:id="@+id/chip9"
         android:layout_width="48dp"
         android:layout_height="28dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="#000000"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
@@ -517,7 +168,7 @@
         android:id="@+id/chip13"
         android:layout_width="48dp"
         android:layout_height="28dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="25dp"
         android:background="#000000"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"

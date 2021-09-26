@@ -25,24 +25,16 @@ import java.util.regex.Pattern;
 public class CreateAccount extends AppCompatActivity {
 
     EditText inputName, inputEmail, inputMobileNumber, inputPassword, inputConfirmPassword;
-
     Button  saveBtn;
-
     private FirebaseAuth mAuth;
-
     User user;
-
     ProgressDialog spinner;
-
     DatabaseReference db;
 
     private void clearControls(){
         inputName.setText("");
-
         inputEmail.setText("");
-
         inputMobileNumber.setText("");
-
         inputPassword.setText("");
     }
     @Override
@@ -53,7 +45,6 @@ public class CreateAccount extends AppCompatActivity {
         if(mAuth.getCurrentUser() != null)
         {
             Intent intent = new Intent(CreateAccount.this, MainActivity.class);
-
             startActivity(intent);
         }
 
@@ -65,19 +56,12 @@ public class CreateAccount extends AppCompatActivity {
         setContentView(R.layout.activity_create_account);
 
         inputName = findViewById(R.id.createAcc_nameEditText);
-
         inputEmail = findViewById(R.id.createAcc_emailEditText);
-
         inputMobileNumber = findViewById(R.id.createAcc_mobileNoEditText);
-
         inputPassword = findViewById(R.id.createAcc_passwordEditTest);
-
         inputConfirmPassword = findViewById(R.id.createAcc_ConfirmPasswordEditText);
-
         spinner = new ProgressDialog(CreateAccount.this);
-
         mAuth = FirebaseAuth.getInstance();
-
         saveBtn = findViewById(R.id.createAccbtn);
 
     }
@@ -124,32 +108,19 @@ public class CreateAccount extends AppCompatActivity {
                 else{
 
                     boolean validateEmail = validateEmail();
-
                     boolean validateMobileNo = validateMobileNumber();
-
                     boolean validatePassword = validatePassword();
 
                     String id;
-
                     String name = inputName.getText().toString().trim();
-
                     String email = inputEmail.getText().toString().trim();
-
                     String phoneNumber = inputMobileNumber.getText().toString().trim();
-
                     String password = inputPassword.getText().toString().trim();
 
-
-
-
                     spinner.setTitle("Register New User");
-
                     spinner.setMessage("Please Wait while Validate the Details");
-
                     spinner.setCanceledOnTouchOutside(false);
-
                     spinner.show();
-
 
                     mAuth.createUserWithEmailAndPassword(email, password)
 
@@ -160,13 +131,9 @@ public class CreateAccount extends AppCompatActivity {
                                     if(task.isSuccessful()){
 
                                         User user = new User();
-
                                         user.setName(name);
-
                                         user.setEmail(email);
-
                                         user.setPhoneNumber(phoneNumber);
-
                                         FirebaseDatabase.getInstance().getReference("User")
                                                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                                 .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {

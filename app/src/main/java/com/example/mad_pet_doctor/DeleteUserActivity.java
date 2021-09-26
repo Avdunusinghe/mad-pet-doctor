@@ -63,7 +63,8 @@ public class DeleteUserActivity extends AppCompatActivity {
                                                         Toast.LENGTH_SHORT)
                                                         .show();
 
-                                                Intent intent = new Intent(DeleteUserActivity.this, AuthActivity.class);
+                                                Intent intent = new Intent
+                                                        (DeleteUserActivity.this, AuthActivity.class);
                                                 startActivity(intent);
                                             }
                                         }

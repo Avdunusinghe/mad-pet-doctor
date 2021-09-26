@@ -94,7 +94,6 @@ public class AuthActivity extends AppCompatActivity {
                 spinner.show();
 
                 String inputEmail = email.getText().toString();
-
                 String inputPassword = password.getText().toString();
 
                 if(validateMail()){
@@ -104,28 +103,20 @@ public class AuthActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
                             if(task.isSuccessful()){
-
                                 if(inputEmail.equals("admin@gmail.com")){
-
                                     spinner.dismiss();
-
                                     Toast.makeText(getApplicationContext(),
                                             "Admin Login Success",
                                             Toast.LENGTH_SHORT)
                                             .show();
-
                                     routeAdminActivity();
-
                                 }
                                 else{
-
                                     Toast.makeText(getApplicationContext(),
                                             "Login Success",
                                             Toast.LENGTH_SHORT)
                                             .show();
-
                                     routeMainActivity();
-
                                     spinner.dismiss();
 
                                 }

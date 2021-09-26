@@ -110,14 +110,12 @@ public class ClientProfile extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                     dbRef.child("email").setValue(email.getText().toString().trim());
-
                     dbRef.child("name").setValue(name.getText().toString().trim());
-
                     dbRef.child("phoneNumber").setValue(phoneNumber.getText().toString().trim());
 
 
                     Toast.makeText(getApplicationContext(),
-                            "Succefully updated detils",
+                            "Successfully updated Details",
                             Toast.LENGTH_SHORT)
                             .show();
 

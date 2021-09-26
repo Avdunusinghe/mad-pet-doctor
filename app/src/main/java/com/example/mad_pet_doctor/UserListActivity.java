@@ -53,9 +53,7 @@ public class UserListActivity extends AppCompatActivity {
                 userList.clear();
 
                 for(DataSnapshot userDataSnapshot:snapshot.getChildren()){
-
                     User users = userDataSnapshot.getValue(User.class);
-
                     userList.add(users);
                 }
 

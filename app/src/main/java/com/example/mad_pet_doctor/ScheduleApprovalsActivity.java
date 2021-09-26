@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ScheduleApprovalsActivity extends AppCompatActivity {
+public class ScheduleApprovalsActivity extends AppCompatActivity implements TableAdapter.CourseClickInterface {
 
     private ImageView HosLogo;
     private TextView Heading, DocNameEdt, DateEdt, TimeEdt, Column4, Column5;
@@ -72,7 +72,7 @@ public class ScheduleApprovalsActivity extends AppCompatActivity {
 
         //arraylist
         scheduleModalArrayList = new ArrayList<>();
-        tableAdapter = new TableAdapter(scheduleModalArrayList,this,  this::onCourseClick);
+        tableAdapter = new TableAdapter(scheduleModalArrayList,this,this);
         table.setLayoutManager(new LinearLayoutManager(this));
 
         //table

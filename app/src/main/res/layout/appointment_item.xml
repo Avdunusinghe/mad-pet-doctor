@@ -133,7 +133,8 @@
         android:layout_marginEnd="29dp"
         android:layout_marginRight="29dp"
         app:backgroundTint="@android:color/holo_red_dark"
-        app:srcCompat="@drawable/call_btn" />
+        app:srcCompat="@drawable/call_btn"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </RelativeLayout>
 

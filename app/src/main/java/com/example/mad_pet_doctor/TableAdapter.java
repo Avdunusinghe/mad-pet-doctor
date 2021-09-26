@@ -75,7 +75,6 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder> 
     }
 
 
-
     private void setAnimation(View itemView, int position) {
         if(position>lastPos){
             Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
@@ -103,14 +102,10 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder> 
             //UpdateBtn= itemView.findViewById(R.id.icondell4);
             DeleteBtn= itemView.findViewById(R.id.icondel14);
 
-
-
         }
     }
 
     public interface CourseClickInterface{
         void onCourseClick(int position);
     }
-
-
 }

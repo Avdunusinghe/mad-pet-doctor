@@ -24,6 +24,8 @@ public class MedicalCenterReg implements Parcelable {
         Email = email;
     }
 
+
+
     protected MedicalCenterReg(Parcel in) {
         MedicalCenterId = in.readString();
         MedicalCenterNo = in.readString();

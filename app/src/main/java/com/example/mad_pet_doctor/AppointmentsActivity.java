@@ -41,7 +41,7 @@ public class AppointmentsActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference= firebaseDatabase.getReference("Schedules");
         scheduleModalArrayList = new ArrayList<>();
-        scheduleAdapter = new ScheduleAdapter(scheduleModalArrayList,this,  this::onCourseClick);
+      //  scheduleAdapter = new ScheduleAdapter(scheduleModalArrayList,this,  this::onCourseClick);
         scheduleApp.setLayoutManager(new LinearLayoutManager(this));
         scheduleApp.setAdapter(scheduleAdapter);
         cardApp = findViewById(R.id.homeCard);

@@ -44,7 +44,7 @@ public class DoctorEditList extends AppCompatActivity {
         DoctorNameEdt=findViewById(R.id.apptable2);
         MedicalCenterEdt=findViewById(R.id.apptable3);
         TelNoEdt=findViewById(R.id.apptable4);
-        Column4=findViewById(R.id.apptable5);
+       // Column4=findViewById(R.id.apptable5);
         Column5=findViewById(R.id.apptable6);
         AddBtn=findViewById(R.id.addbton);
         DeleteBtn=findViewById(R.id.icondel14);

@@ -43,7 +43,7 @@ public class MyAppointmnt extends AppCompatActivity {
         PatientNameEdt=findViewById(R.id.apptable2);
         DateEdt=findViewById(R.id.apptable3);
         TimeEdt=findViewById(R.id.apptable4);
-        Column4=findViewById(R.id.apptable5);
+        //Column4=findViewById(R.id.apptable5);
         Column5=findViewById(R.id.apptable6);
         ConfirmBtn=findViewById(R.id.confirm);
         IgnoreBtn=findViewById(R.id.ignore);

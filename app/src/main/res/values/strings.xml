@@ -276,8 +276,9 @@
 
     <string name="createAcc_confirmPasswordText">Confirm Password</string>
     <string name="createAcc_ConfirmPasswordEditText" />
-    <string name="resetPassword_emailEditText" />
-    <string name="resetPassword_authTextView">Sign in</string>
+    <!--<string name="resetPassword_emailEditText" />
+    <string name="send_emailBtn">Send Email</string>
+    <string name="resetPassword_authTextView">Sign in</string>-->
     <string name="user_name_list_textview" />
     <string name="user_email_list_textview" />
     <string name="user_phone_list_textview" />
@@ -389,7 +390,6 @@
     <string name="prof_btn5">APPOINTMENTS</string>
     <string name="addbtn">Add Button</string>
     <string name="usernameId">usernameId</string>
-    <string name="btondelete">btondelete</string>
 
 
     <!-- Nawanjana MH -->
@@ -546,7 +546,11 @@
     <string name="deleteUserSubmitButton">Submit</string>
     <string name="deleteUserEmailEditText" />
     <string name="resetPasswordEmail_text">Email</string>
-    <string name="send_emailBtn">Send Link</string>
+    <string name="resetPassword_emailEditText" />
+    <string name="send_emailBtn">Send Email</string>
+    <string name="resetPassword_authTextView">Sign in</string>
+    <string name="btondelete">btondelete</string>
+    <!--<string name="send_emailBtn">Send Link</string>-->
 
 
 </resources>

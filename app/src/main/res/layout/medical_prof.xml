@@ -4,22 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fdefe9"
     tools:context=".MainActivity">
 
 
-    <TextView
-        android:id="@+id/med_heading"
-        android:layout_width="227dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/med_heading"
-        android:fontFamily="sans-serif-black"
-        android:text="M+ Medical Center"
-        app:autoSizeTextType="uniform"
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.3"
+        android:contentDescription="@string/introductionofdogimage"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/newqqq" />
+
+    <ImageView
+        android:id="@+id/hos_logo1"
+        android:layout_width="79dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/hos_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+        app:srcCompat="@drawable/hospital" />
+
+    <Button
+        android:id="@+id/prof_btn4"
+        android:layout_width="339dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/prof_btn1"
+        android:text="SCHEDULES"
+        app:backgroundTint="@color/BurlyWood"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
+
+    <Button
+        android:id="@+id/prof_btn5"
+        android:layout_width="350dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/prof_btn2"
+        android:text="MY PROFILE"
+        app:backgroundTint="@color/Peru"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+
+    <Button
+        android:id="@+id/prof_btn3"
+        android:layout_width="346dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/prof_btn3"
+        android:text="DAILY REPORTS"
+        app:backgroundTint="@color/Goldenrod"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="130dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginRight="132dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/hos_logo1"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+        app:srcCompat="@drawable/icons8_user_50" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="132dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prof_btn5"
+        app:srcCompat="@drawable/report" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="138dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prof_btn4"
+        app:srcCompat="@drawable/medical_history" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar3"
@@ -41,60 +126,52 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chip5"
-        android:layout_width="44dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="112dp"
-        android:layout_marginRight="112dp"
-        app:chipBackgroundColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/imageView56"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/toolbar3"
-        app:layout_constraintTop_toTopOf="@+id/chip9" />
 
     <com.google.android.material.chip.Chip
-        android:id="@+id/chip9"
-        android:layout_width="45dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/chip5"
+        android:layout_width="48dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="24dp"
+        android:background="#000000"
         app:chipBackgroundColor="#000000"
-        app:layout_constraintEnd_toStartOf="@+id/imageView56"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.011"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <ImageView
-        android:id="@+id/hos_logo1"
-        android:layout_width="75dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="32dp"
-        android:contentDescription="@string/hos_logo"
-        app:layout_constraintHorizontal_bias="0.0"
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip9"
+        android:layout_width="48dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="8dp"
+        android:background="#000000"
+        app:chipBackgroundColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.011"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chip5"
-        app:srcCompat="@drawable/hospital" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView52"
         android:layout_width="49dp"
         android:layout_height="40dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView56"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user_icon" />
+
+    <ImageView
+        android:id="@+id/imageView56"
+        android:layout_width="75dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar3"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pet_doc_2" />
 
     <TextView
         android:id="@+id/usernameId"
@@ -106,90 +183,8 @@
         android:textColor="@color/black"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView52" />
-
-
-    <ImageView
-        android:id="@+id/imageView56"
-        android:layout_width="64dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar3"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pet_doc_2" />
-
-    <Button
-        android:id="@+id/prof_btn4"
-        android:layout_width="343dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/prof_btn1"
-        android:text="SCHEDULES"
-        app:backgroundTint="@color/BurlyWood"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
-
-    <Button
-        android:id="@+id/prof_btn5"
-        android:layout_width="350dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="12dp"
-        android:contentDescription="@string/prof_btn2"
-        android:text="DOC REGISTRATION"
-        app:backgroundTint="@color/Peru"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
-
-    <Button
-        android:id="@+id/prof_btn3"
-        android:layout_width="346dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="@string/prof_btn3"
-        android:text="DAILY REPORTS"
-        app:backgroundTint="@color/Goldenrod"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="167dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/med_heading"
-        app:srcCompat="@drawable/overtime_1" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="169dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prof_btn4"
-        app:srcCompat="@drawable/edit_user_male" />
-
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="164dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prof_btn5"
-        app:srcCompat="@drawable/medical_history" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

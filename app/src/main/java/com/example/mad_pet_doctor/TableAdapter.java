@@ -31,13 +31,14 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder> 
     private ArrayList<ScheduleModal> scheduleModalArrayList;
     private Context context;
     int lastPos = -1;
-   // private TableAdapter.CourseClickInterface courseClickInterface;
+    private TableAdapter.CourseClickInterface courseClickInterface;
 
 
-    public TableAdapter(ArrayList<ScheduleModal> scheduleModalArrayList, Context context) {
+
+    public TableAdapter(ArrayList<ScheduleModal> scheduleModalArrayList, Context context, CourseClickInterface courseClickInterface) {
         this.scheduleModalArrayList = scheduleModalArrayList;
         this.context = context;
-
+        this.courseClickInterface = courseClickInterface;
     }
 
     @Override
@@ -46,28 +47,29 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder> 
         return new TableAdapter.ViewHolder(view);
     }
 
-   @Override
+    @Override
     public void onBindViewHolder(@NonNull  TableAdapter.ViewHolder holder, int position) {
-
         ScheduleModal scheduleModal = scheduleModalArrayList.get(position);
         holder.DoctorName.setText(scheduleModal.getDoctorName());
         holder.Date.setText(scheduleModal.getDate());
         holder.Time.setText(scheduleModal.getTime());
         setAnimation(holder.itemView, position);
-
-        holder.UpdateBtn.setOnClickListener(new View.OnClickListener() {
+        /*holder.UpdateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-               // courseClickInterface.onCourseClick(position);
-
+                courseClickInterface.onCourseClick(position);
             }
-        });
+        });*/
 
-        holder.DeleteBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               // courseClickInterface.onCourseClick(position);
+        holder.DeleteBtn.setOnClickListener(new View.OnClickListener()
+        {
+            @Override public void onClick(View v)
+            {
+                View row = (View) v.getParent();
+                ViewGroup container = ((ViewGroup)row.getParent());
+                container.removeView(row);
+                container.invalidate();
             }
         });
     }
@@ -87,6 +89,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder> 
         return scheduleModalArrayList.size();
     }
 
+    //implement fields
     public class ViewHolder extends  RecyclerView.ViewHolder{
         public TextView DoctorName , Date, Time;
         private ImageButton UpdateBtn, DeleteBtn;
@@ -102,7 +105,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.ViewHolder> 
         }
     }
 
-    /*public interface CourseClickInterface{
+    public interface CourseClickInterface{
         void onCourseClick(int position);
-    }*/
+    }
 }

@@ -68,7 +68,16 @@
         <activity
             android:name=".MedicalCenterDialogActivity"
             android:exported="true" />
-<activity
+
+        <activity android:name=".NewUpdateActivity">
+
+        </activity>
+
+        <activity android:name=".MedCenterDailyReportActivity">
+
+        </activity>
+
+       <activity
             android:name=".MedicalCenterListDetailActivity"
             android:exported="true" />
         <activity

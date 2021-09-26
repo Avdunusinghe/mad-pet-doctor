@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.model.ContactModal;
+import com.google.android.material.chip.Chip;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +30,7 @@ public class ContactUsActivity extends AppCompatActivity {
     private TextView ContHead, ContEmail, ContactNo, Name, Email ,Message;
     private EditText NameEdt, EmaiEdt, MessageEdt;
     private Button ContSubmitBtn;
+    private Chip HomeChip1,HomeChip2;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private String ContactId;
@@ -52,6 +54,19 @@ public class ContactUsActivity extends AppCompatActivity {
         ContSubmitBtn = findViewById(R.id.bton3);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Contacts");
+
+        HomeChip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ContactUsActivity.this, ActivityMainSideBar.class));
+            }
+        });
+        HomeChip2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ContactUsActivity.this, ActivityMainSideBar.class));
+            }
+        });
 
         ContSubmitBtn.setOnClickListener(new View.OnClickListener() {
             @Override

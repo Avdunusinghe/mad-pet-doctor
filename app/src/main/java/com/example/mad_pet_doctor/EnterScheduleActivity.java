@@ -18,6 +18,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.model.ScheduleModal;
+import com.google.android.material.chip.Chip;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,6 +32,7 @@ import java.util.Locale;
 public class EnterScheduleActivity extends AppCompatActivity {
 
     private ImageView hoslogo , schedulepic;
+    private Chip HomeChip1,HomeChip2;
     private TextView schedHeading, Docname, Date, Time,Id;
     private EditText IDEdt, DocNameEdt, DateEdt, TimeEdt;
     private Button submitBtn;
@@ -48,6 +50,8 @@ public class EnterScheduleActivity extends AppCompatActivity {
         hoslogo = findViewById(R.id.hos_logo1);
         schedulepic = findViewById(R.id.sched_pic);
         schedHeading = findViewById(R.id.sched_name);
+        HomeChip1 = findViewById(R.id.chip5);
+        HomeChip2 = findViewById(R.id.chip9);
         Id = findViewById(R.id.sched_label111);
         Docname = findViewById(R.id.sched_label2);
         Date = findViewById(R.id.sched_label3);
@@ -60,13 +64,25 @@ public class EnterScheduleActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Schedules");
 
+        HomeChip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(EnterScheduleActivity.this, ActivityMainSideBar.class));
+            }
+        });
+        HomeChip2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(EnterScheduleActivity.this, ActivityMainSideBar.class));
+            }
+        });
 
+        //datepicker
 
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                // TODO Auto-generated method stub
                 myCalendar.set(Calendar.YEAR, year);
                 myCalendar.set(Calendar.MONTH, monthOfYear);
                 myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
@@ -79,13 +95,13 @@ public class EnterScheduleActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 new DatePickerDialog(EnterScheduleActivity.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
 
+        //timepicker
         TimeEdt.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -107,6 +123,7 @@ public class EnterScheduleActivity extends AppCompatActivity {
             }
         });
 
+        //submit
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,7 +149,7 @@ public class EnterScheduleActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull  DataSnapshot snapshot) {
                         databaseReference.child(ScheduleId).setValue(scheduleModal);
                         Toast.makeText(EnterScheduleActivity.this, "Schedule is  Added..", Toast.LENGTH_SHORT ).show();
-                        startActivity( new Intent(EnterScheduleActivity.this, MedicalProfileUserActivity.class));
+                        startActivity( new Intent(EnterScheduleActivity.this, ScheduleApprovalsActivity.class));
 
 
                     }

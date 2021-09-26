@@ -15,7 +15,7 @@ public class MedicalProfActivity extends AppCompatActivity {
 
     private ImageView Hoslogo ;
     private ImageButton Schedulepic, DocRegpic, Reportpic;
-    private Button ScheduleBtn, DocRegistrationBtn , ReportBtn;
+    private Button ScheduleBtn, ProfileBtn , ReportBtn;
     private TextView medicalprofHeading;
 
     @Override
@@ -28,7 +28,7 @@ public class MedicalProfActivity extends AppCompatActivity {
         DocRegpic = findViewById(R.id.imageButton6);
         Reportpic = findViewById(R.id.imageButton7);
         ScheduleBtn = findViewById(R.id.prof_btn4);
-        DocRegistrationBtn= findViewById(R.id.prof_btn5);
+        ProfileBtn= findViewById(R.id.prof_btn5);
         ReportBtn = findViewById(R.id.prof_btn3);
         medicalprofHeading = findViewById(R.id.med_heading);
 
@@ -42,10 +42,10 @@ public class MedicalProfActivity extends AppCompatActivity {
         });
 
         //Doctor Registration page button implementation
-        DocRegistrationBtn.setOnClickListener(new View.OnClickListener() {
+        ProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MedicalProfActivity.this, DoctoreRegistration.class);
+                Intent i = new Intent(MedicalProfActivity.this,MedicalCenterListDetailActivity.class);
                 startActivity(i);
             }
         });
@@ -54,7 +54,7 @@ public class MedicalProfActivity extends AppCompatActivity {
         ReportBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MedicalProfActivity.this,  DailyReportsActivity.class);
+                Intent i = new Intent(MedicalProfActivity.this,  MedCenterDailyReportActivity.class);
                 startActivity(i);
             }
         });
@@ -71,7 +71,7 @@ public class MedicalProfActivity extends AppCompatActivity {
          DocRegpic.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 Intent intend2 = new Intent(MedicalProfActivity.this, DoctoreRegistration.class);
+                 Intent intend2 = new Intent(MedicalProfActivity.this, MedicalCenterListDetailActivity.class);
                  startActivity(intend2);
              }
          });
@@ -79,7 +79,7 @@ public class MedicalProfActivity extends AppCompatActivity {
          Reportpic.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 Intent intend3 = new Intent(MedicalProfActivity.this,  DailyReportsActivity.class);
+                 Intent intend3 = new Intent(MedicalProfActivity.this,  MedCenterDailyReportActivity.class);
                  startActivity(intend3);
              }
          });

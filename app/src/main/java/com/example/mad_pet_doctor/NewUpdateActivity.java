@@ -1,16 +1,13 @@
 package com.example.mad_pet_doctor;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.model.BookingModal;
 import com.example.model.ScheduleModal;
@@ -20,11 +17,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
-public class UpdateScheduleActivity extends AppCompatActivity {
+public class NewUpdateActivity extends AppCompatActivity {
 
     private ImageView hoslogo , schedulepic;
     private TextView schedHeading, Docname, Date, Time,Id;
@@ -34,7 +27,6 @@ public class UpdateScheduleActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private String scheduleId;
     private ScheduleModal scheduleModal;
-    private ArrayList<ScheduleModal> scheduleModalArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,53 +47,44 @@ public class UpdateScheduleActivity extends AppCompatActivity {
         UpdateBtn = findViewById(R.id.bton7);
         firebaseDatabase = FirebaseDatabase.getInstance();
         scheduleModal = getIntent().getParcelableExtra("Schedule");
-        if(scheduleModalArrayList!=null){
+        if(scheduleModal!=null){
             IDEdt.setText(scheduleModal.getId());
             DocNameEdt.setText(scheduleModal.getDoctorName());
             DateEdt.setText(scheduleModal.getDate());
             TimeEdt.setText(scheduleModal.getTime());
             scheduleId = scheduleModal.getScheduleId();
-
         }
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Schedules");
-        UpdateBtn.setOnClickListener(new View.OnClickListener() {
+
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-                String Id =IDEdt.getText().toString();
-                String Docname =DocNameEdt.getText().toString();
-                String date =DateEdt.getText().toString();
-                String time =TimeEdt.getText().toString();
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                for (DataSnapshot datasnapshot : snapshot.getChildren()) {
 
+                    ScheduleModal scheduleModal;
+                    scheduleModal = datasnapshot.getValue(ScheduleModal.class);
+                    assert scheduleModal != null;
+                    String Id = scheduleModal.getId();
+                    String Docname = scheduleModal.getDoctorName();
+                    String date = scheduleModal.getDate();
+                    String time = scheduleModal.getTime();
 
-                Map<String , Object > map = new HashMap<>();
-                    map.put("Id", Id);
-                    map.put("DoctorName", Docname);
-                    map.put("Date", date);
-                    map.put("Time", time);
+                    IDEdt.setText(Id);
+                    DocNameEdt.setText(Docname);
+                    DateEdt.setText(date);
+                    TimeEdt.setText(time);
 
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull  DataSnapshot snapshot) {
-                            databaseReference.updateChildren(map);
-                        Toast.makeText(UpdateScheduleActivity.this, "Updated Successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(UpdateScheduleActivity.this, ScheduleApprovalsActivity.class));
-                    }
+                }
+            }
 
-                    @Override
-                    public void onCancelled(@NonNull  DatabaseError error) {
-                        Toast.makeText(UpdateScheduleActivity.this, "Fail to update", Toast.LENGTH_SHORT).show();
-                    }
-                });
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
+
         });
 
-
-
-    }
-
-
-    }
-
+    }}

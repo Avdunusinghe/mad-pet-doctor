@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RelativeLayout;
 
 import com.example.model.ScheduleModal;
@@ -46,7 +47,10 @@ public class AppointmentsActivity extends AppCompatActivity {
         cardApp = findViewById(R.id.homeCard);
         getAllschedules();
 
+
+
     }
+
 
     private void getAllschedules(){
         scheduleModalArrayList.clear();
@@ -54,32 +58,25 @@ public class AppointmentsActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull  DataSnapshot snapshot, @Nullable  String previousChildName) {
                 scheduleModalArrayList.add(snapshot.getValue(ScheduleModal.class));
-                scheduleAdapter.notifyDataSetChanged();;
-
+                scheduleAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable  String previousChildName) {
                 scheduleAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onChildRemoved(@NonNull  DataSnapshot snapshot) {
                 scheduleAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onChildMoved(@NonNull  DataSnapshot snapshot, @Nullable  String previousChildName) {
                 scheduleAdapter.notifyDataSetChanged();
             }
-
             @Override
             public void onCancelled(@NonNull  DatabaseError error) {
-
             }
         });
     }
-
     public void onCourseClick(int position){
         startActivity(new Intent(AppointmentsActivity.this , PetBookFormActivity.class));
 

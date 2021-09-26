@@ -18,6 +18,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.model.BookingModal;
+import com.google.android.material.chip.Chip;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,6 +35,7 @@ import java.util.Locale;
 public class  PetBookFormActivity extends AppCompatActivity {
 
     private ImageView hosLogo , petpic1;
+    private Chip HomeChip1,HomeChip2;
     private TextView petHeading , AnimalName, Ownername, OwnerPhoneNo, Address, AppDate , AppTime;
     private EditText  AnimalNameEdt, OwnerNameEdt, OwnerPhoneEdt, AddressEdt , AppDateEdt  , AppTimeEdt ;
     private Button NextBtn ;
@@ -50,6 +52,8 @@ public class  PetBookFormActivity extends AppCompatActivity {
         hosLogo = findViewById(R.id.hos_logo1);
         petpic1 = findViewById(R.id.pet_pic1);
         petHeading = findViewById(R.id.appo_head);
+        HomeChip1 = findViewById(R.id.chip5);
+        HomeChip2 = findViewById(R.id.chip9);
         AnimalName = findViewById(R.id.pet_label2);
         Ownername = findViewById(R.id.pet_label3);
         OwnerPhoneNo = findViewById(R.id.pet_label4);
@@ -66,6 +70,19 @@ public class  PetBookFormActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Boookings");
 
+
+      /*  HomeChip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PetBookFormActivity.this, ActivityMainSideBar.class));
+            }
+        });*/
+        HomeChip2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PetBookFormActivity.this, ActivityMainSideBar.class));
+            }
+        });
 
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
@@ -132,13 +149,14 @@ public class  PetBookFormActivity extends AppCompatActivity {
                 } else if (TextUtils.isEmpty((AppTimeEdt.getText().toString()))) {
                     Toast.makeText(getApplicationContext(), "Please select Time", Toast.LENGTH_SHORT).show();
                 } else {
+                    String Id = databaseReference.push().getKey();
                     String AnimalName = AnimalNameEdt.getText().toString();
                     String OwnerName = OwnerNameEdt.getText().toString();
                     String OwnerPhone = OwnerPhoneEdt.getText().toString();
                     String Address = AddressEdt.getText().toString();
                     String AppointmentDate = AppDateEdt.getText().toString();
                     String AppointmentTime = AppTimeEdt.getText().toString();
-                    BookingId = AnimalName;
+                    BookingId = Id;
                     BookingModal bookingModal = new BookingModal(AnimalName, OwnerName, OwnerPhone, Address, AppointmentDate, AppointmentTime, BookingId);
 
                     databaseReference.addValueEventListener(new ValueEventListener() {
@@ -157,6 +175,24 @@ public class  PetBookFormActivity extends AppCompatActivity {
                     });
                 }
             }
+
+            public boolean validateMobileNumber()
+            {
+                String phone = OwnerPhoneEdt.getText().toString();
+
+                if(phone.length() == 10)
+                {
+                    return true;
+                }
+                else {
+                    Toast.makeText(getApplicationContext(),
+                            "Please enter valid phone number",
+                            Toast.LENGTH_SHORT)
+                            .show();
+                    return false;
+                }
+
+            }
         });
 
     }
@@ -167,4 +203,5 @@ public class  PetBookFormActivity extends AppCompatActivity {
 
         AppDateEdt.setText(sdf.format(myCalendar.getTime()));
     }
+
 }

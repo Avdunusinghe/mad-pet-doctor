@@ -63,7 +63,7 @@ public class ScheduleApprovalsActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference= firebaseDatabase.getReference("Schedules");
         scheduleModalArrayList = new ArrayList<>();
-        tableAdapter = new TableAdapter(scheduleModalArrayList,this,  this::onCourseClick);
+        tableAdapter = new TableAdapter(scheduleModalArrayList,this);
         table.setLayoutManager(new LinearLayoutManager(this));
         table.setAdapter(tableAdapter);
         getAllschedules();

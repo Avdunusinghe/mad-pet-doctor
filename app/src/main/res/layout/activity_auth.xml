@@ -7,6 +7,16 @@
     tools:context=".AuthActivity">
 
     <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="580dp"
+        android:layout_height="864dp"
+        android:alpha="0.3"
+        android:contentDescription="@string/introductionofdogimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homepageimage1" />
+
+    <ImageView
         android:id="@+id/auth_logo"
         android:layout_width="242dp"
         android:layout_height="177dp"

@@ -23,7 +23,7 @@ public class Doctors extends AppCompatActivity {
         profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intend1 = new Intent(Doctors.this, DoctorProfile.class);
+                Intent intend1 = new Intent(Doctors.this, DoctorEditList.class);
                 startActivity(intend1);
             }
         });

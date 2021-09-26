@@ -134,7 +134,7 @@
         android:layout_marginRight="29dp"
         app:backgroundTint="@android:color/holo_red_dark"
         app:srcCompat="@drawable/call_btn"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="VectorDrawableCompat" />
 
 </RelativeLayout>
 

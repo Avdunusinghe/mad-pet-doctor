@@ -4,13 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".DailyReport">
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="554dp"
+        android:layout_height="899dp"
+        android:alpha="0.3"
+        android:contentDescription="@string/introductionofdogimage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homepagepetimage1" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
@@ -31,7 +44,7 @@
         android:id="@+id/chip9"
         android:layout_width="48dp"
         android:layout_height="28dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="#000000"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,35 +56,37 @@
         android:id="@+id/chip13"
         android:layout_width="48dp"
         android:layout_height="28dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="25dp"
         android:background="#000000"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView55"
-        android:layout_width="70dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="65dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/pet_doc_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pet_doc_2"
-        android:contentDescription="@string/pet_doc_2" />
+        app:srcCompat="@drawable/pet_doc_2" />
+
     <ImageView
         android:id="@+id/usericon"
         android:layout_width="31dp"
         android:layout_height="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/user_icon"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toEndOf="@+id/imageView55"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/user_icon"
-        android:contentDescription="@string/user_icon" />
+        app:srcCompat="@drawable/user_icon" />
 
     <TextView
         android:id="@+id/usernameid"
@@ -79,7 +94,7 @@
         android:layout_height="wrap_content"
         android:text="@string/mhn"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toEndOf="@+id/imageView55"
         app:layout_constraintTop_toBottomOf="@+id/usericon" />
 
@@ -87,288 +102,170 @@
         android:id="@+id/textView3"
         android:layout_width="376dp"
         android:layout_height="76dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-black"
         android:gravity="center_horizontal"
-        android:text="@string/daily_report"
+        android:text="My Fee"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#000000"
         android:textSize="45sp"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         android:typeface="normal"
-        app:layout_constraintBottom_toTopOf="@+id/textView60"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView55" />
 
-
-    <TextView
-        android:id="@+id/textView60"
-        android:layout_width="227dp"
-        android:layout_height="52dp"
-        android:text="@string/_2021_08_18"
-        android:textColor="#CA2E2E"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <TextView
-        android:id="@+id/textView69"
-        android:layout_width="227dp"
-        android:layout_height="52dp"
-        android:text="@string/_2021_08_17"
-        android:textColor="#CA2E2E"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow11"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TableRow
-        android:id="@+id/tableRow8"
-        android:layout_width="357dp"
-        android:layout_height="47dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.773"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView60">
-
-        <TextView
-            android:id="@+id/textView61"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:text="@string/total_appointments"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:autoSizeTextType="uniform" />
-
-        <TextView
-            android:id="@+id/textView74"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_27"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow9"
-        android:layout_width="356dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow10"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.763"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow8">
-
-        <TextView
-            android:id="@+id/textView63"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/total_patients"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:autoSizeTextType="uniform" />
-
-        <TextView
-            android:id="@+id/textView66"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_25"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow10"
-        android:layout_width="359dp"
-        android:layout_height="52dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow11"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.807"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow9">
-
-        <TextView
-            android:id="@+id/textView65"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/dr_charge"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:autoSizeTextType="uniform" />
-
-        <TextView
-            android:id="@+id/textView68"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rs_1500_00"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow11"
-        android:layout_width="354dp"
-        android:layout_height="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView69"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.736"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow10">
-
-        <TextView
-            android:id="@+id/textView67"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/total_fee"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:autoSizeTextType="uniform" />
-
-        <TextView
-            android:id="@+id/textView77"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rs_37500_00"
-            android:textAllCaps="false"
-            android:textColor="#BF2626"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow12"
-        android:layout_width="349dp"
-        android:layout_height="45dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow13"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.677"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView69">
-
-        <TextView
-            android:id="@+id/textView70"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/total_appointments"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:autoSizeTextType="uniform" />
-
-        <TextView
-            android:id="@+id/textView64"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_17"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow13"
-        android:layout_width="351dp"
-        android:layout_height="47dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow14"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow12">
-
-        <TextView
-            android:id="@+id/textView71"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/total_patients"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:autoSizeTextType="uniform" />
-
-        <TextView
-            android:id="@+id/textView75"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/_15"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow14"
-        android:layout_width="352dp"
-        android:layout_height="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/tableRow15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.711"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow13">
-
-        <TextView
-            android:id="@+id/textView72"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/dr_charge"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:autoSizeTextType="uniform" />
-
-        <TextView
-            android:id="@+id/textView76"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rs_1500_00"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow15"
-        android:layout_width="352dp"
-        android:layout_height="48dp"
+    <RelativeLayout
+        android:layout_width="324dp"
+        android:layout_height="476dp"
+        android:background="#BEF5F5DC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.711"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow14">
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.236">
 
         <TextView
-            android:id="@+id/textView73"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/total_fee"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/textView62"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rs_22500_00"
-            android:textAllCaps="false"
-            android:textColor="#BF2626"
-            android:textSize="16sp"
+            android:text="Calculate Daily budget"
+            android:textColor="#FF0000"
+            android:textSize="24sp"
             android:textStyle="bold" />
-    </TableRow>
+
+        <TextView
+            android:id="@+id/book_doc"
+            android:layout_width="129dp"
+            android:layout_height="31dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-220dp"
+            android:layout_marginLeft="-220dp"
+            android:layout_marginTop="125dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toEndOf="@+id/textView2"
+            android:layout_toRightOf="@+id/textView2"
+            android:contentDescription="@string/book_doc"
+            android:fontFamily="sans-serif-black"
+            android:text="Total Patients"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/book_doc2"
+            android:layout_width="134dp"
+            android:layout_height="32dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-219dp"
+            android:layout_marginLeft="-219dp"
+            android:layout_marginTop="200dp"
+            android:layout_toEndOf="@+id/textView2"
+            android:layout_toRightOf="@+id/textView2"
+            android:contentDescription="@string/book_doc2"
+            android:fontFamily="sans-serif-black"
+            android:text="Dr. Charge"
+            android:textColor="#000000"
+            app:layout_constraintHorizontal_bias="0.011" />
+
+        <TextView
+            android:id="@+id/book_doc16"
+            android:layout_width="134dp"
+            android:layout_height="32dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-218dp"
+            android:layout_marginLeft="-218dp"
+            android:layout_marginTop="296dp"
+            android:layout_toEndOf="@+id/textView2"
+            android:layout_toRightOf="@+id/textView2"
+            android:contentDescription="@string/book_doc2"
+            android:fontFamily="sans-serif-black"
+            android:onClick="calculateBtn"
+            android:text="Total Fee"
+            android:textColor="#000000"
+            app:layout_constraintHorizontal_bias="0.011" />
+
+        <Button
+            android:id="@+id/confirm3"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="83dp"
+            android:layout_marginLeft="83dp"
+            android:layout_marginEnd="95dp"
+            android:layout_marginRight="95dp"
+            android:layout_marginBottom="60dp"
+            android:onClick="calculateBtn"
+            android:text="Calculate"
+            app:backgroundTint="#4B66FB" />
+
+        <EditText
+            android:id="@+id/totalPatient"
+            android:layout_width="134dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="21dp"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="111dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_toEndOf="@+id/book_doc"
+            android:layout_toRightOf="@+id/book_doc"
+            android:ems="10"
+            android:hint="Patients"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/drCharge"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="195dp"
+            android:layout_marginEnd="-1dp"
+            android:layout_marginRight="-1dp"
+            android:layout_toEndOf="@+id/book_doc2"
+            android:layout_toRightOf="@+id/book_doc2"
+            android:ems="10"
+            android:hint="Fee"
+            android:inputType="number"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/totalFee"
+            android:layout_width="112dp"
+            android:layout_height="41dp"
+            android:layout_below="@+id/drCharge"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="150dp"
+            android:layout_toEndOf="@+id/book_doc16"
+            android:layout_toRightOf="@+id/book_doc16"
+            android:text="Result"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

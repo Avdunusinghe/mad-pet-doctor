@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.chip.Chip;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +29,11 @@ public class CilentProfileViewActivity extends AppCompatActivity {
     String userId;
     boolean emailVerified;
 
+
+    private Chip HomeChip1, HomeChip2;
+
+
+
     /*nameViewText  emailTextView
     mobileTextView viewProfileUpdateButton*/
 
@@ -43,7 +49,26 @@ public class CilentProfileViewActivity extends AppCompatActivity {
         mobileNumber = findViewById(R.id.mobileTextView);
         deleteUserAccount = findViewById(R.id.userDeleteButton);
 
+
+        HomeChip1 = findViewById(R.id.chip9);
+        HomeChip2 = findViewById(R.id.chip13);
+
+
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        HomeChip1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CilentProfileViewActivity.this, ActivityMainSideBar.class));
+            }
+        });
+        HomeChip2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CilentProfileViewActivity.this, ActivityMainSideBar.class));
+            }
+        });
 
 
         if(user != null)

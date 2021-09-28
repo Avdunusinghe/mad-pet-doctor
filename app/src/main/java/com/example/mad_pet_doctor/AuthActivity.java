@@ -47,12 +47,12 @@ public class AuthActivity extends AppCompatActivity {
         if(mAuth.getCurrentUser() != null)
         {
             //navigate to home
-           // navigateToActivityHome();
+          //  routeMainActivity();
         }
 
-        else if(!isLoggedInUserName.equals("E")){
+        else if(!isLoggedInUserName.equals("admin")){
             //user logged in navigate to Admin home
-           // navigateToActivityAdmin();
+          //  routeAdminActivity();
         }
 
     }
@@ -103,6 +103,7 @@ public class AuthActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
                             if(task.isSuccessful()){
+
                                 if(inputEmail.equals("admin@gmail.com")){
                                     spinner.dismiss();
                                     Toast.makeText(getApplicationContext(),
@@ -111,6 +112,25 @@ public class AuthActivity extends AppCompatActivity {
                                             .show();
                                     routeAdminActivity();
                                 }
+
+                                else if(inputEmail.equals("medicalcenter@gmail.com")){
+                                    spinner.dismiss();
+                                    Toast.makeText(getApplicationContext(),
+                                            "Medical Center Login Success",
+                                            Toast.LENGTH_SHORT)
+                                            .show();
+                                    routeMedicalProfActivity();
+                                }
+
+                                else if(inputEmail.equals("doctor@gmail.com")){
+                                    spinner.dismiss();
+                                    Toast.makeText(getApplicationContext(),
+                                            "Doctor Login Success",
+                                            Toast.LENGTH_SHORT)
+                                            .show();
+                                    routeDoctors();
+                                }
+
                                 else{
                                     Toast.makeText(getApplicationContext(),
                                             "Login Success",
@@ -229,6 +249,18 @@ public class AuthActivity extends AppCompatActivity {
     public void routeForgetPasswordActivity()
     {
         Intent intent = new Intent(AuthActivity.this, ResetPasswordEmailActivity.class);
+        startActivity(intent);
+    }
+
+    public void routeMedicalProfActivity()
+    {
+        Intent intent = new Intent(AuthActivity.this, MedicalProfActivity.class);
+        startActivity(intent);
+    }
+
+    public void routeDoctors()
+    {
+        Intent intent = new Intent(AuthActivity.this, Doctors.class);
         startActivity(intent);
     }
 

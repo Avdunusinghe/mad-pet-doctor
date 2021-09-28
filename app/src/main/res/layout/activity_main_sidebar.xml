@@ -4,134 +4,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fdefe9"
     tools:context=".MainActivity">
 
-    <SearchView
-        android:id="@+id/searchView4"
-        android:layout_width="384dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:background="#FFFFFF"
-        android:contentDescription="@string/search"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
-
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView"
-        android:layout_width="404dp"
-        android:layout_height="178dp"
-        android:layout_marginTop="24dp"
-        android:contentDescription="@string/mapview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
-
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationView2"
-        android:layout_width="259dp"
-        android:layout_height="485dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/NavigationBar"
+        android:layout_width="400dp"
+        android:layout_height="660dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2">
-
         <ImageView
-            android:id="@+id/imageView21"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
+            android:id="@+id/navigationimage"
+            android:layout_width="510dp"
+            android:layout_height="200dp"
             app:srcCompat="@drawable/auth_logo" />
-
         <Button
-            android:id="@+id/button"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="80dp"
+            android:id="@+id/navButton1"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="180dp"
             android:text="DOCTOR"
-            app:backgroundTint="#C18585" />
-
+            android:textColor="@color/black"
+            app:backgroundTint="#D2B48C"
+            android:fontFamily="sans-serif-black"
+            app:iconTint="#4E0808" />
         <Button
-            android:id="@+id/button19"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="120dp"
+            android:id="@+id/navButton2"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="230dp"
             android:text="PET CARD DETAILS"
-            app:backgroundTint="#C18585" />
-
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
+            app:backgroundTint="#D2B48C" />
         <Button
-            android:id="@+id/button20"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="160dp"
-            android:text="MEDICAL CENTER"
-            app:backgroundTint="#C18585" />
-
-        <Button
-            android:id="@+id/button21"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="200dp"
-            android:text="VACCINE REPORT"
-            app:backgroundTint="#C18585" />
-
-        <Button
-            android:id="@+id/button22"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="240dp"
-            android:text="DETAILS OF PETS"
-            app:backgroundTint="#C18585" />
-
-        <Button
-            android:id="@+id/button23"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:id="@+id/navButton3"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="280dp"
+            android:text="MEDICAL CENTER"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
+            app:backgroundTint="#D2B48C" />
+
+        <Button
+            android:id="@+id/navButton4"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="330dp"
+            android:text="VACCINE REPORT"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
+            app:backgroundTint="#D2B48C" />
+        <Button
+            android:id="@+id/navButton5"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="380dp"
+            android:text="DETAILS OF PETS"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
+            app:backgroundTint="#D2B48C" />
+        <Button
+            android:id="@+id/navButton6"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="430dp"
             android:text="ACCOUNTS"
-            app:backgroundTint="#C18585" />
-
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
+            app:backgroundTint="#D2B48C" />
         <Button
-            android:id="@+id/button24"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="320dp"
+            android:id="@+id/navButton7"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="480dp"
             android:text="BLOGS"
-            app:backgroundTint="#C18585" />
-
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
+            app:backgroundTint="#D2B48C" />
         <Button
-            android:id="@+id/button25"
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="360dp"
+            android:id="@+id/navButton8"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="530dp"
             android:text="CONTACT US"
-            app:backgroundTint="#C18585" />
-
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
+            app:backgroundTint="#D2B48C" />
         <Button
-            android:id="@+id/button26"
-            android:layout_width="250dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="400dp"
+            android:id="@+id/navButton9"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="580dp"
             android:text="LOGOUT"
+            android:fontFamily="sans-serif-black"
             app:backgroundTint="#FF0000" />
-
     </com.google.android.material.navigation.NavigationView>
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="0dp"
         android:background="@color/white"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <View
         android:id="@+id/view"
         android:layout_width="wrap_content"
@@ -140,52 +132,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
-
     <com.google.android.material.chip.Chip
         android:id="@+id/chip9"
         android:layout_width="48dp"
         android:layout_height="28dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.chip.Chip
         android:id="@+id/chip13"
         android:layout_width="48dp"
         android:layout_height="28dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="23dp"
         android:background="#5A0F0F"
         app:chipBackgroundColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
-        android:id="@+id/imageView55"
+        android:id="@+id/HomeHeadingImage"
         android:layout_width="70dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pet_doc_2" />
-
     <ImageView
         android:id="@+id/usericon"
         android:layout_width="31dp"
         android:layout_height="25dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.862"
-        app:layout_constraintStart_toEndOf="@+id/imageView55"
+        app:layout_constraintStart_toEndOf="@+id/HomeHeadingImage"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/user_icon" />
-
     <TextView
         android:id="@+id/usernameid"
         android:layout_width="wrap_content"
@@ -193,41 +180,7 @@
         android:text="TKSAR"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
         app:layout_constraintHorizontal_bias="0.901"
-        app:layout_constraintStart_toEndOf="@+id/imageView55"
+        app:layout_constraintStart_toEndOf="@+id/HomeHeadingImage"
         app:layout_constraintTop_toBottomOf="@+id/usericon" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="103dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.935"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView4"
-        app:srcCompat="@drawable/icons8_user_location_30" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="100dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.945"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
-        app:srcCompat="@drawable/icons8_hospital_30" />
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="100dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="56dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.945"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-        app:srcCompat="@drawable/icons8_down_button_30" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
